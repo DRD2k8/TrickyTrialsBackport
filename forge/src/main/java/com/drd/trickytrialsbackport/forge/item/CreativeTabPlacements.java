@@ -1,6 +1,7 @@
 package com.drd.trickytrialsbackport.forge.item;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
+import com.drd.trickytrialsbackport.registry.ModBlocks;
 import com.drd.trickytrialsbackport.registry.ModItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -62,7 +63,7 @@ public class CreativeTabPlacements {
         }
 
         if (tab == CreativeModeTabs.INGREDIENTS) {
-            entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get());
+            entries.addAfter(Items.BLAZE_ROD, ModBlocks.HEAVY_CORE.get(), ModItems.BREEZE_ROD.get());
         }
     }
 }

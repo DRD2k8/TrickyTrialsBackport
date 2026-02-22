@@ -2,6 +2,8 @@ package com.drd.trickytrialsbackport.datagen;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.datagen.client.ModItemModelProvider;
+import com.drd.trickytrialsbackport.datagen.server.ModBlockTagProvider;
+import com.drd.trickytrialsbackport.datagen.server.ModItemTagProvider;
 import com.drd.trickytrialsbackport.datagen.server.ModRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -24,5 +26,8 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        ModBlockTagProvider blockTagProvider = generator.addProvider(event.includeServer(),
+                new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
     }
 }

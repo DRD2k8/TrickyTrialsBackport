@@ -15,6 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem("breeze_rod");
+        evenSimplerBlockItem("heavy_core");
         simpleItem("wind_charge");
     }
 
@@ -22,5 +23,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(itemName,
                 ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(TrickyTrialsBackport.NAMESPACE,"item/" + itemName));
+    }
+
+    public void evenSimplerBlockItem(String blockName) {
+        String name = blockName;
+        this.withExistingParent( name, modLoc("block/" + name) );
     }
 }

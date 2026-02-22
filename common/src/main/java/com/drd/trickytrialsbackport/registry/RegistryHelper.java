@@ -15,7 +15,9 @@ public abstract class RegistryHelper {
     public static final Set<String> VANILLA_BACKPORT_IDS = new HashSet<>();
 
     static {
+        // Always add the stuff here so that way they can register in the minecraft namespace
         VANILLA_BACKPORT_IDS.add("breeze_rod");
+        VANILLA_BACKPORT_IDS.add("heavy_core");
         VANILLA_BACKPORT_IDS.add("mace");
         VANILLA_BACKPORT_IDS.add("wind_charge");
     }

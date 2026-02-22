@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.fabric.item;
 
+import com.drd.trickytrialsbackport.registry.ModBlocks;
 import com.drd.trickytrialsbackport.registry.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -34,7 +35,7 @@ public class CreativeTabPlacements {
     }
 
     private static void addItemsToIngredientsTab(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get());
+        entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get(), ModBlocks.HEAVY_CORE.get());
     }
 
     public static void registerTabPlacements() {
