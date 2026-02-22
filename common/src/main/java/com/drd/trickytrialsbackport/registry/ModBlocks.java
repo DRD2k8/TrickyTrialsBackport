@@ -12,19 +12,25 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    public static final List<Supplier<Block>> BLOCKS = new ArrayList<>();
+
     public static Supplier<Block> HEAVY_CORE;
 
     public static <T extends Block> Supplier<T> registerBlockWithItem(String name, Supplier<T> block) {
         Supplier<T> toReturn = RegistryHelper.getInstance().registerAuto(Registries.BLOCK, name, block);
+        BLOCKS.add((Supplier<Block>) toReturn);
         RegistryHelper.getInstance().registerAuto(Registries.ITEM, name, () -> new BlockItem(toReturn.get(), new Item.Properties()));
         return toReturn;
     }
 
     public static <T extends Block> Supplier<T> registerBlockWithRarity(String name, Supplier<T> block, Rarity rarity) {
         Supplier<T> toReturn = RegistryHelper.getInstance().registerAuto(Registries.BLOCK, name, block);
+        BLOCKS.add((Supplier<Block>) toReturn);
         RegistryHelper.getInstance().registerAuto(Registries.ITEM, name, () -> new BlockItem(toReturn.get(), new Item.Properties().rarity(rarity)));
         return toReturn;
     }

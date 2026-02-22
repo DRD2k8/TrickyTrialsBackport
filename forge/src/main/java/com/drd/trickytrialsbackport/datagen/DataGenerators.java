@@ -4,6 +4,7 @@ import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.datagen.client.ModItemModelProvider;
 import com.drd.trickytrialsbackport.datagen.server.ModBlockTagProvider;
 import com.drd.trickytrialsbackport.datagen.server.ModItemTagProvider;
+import com.drd.trickytrialsbackport.datagen.server.ModLootTableProvider;
 import com.drd.trickytrialsbackport.datagen.server.ModRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -25,6 +26,7 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         ModBlockTagProvider blockTagProvider = generator.addProvider(event.includeServer(),
                 new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
