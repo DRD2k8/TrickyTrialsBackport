@@ -1,0 +1,310 @@
+{
+  "block.heavy_core.break": {
+    "sounds": [
+      "block/heavy_core/break1",
+      "block/heavy_core/break2",
+      "block/heavy_core/break3",
+      "block/heavy_core/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.heavy_core.fall": {
+    "sounds": [
+      "block/heavy_core/step1",
+      "block/heavy_core/step2",
+      "block/heavy_core/step3",
+      "block/heavy_core/step4"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.heavy_core.hit": {
+    "sounds": [
+      "block/heavy_core/step1",
+      "block/heavy_core/step2",
+      "block/heavy_core/step3",
+      "block/heavy_core/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.heavy_core.place": {
+    "sounds": [
+      "block/heavy_core/break1",
+      "block/heavy_core/break2",
+      "block/heavy_core/break3",
+      "block/heavy_core/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.heavy_core.step": {
+    "sounds": [
+      "block/heavy_core/step1",
+      "block/heavy_core/step2",
+      "block/heavy_core/step3",
+      "block/heavy_core/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.polished_tuff.break": {
+    "sounds": [
+      {
+        "name": "minecraft:block/tuff/break1",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break2",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break3",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break4",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break5",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.polished_tuff.fall": {
+    "sounds": [
+      {
+        "name": "minecraft:block/tuff/step1",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step2",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step3",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step4",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step5",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step6",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.polished_tuff.hit": {
+    "sounds": [
+      {
+        "name": "minecraft:block/tuff/step1",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step2",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step3",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step4",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step5",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step6",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.polished_tuff.place": {
+    "sounds": [
+      {
+        "name": "minecraft:block/tuff/break1",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break2",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break3",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break4",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/break5",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.polished_tuff.step": {
+    "sounds": [
+      {
+        "name": "minecraft:block/tuff/step1",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step2",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step3",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step4",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step5",
+        "pitch": 1.2
+      },
+      {
+        "name": "minecraft:block/tuff/step6",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.tuff_bricks.break": {
+    "sounds": [
+      "block/tuff_bricks/place1",
+      "block/tuff_bricks/place2",
+      "block/tuff_bricks/place3",
+      "block/tuff_bricks/place4",
+      "block/tuff_bricks/place5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.tuff_bricks.fall": {
+    "sounds": [
+      "block/tuff_bricks/step1",
+      "block/tuff_bricks/step2",
+      "block/tuff_bricks/step3",
+      "block/tuff_bricks/step4",
+      "block/tuff_bricks/step5",
+      "block/tuff_bricks/step6"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.tuff_bricks.hit": {
+    "sounds": [
+      "block/tuff_bricks/step1",
+      "block/tuff_bricks/step2",
+      "block/tuff_bricks/step3",
+      "block/tuff_bricks/step4",
+      "block/tuff_bricks/step5",
+      "block/tuff_bricks/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.tuff_bricks.place": {
+    "sounds": [
+      "block/tuff_bricks/place1",
+      "block/tuff_bricks/place2",
+      "block/tuff_bricks/place3",
+      "block/tuff_bricks/place4",
+      "block/tuff_bricks/place5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.tuff_bricks.step": {
+    "sounds": [
+      "block/tuff_bricks/step1",
+      "block/tuff_bricks/step2",
+      "block/tuff_bricks/step3",
+      "block/tuff_bricks/step4",
+      "block/tuff_bricks/step5",
+      "block/tuff_bricks/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "entity.wind_charge.throw": {
+    "sounds": [
+      "random/bow"
+    ],
+    "subtitle": "subtitles.entity.wind_charge.throw"
+  },
+  "entity.wind_charge.wind_burst": {
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "entity/wind_charge/wind_burst1",
+        "pitch": 1.25
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "entity/wind_charge/wind_burst2",
+        "pitch": 1.25
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "entity/wind_charge/wind_burst3",
+        "pitch": 1.25
+      }
+    ],
+    "subtitle": "subtitles.entity.wind_charge.wind_burst"
+  },
+  "item.mace.smash_air": {
+    "sounds": [
+      "item/mace/smash_air1",
+      "item/mace/smash_air2",
+      "item/mace/smash_air3"
+    ],
+    "subtitle": "subtitles.item.mace.smash_air"
+  },
+  "item.mace.smash_ground": {
+    "sounds": [
+      "item/mace/smash_ground1",
+      "item/mace/smash_ground2",
+      "item/mace/smash_ground3",
+      "item/mace/smash_ground4"
+    ],
+    "subtitle": "subtitles.item.mace.smash_ground"
+  },
+  "item.mace.smash_ground_heavy": {
+    "sounds": [
+      "item/mace/smash_ground_heavy"
+    ],
+    "subtitle": "subtitles.item.mace.smash_ground"
+  },
+  "music_disc.creator": {
+    "sounds": [
+      {
+        "name": "records/creator",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.creator_music_box": {
+    "sounds": [
+      {
+        "name": "records/creator_music_box",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.precipice": {
+    "sounds": [
+      {
+        "name": "records/precipice",
+        "stream": true
+      }
+    ]
+  }
+}
