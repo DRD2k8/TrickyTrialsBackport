@@ -17,6 +17,7 @@ public abstract class RegistryHelper {
     static {
         VANILLA_BACKPORT_IDS.add("breeze_rod");
         VANILLA_BACKPORT_IDS.add("mace");
+        VANILLA_BACKPORT_IDS.add("wind_charge");
     }
 
     private static RegistryHelper instance;

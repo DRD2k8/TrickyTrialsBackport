@@ -2,6 +2,7 @@ package com.drd.trickytrialsbackport.datagen;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.datagen.client.ModItemModelProvider;
+import com.drd.trickytrialsbackport.datagen.server.ModRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -21,6 +22,7 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
     }
 }

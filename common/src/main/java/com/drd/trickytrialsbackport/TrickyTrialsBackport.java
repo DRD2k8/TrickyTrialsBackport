@@ -8,6 +8,7 @@ public final class TrickyTrialsBackport {
 
     public static void init() {
         ModSounds.register();
+        ModEntities.register();
         ModItems.register();
     }
 }

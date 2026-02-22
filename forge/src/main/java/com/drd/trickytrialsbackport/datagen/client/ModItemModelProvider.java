@@ -15,6 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem("breeze_rod");
+        simpleItem("wind_charge");
     }
 
     private ItemModelBuilder simpleItem(String itemName) {

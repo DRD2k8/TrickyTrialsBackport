@@ -3,18 +3,38 @@ package com.drd.trickytrialsbackport.fabric.item;
 import com.drd.trickytrialsbackport.registry.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 
 public class CreativeTabPlacements {
+    /**
+     * Example usage of adding an item after a modded item when a mod is installed:
+     * <pre>{@code private static void addItemsToExampleTab(FabricItemGroupEntries entries) {
+     *     ItemLike tileBlock = BuiltInRegistries.ITEM.get(
+     *         new ResourceLocation("othermod", "tile_block")
+     *     )
+     *     // Makes the item register after the tileBlock if the other mod is installed
+     *     entries.addAfter(tileBlock, ExampleModItems.TILE_STAIRS);
+     *     // Makes the item register after Redstone if the other mod is not installed
+     *     entries.addAfter(Items.REDSTONE, ExampleModItems.TILE_STAIRS);
+     * }}</pre>
+     */
+
     private static void addItemsToCombatTab(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.TRIDENT,
-                ModItems.MACE.get());
+        entries.addAfter(Items.TRIDENT, ModItems.MACE.get());
+
+        ItemLike blueEgg = BuiltInRegistries.ITEM.get(
+                new ResourceLocation("minecraft", "blue_egg")
+        );
+        entries.addAfter(blueEgg, ModItems.WIND_CHARGE.get());
+        entries.addAfter(Items.EGG, ModItems.WIND_CHARGE.get());
     }
 
     private static void addItemsToIngredientsTab(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.BLAZE_ROD,
-                ModItems.BREEZE_ROD.get());
+        entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get());
     }
 
     public static void registerTabPlacements() {
