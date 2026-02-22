@@ -1,0 +1,10 @@
+package com.drd.trickytrialsbackport;
+
+public final class TrickyTrialsBackport {
+    public static final String MOD_ID = "trickytrialsbackport";
+    public static final String NAMESPACE = "minecraft";
+
+    public static void init() {
+        // Write common init code here.
+    }
+}

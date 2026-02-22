@@ -1,0 +1,56 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "CC0-1.0"
+
+[[mods]]
+modId = "trickytrialsbackport"
+version = "${version}"
+displayName = "Tricky Trials Backport"
+authors = "Dandi2k8"
+description = '''
+Bringing Tricky Trials to modern Minecraft versions.
+'''
+logoFile = "icon.png"
+
+[[dependencies.trickytrialsbackport]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.trickytrialsbackport]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.trickytrialsbackport]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.trickytrialsbackport]]
+modId = "copperagebackport"
+mandatory = true
+versionRange = "[0.1.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.trickytrialsbackport]]
+modId = "trimmed"
+mandatory = true
+versionRange = "[2.1.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.trickytrialsbackport]]
+modId = "sherdsapi"
+mandatory = true
+versionRange = "[4.0.4,)"
+ordering = "NONE"
+side = "BOTH"
