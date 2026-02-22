@@ -28,13 +28,6 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.trickytrialsbackport]]
-modId = "architectury"
-mandatory = true
-versionRange = "[9.2.14,)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies.trickytrialsbackport]]
 modId = "copperagebackport"
 mandatory = true
 versionRange = "[0.1.4,)"

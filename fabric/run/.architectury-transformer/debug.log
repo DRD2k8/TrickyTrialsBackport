@@ -1,7 +1,7 @@
 [Architectury Transformer] Architectury Runtime 5.2.87
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar
 [Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Provided 114 classpath jar(s):
+[Architectury Transformer DEBUG] Provided 113 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.18.4\dc4682125d5db647d6ce80a98b98945835adcd4b\fabric-loader-0.18.4.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\26.0.2\c7ce3cdeda3d18909368dfe5977332dfad326c6d\annotations-26.0.2.jar
@@ -55,11 +55,10 @@
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar
-[Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-e567bd3611\1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2\minecraft-merged-e567bd3611-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar
+[Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-411361af99\1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2\minecraft-merged-411361af99-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-api-525a49f8\0.92.7+1.20.1\fabric-api-525a49f8-0.92.7+1.20.1.jar
-[Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\dev\architectury\architectury-fabric-525a49f8\9.2.14\architectury-fabric-525a49f8-9.2.14.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\maven\modrinth\backport-copper-age-525a49f8\TqXQZvqk\backport-copper-age-525a49f8-TqXQZvqk.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\maven\modrinth\trimmed-525a49f8\1.20.1-2.1.4+fabric\trimmed-525a49f8-1.20.1-2.1.4+fabric.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\maven\modrinth\sherdsapi-525a49f8\4.0.4+Fabric\sherdsapi-525a49f8-4.0.4+Fabric.jar
@@ -116,25 +115,45 @@
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-resource-loader-v0-525a49f8\0.11.12+fb82e9d777\fabric-resource-loader-v0-525a49f8-0.11.12+fb82e9d777.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-sound-api-v1-525a49f8\1.0.14+1802ada577\fabric-sound-api-v1-525a49f8-1.0.14+1802ada577.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1-525a49f8\4.3.2+1802ada577\fabric-transitive-access-wideners-v1-525a49f8-4.3.2+1802ada577.jar
-[Architectury Transformer] Read classpath in 1.543 s
+[Architectury Transformer] Read classpath in 1.380 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar to C:\Users\dandi\AppData\Local\Temp\3142432884986715012.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@55b699ef
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@35d019a3
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@689604d9
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@18078bef
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@799f10e1
-[Architectury Transformer DEBUG] Transforming from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar to C:\Users\dandi\AppData\Local\Temp\3142432884986715012.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar to C:\Users\dandi\AppData\Local\Temp\14575167620448772315.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@14cd1699
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@77888435
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@73a1e9a9
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@71d44a3
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@7b98f307
+[Architectury Transformer DEBUG] Transforming from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar to C:\Users\dandi\AppData\Local\Temp\14575167620448772315.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/MaceItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModItems with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSounds with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/RegistryHelper with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/TrickyTrialsBackport with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /trickytrialsbackport.mixins.json is a mixin config.
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\dandi\AppData\Local\Temp\3142432884986715012.jar
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\dandi\AppData\Local\Temp\14575167620448772315.jar
 [Architectury Transformer] Listening at D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\dandi\AppData\Local\Temp\3142432884986715012.jar] contains packages: com.drd.trickytrialsbackport
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\dandi\AppData\Local\Temp\14575167620448772315.jar] contains packages: com.drd.trickytrialsbackport, com.drd.trickytrialsbackport.registry, com.drd.trickytrialsbackport.item
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-1.0.0-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\fabric\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Classpath entry [D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\resources\main] contains packages: 
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/RegistryHelper.class to com/drd/trickytrialsbackport/registry/RegistryHelper.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/RegistryHelper with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/RegistryHelper in 2.087 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/TrickyTrialsBackport.class to com/drd/trickytrialsbackport/TrickyTrialsBackport.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/TrickyTrialsBackport with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/TrickyTrialsBackport in 1.008 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/TrickyTrialsBackport in 275.7 μs
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModSounds.class to com/drd/trickytrialsbackport/registry/ModSounds.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSounds with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSounds in 1.039 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModItems.class to com/drd/trickytrialsbackport/registry/ModItems.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModItems with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModItems in 715.8 μs
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/MaceItem.class to com/drd/trickytrialsbackport/item/MaceItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/MaceItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/MaceItem in 3.183 ms

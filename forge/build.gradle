@@ -51,9 +51,6 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:$rootProject.forge_version"
 
-    // Architectury API. This is optional, and you can comment it out if you don't need it.
-    modImplementation "dev.architectury:architectury-forge:$rootProject.architectury_api_version"
-
     // Required dependencies
     modImplementation "maven.modrinth:backport-copper-age:${copperagebackport_forge_id}"
     runtimeOnly("io.github.llamalad7:mixinextras-forge:${mixinextras_version}")

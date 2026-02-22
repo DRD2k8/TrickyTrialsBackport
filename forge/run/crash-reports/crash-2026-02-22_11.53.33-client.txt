@@ -1,0 +1,191 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 2026-02-22 11:53:33
+Description: Rendering overlay
+
+java.lang.IllegalArgumentException: Failed to create model for minecraft:bat
+	at net.minecraft.client.renderer.entity.EntityRenderers.method_32174(EntityRenderers.java:164) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?] {re:mixin}
+	at net.minecraft.client.renderer.entity.EntityRenderers.createEntityRenderers(EntityRenderers.java:160) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.entity.EntityRenderDispatcher.onResourceManagerReload(EntityRenderDispatcher.java:360) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.packs.resources.ResourceManagerReloadListener.method_29490(ResourceManagerReloadListener.java:15) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,re:classloading,re:mixin}
+	at java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.method_18365(SimpleReloadInstance.java:69) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:156) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:unprotect:A,re:mixin,pl:unprotect:A,re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:130) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:115) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1106) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[?:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar%23199!/:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) ~[?:?] {}
+Caused by: java.lang.IllegalStateException: Cannot get config value before config is loaded.
+This error is currently only thrown in the development environment, to avoid breaking published mods.
+In a future version, this will also throw in the production environment.
+
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:502) ~[guava-31.1-jre.jar%23140!/:?] {}
+	at net.minecraftforge.common.ForgeConfigSpec$ConfigValue.get(ForgeConfigSpec.java:848) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?] {re:classloading,pl:unprotect:A}
+	at com.blackgear.platform.core.util.config.forge.ForgeConfigValue.get(ForgeConfigValue.java:22) ~[platform-0cd3bb3a-XCJNVCRh.jar%23212!/:?] {re:classloading}
+	at com.blackgear.vanillabackport.client.api.renderer.RenderConditions.lambda$static$3(RenderConditions.java:13) ~[vanillabackport-0cd3bb3a-lXAo1yJs.jar%23211!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:runtimedistcleaner:A}
+	at com.blackgear.vanillabackport.client.api.renderer.SpecialMobRenderer.create(SpecialMobRenderer.java:18) ~[vanillabackport-0cd3bb3a-lXAo1yJs.jar%23211!/:?] {re:mixin,re:classloading}
+	at net.minecraft.client.renderer.entity.BatRenderer.handler$zbp000$onInit(BatRenderer.java:534) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:vanillabackport.mixins.json:client.entities.renderer.BatRendererMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.entity.BatRenderer.<init>(BatRenderer.java:15) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:vanillabackport.mixins.json:client.entities.renderer.BatRendererMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.entity.EntityRenderers.method_32174(EntityRenderers.java:162) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	... 30 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mods: 
+	VanillaBackport (vanillabackport), Version: 1.1.5.4.2
+		Issue tracker URL: https://github.com/ItsBlackGear/VanillaBackport/issues
+		at TRANSFORMER/vanillabackport@1.1.5.4.2/com.blackgear.vanillabackport.client.api.renderer.RenderConditions.lambda$static$3(RenderConditions.java:13)
+
+	Platform (platform), Version: 1.2.11.6.2
+		Issue tracker URL: https://github.com/ItsBlackGear/Platform/issues
+		at TRANSFORMER/platform@1.2.11.6.2/com.blackgear.platform.core.util.config.forge.ForgeConfigValue.get(ForgeConfigValue.java:22)
+Stacktrace:
+	at net.minecraft.client.renderer.entity.EntityRenderers.method_32174(EntityRenderers.java:164) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?] {re:mixin}
+	at net.minecraft.client.renderer.entity.EntityRenderers.createEntityRenderers(EntityRenderers.java:160) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.entity.EntityRenderDispatcher.onResourceManagerReload(EntityRenderDispatcher.java:360) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.packs.resources.ResourceManagerReloadListener.method_29490(ResourceManagerReloadListener.java:15) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,re:classloading,re:mixin}
+	at java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.method_18365(SimpleReloadInstance.java:69) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:156) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:unprotect:A,re:mixin,pl:unprotect:A,re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:130) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+-- Overlay render details --
+Details:
+	Overlay name: net.minecraftforge.client.loading.ForgeLoadingOverlay
+Stacktrace:
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:957) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1146) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.4.10.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[?:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar%23199!/:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) ~[?:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: No
+	Packs: vanilla
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 21.0.10, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 458174112 bytes (436 MiB) / 2826960896 bytes (2696 MiB) up to 8573157376 bytes (8176 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 7 5800X 8-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 33 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.79
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: AMD Radeon RX 6800
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x73bf
+	Graphics card #0 versionInfo: DriverVersion=27.20.14501.28009
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 3.60
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 3.60
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 37554.72
+	Virtual memory used (MB): 24273.23
+	Swap memory total (MB): 4864.00
+	Swap memory used (MB): 462.23
+	JVM Flags: 0 total; 
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.3.2+13
+	Backend API: AMD Radeon RX 6800 GL version 4.6.14757 Core Profile Forward-Compatible Context 20.12.1 27.20.14501.28009, ATI Technologies Inc.
+	Window size: 2560x1377
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: en_us
+	CPU: 4x AMD Ryzen 7 5800X 8-Core Processor 
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-patched-0.8.5.12.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar runtime_enum_extender PLUGINSERVICE 
+		unprotect-modlauncher-2.0.2.jar unprotect PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar ArchitecturyMixinRemapperInjector TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		vanillabackport-0cd3bb3a-lXAo1yJs.jar             |VanillaBackport               |vanillabackport               |1.1.5.4.2           |COMMON_SET|Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.|Minecraft                     |minecraft                     |1.20.1              |COMMON_SET|Manifest: NOSIGNATURE
+		backport-copper-age-0cd3bb3a-BeVdLB9R.jar         |Copper-Age-Backport           |copperagebackport             |0.1.4               |COMMON_SET|Manifest: NOSIGNATURE
+		mixinextras-forge-0.3.2.jar                       |MixinExtras                   |mixinextras                   |0.3.2               |COMMON_SET|Manifest: NOSIGNATURE
+		sherdsapi-0cd3bb3a-4.0.4+Forge.jar                |Sherds API                    |sherdsapi                     |4.0.4               |COMMON_SET|Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.4.10             |COMMON_SET|Manifest: NOSIGNATURE
+		18128181552113114300.jar                          |generated_81f17d2             |generated_81f17d2             |1                   |COMMON_SET|Manifest: NOSIGNATURE
+		trimmed-0cd3bb3a-1.20.1-2.1.4+forge.jar           |Trimmed                       |trimmed                       |2.1.4               |COMMON_SET|Manifest: NOSIGNATURE
+		main                                              |Tricky Trials Backport        |trickytrialsbackport          |1.0.0               |ERROR     |Manifest: NOSIGNATURE
+		platform-0cd3bb3a-XCJNVCRh.jar                    |Platform                      |platform                      |1.2.11.6.2          |COMMON_SET|Manifest: NOSIGNATURE
+	Crash Report UUID: 5df1f9fc-2958-4894-ad03-9b0b8cb114bf
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.10

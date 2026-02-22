@@ -12,9 +12,8 @@ A Minecraft mod that brings the Tricky Trials experience to 1.20.1. Adding featu
 
 ### Required
 1. [Copper Age Backport](https://www.curseforge.com/minecraft/mc-mods/copper-age-backport) (For the Copper Blocks that are in the Trial Chambers)
-2. [Architectury API](https://www.curseforge.com/minecraft/mc-mods/architectury-api) (For the registries)
-3. [Trimmed](https://www.curseforge.com/minecraft/mc-mods/trimmed) (For the custom Armor Trims)
-4. [Sherds API](https://www.curseforge.com/minecraft/mc-mods/sherdsapi) (For the custom Pottery Sherds)
+2. [Trimmed](https://www.curseforge.com/minecraft/mc-mods/trimmed) (For the custom Armor Trims)
+3. [Sherds API](https://www.curseforge.com/minecraft/mc-mods/sherdsapi) (For the custom Pottery Sherds)
 
 ### Optional
 1. [Vanilla Backport](https://www.curseforge.com/minecraft/mc-mods/vanillabackport) (For the Decorated Pot loot tables and the Spawn Egg textures)

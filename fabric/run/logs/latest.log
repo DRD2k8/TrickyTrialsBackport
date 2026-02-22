@@ -1,6 +1,5 @@
-[19:53:06] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.18.4
-[19:53:06] [main/INFO] (FabricLoader) Loading 64 mods:
-	- architectury 9.2.14
+[12:22:14] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.18.4
+[12:22:14] [main/INFO] (FabricLoader) Loading 63 mods:
 	- copperagebackport 0.1.4
 	- fabric-api 0.92.7+1.20.1
 	- fabric-api-base 0.4.32+1802ada577
@@ -57,30 +56,31 @@
 	- fabric-transfer-api-v1 3.3.6+8dd72ea377
 	- fabric-transitive-access-wideners-v1 4.3.2+1802ada577
 	- fabricloader 0.18.4
-	- generated_45a3d73 1.0.0
+	- generated_b45f048 1.0.0
 	- java 21
 	- minecraft 1.20.1
 	- mixinextras 0.5.0
 	- sherdsapi 4.0.4
 	- trickytrialsbackport 1.0.0
 	- trimmed 2.1.4
-[19:53:06] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.0+mixin.0.8.7/cf31463202f72d03b0ef1e1e38e8ee71b7faaab6/sponge-mixin-0.17.0+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[19:53:06] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[19:53:06] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[19:53:08] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
-[19:53:08] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[19:53:14] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 1531 milliseconds
-[19:53:14] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
-[19:53:14] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[19:53:15] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[12:22:15] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.0+mixin.0.8.7/cf31463202f72d03b0ef1e1e38e8ee71b7faaab6/sponge-mixin-0.17.0+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[12:22:15] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[12:22:15] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[12:22:15] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[12:22:16] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[12:22:16] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[12:22:20] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 195 milliseconds
+[12:22:21] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
+[12:22:21] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[12:22:22] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.<init>(YggdrasilUserApiService.java:55) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createUserApiService(YggdrasilAuthenticationService.java:124) ~[authlib-4.0.43.jar:?]
-	at net.minecraft.client.Minecraft.createUserApiService(Minecraft.java:733) ~[minecraft-merged-e567bd3611-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.Minecraft.<init>(Minecraft.java:442) ~[minecraft-merged-e567bd3611-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:211) ~[minecraft-merged-e567bd3611-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar:?]
+	at net.minecraft.client.Minecraft.createUserApiService(Minecraft.java:733) ~[minecraft-merged-411361af99-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar:?]
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:442) ~[minecraft-merged-411361af99-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:211) ~[minecraft-merged-411361af99-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2.jar:?]
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:514) ~[fabric-loader-0.18.4.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.18.4.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.18.4.jar:?]
@@ -91,51 +91,129 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 10 more
-[19:53:15] [Render thread/INFO] (Minecraft) Setting user: Player916
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Initializing Copper-Age-Backport on Fabric
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering sounds for Copper-Age-Backport
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering memory module types for Copper-Age-Backport
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering particles for Copper-Age-Backport
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering blocks for Copper-Age-Backport
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering block entities for Copper-Age-Backport
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering entities for Copper-Age-Backport
-[19:53:15] [Render thread/ERROR] (Minecraft) No data fixer registered for copper_golem
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Registering items for Copper-Age-Backport
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Mod 'fastchest' not loaded, skipping compatibility module
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Mod 'sophisticatedstorage' not loaded, skipping compatibility module
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Mod 'ironchest' not loaded, skipping compatibility module
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Initializing 0 compatibility modules...
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Initialization complete. 0 chest handlers, 0 container handlers registered.
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Copper-Age-Backport initialized successfully!
-[19:53:15] [Render thread/INFO] (Copper-Age-Backport) Fired 1 registration callbacks
-[19:53:15] [Render thread/INFO] (Sherds API) Initializing Sherds API for Fabric in a development environment...
-[19:53:15] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[19:53:16] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
-[19:53:16] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
-[19:53:20] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-block-api-v1, fabric-recipe-api-v1, fabric-networking-v0, fabric-blockrenderlayer-v1, fabric-renderer-indigo, copperagebackport, fabric-screen-handler-api-v1, fabric-resource-conditions-api-v1, fabric-events-interaction-v0, fabric-particles-v1, fabric-rendering-data-attachment-v1, fabricloader, fabric-renderer-registries-v1, fabric-renderer-api-v1, fabric-content-registries-v0, fabric-registry-sync-v0, fabric-screen-api-v1, fabric-containers-v0, fabric-rendering-fluids-v1, fabric-crash-report-info-v1, fabric-game-rule-api-v1, fabric-block-view-api-v2, fabric-command-api-v1, fabric-api-lookup-api-v1, fabric-sound-api-v1, fabric-lifecycle-events-v1, fabric-resource-loader-v0, fabric-item-group-api-v1, sherdsapi, fabric-message-api-v1, fabric-transfer-api-v1, fabric-command-api-v2, fabric-convention-tags-v1, fabric-commands-v0, fabric-item-api-v1, fabric-dimensions-v1, fabric-client-tags-api-v1, fabric-networking-api-v1, fabric-loot-tables-v1, fabric-object-builder-api-v1, fabric-rendering-v1, fabric-api, fabric-mining-level-api-v1, fabric-api-base, fabric-gametest-api-v1, fabric-biome-api-v1, fabric-rendering-v0, fabric-loot-api-v2, fabric-entity-events-v1, fabric-data-attachment-api-v1, fabric-key-binding-api-v1, fabric-transitive-access-wideners-v1, fabric-events-lifecycle-v0, fabric-model-loading-api-v1, fabric-models-v0, trimmed, generated_45a3d73, fabric-keybindings-v0, fabric-data-generation-api-v1)
-[19:53:20] [Worker-Main-1/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[19:53:21] [Worker-Main-1/WARN] (Minecraft) Texture sherdsapi:entity/decorated_pot/api with size 1464x1464 limits mip level from 4 to 3
-[19:53:21] [Worker-Main-1/WARN] (Minecraft) minecraft:textures/atlas/decorated_pot.png: dropping miplevel from 4 to 3, because of minimum power of two: 8
-[19:53:22] [Render thread/INFO] (Trimmed) Client tags loaded!
-[19:53:22] [Render thread/INFO] (Trimmed) Client maps loaded!
-[19:53:22] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[19:53:22] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[19:53:22] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speakers (Realtek High Definition Audio)
-[19:53:22] [Render thread/INFO] (Minecraft) Sound engine started
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/chest.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 2048x2048x3 minecraft:textures/atlas/decorated_pot.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[19:53:22] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[19:53:22] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[19:53:23] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[19:53:23] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[19:53:23] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[19:53:23] [Render thread/INFO] (Trimmed) Item model overrides loaded!
-[19:53:23] [Render thread/INFO] (Trimmed) Trimmed templates are prepared!
-[19:53:26] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[19:53:41] [Render thread/INFO] (Minecraft) Stopping!
+[12:22:22] [Render thread/INFO] (Minecraft) Setting user: Player162
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Loaded config: golemBuildSpawning=true, golemPressesButtons=true, buttonPressChance=5%, golemTransportStackSize=16, weatheringTickFrom=504000, weatheringTickTo=552000
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Initializing Copper-Age-Backport on Fabric
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering sounds for Copper-Age-Backport
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering memory module types for Copper-Age-Backport
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering particles for Copper-Age-Backport
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering blocks for Copper-Age-Backport
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering block entities for Copper-Age-Backport
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering entities for Copper-Age-Backport
+[12:22:22] [Render thread/ERROR] (Minecraft) No data fixer registered for copper_golem
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Registering items for Copper-Age-Backport
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Mod 'fastchest' not loaded, skipping compatibility module
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Mod 'sophisticatedstorage' not loaded, skipping compatibility module
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Mod 'ironchest' not loaded, skipping compatibility module
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Initializing 0 compatibility modules...
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) ModCompat: Initialization complete. 0 chest handlers, 0 container handlers registered.
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Copper-Age-Backport initialized successfully!
+[12:22:22] [Render thread/INFO] (Copper-Age-Backport) Fired 1 registration callbacks
+[12:22:22] [Render thread/INFO] (Sherds API) Initializing Sherds API for Fabric in a development environment...
+[12:22:22] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[12:22:23] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
+[12:22:24] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-networking-api-v1, fabric-block-view-api-v2, fabric-block-api-v1, fabric-events-interaction-v0, fabric-command-api-v2, fabric-model-loading-api-v1, generated_b45f048, fabric-item-api-v1, fabric-rendering-v0, fabric-loot-api-v2, fabric-renderer-registries-v1, fabric-lifecycle-events-v1, fabricloader, fabric-message-api-v1, fabric-command-api-v1, fabric-blockrenderlayer-v1, fabric-object-builder-api-v1, fabric-loot-tables-v1, fabric-sound-api-v1, trickytrialsbackport, fabric-screen-api-v1, fabric-particles-v1, fabric-models-v0, fabric-rendering-v1, fabric-rendering-fluids-v1, fabric-containers-v0, fabric-events-lifecycle-v0, fabric-convention-tags-v1, fabric-item-group-api-v1, trimmed, fabric-networking-v0, fabric-data-attachment-api-v1, fabric-rendering-data-attachment-v1, fabric-data-generation-api-v1, fabric-mining-level-api-v1, fabric-keybindings-v0, fabric-commands-v0, fabric-renderer-api-v1, fabric-api-base, fabric-screen-handler-api-v1, fabric-api, fabric-biome-api-v1, fabric-key-binding-api-v1, fabric-dimensions-v1, fabric-resource-conditions-api-v1, fabric-entity-events-v1, fabric-recipe-api-v1, fabric-transfer-api-v1, fabric-gametest-api-v1, fabric-client-tags-api-v1, fabric-registry-sync-v0, fabric-content-registries-v0, copperagebackport, fabric-crash-report-info-v1, fabric-renderer-indigo, fabric-api-lookup-api-v1, sherdsapi, fabric-resource-loader-v0, fabric-game-rule-api-v1, fabric-transitive-access-wideners-v1)
+[12:22:24] [Worker-Main-3/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[12:22:25] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[12:22:25] [Worker-Main-2/WARN] (Minecraft) Texture sherdsapi:entity/decorated_pot/api with size 1464x1464 limits mip level from 4 to 3
+[12:22:25] [Worker-Main-2/WARN] (Minecraft) minecraft:textures/atlas/decorated_pot.png: dropping miplevel from 4 to 3, because of minimum power of two: 8
+[12:22:26] [Render thread/INFO] (Trimmed) Client tags loaded!
+[12:22:26] [Render thread/INFO] (Trimmed) Client maps loaded!
+[12:22:26] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[12:22:26] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[12:22:26] [Render thread/WARN] (Minecraft) Missing sound for event: trickytrialsbackport:music.disc.creator
+[12:22:26] [Render thread/WARN] (Minecraft) Missing sound for event: trickytrialsbackport:music.disc.creator_music_box
+[12:22:26] [Render thread/WARN] (Minecraft) Missing sound for event: trickytrialsbackport:music.disc.precipice
+[12:22:26] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speakers (Realtek High Definition Audio)
+[12:22:26] [Render thread/INFO] (Minecraft) Sound engine started
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/chest.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 2048x2048x3 minecraft:textures/atlas/decorated_pot.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[12:22:26] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[12:22:26] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[12:22:26] [Render thread/INFO] (Trimmed) Item model overrides loaded!
+[12:22:26] [Render thread/INFO] (Trimmed) Trimmed templates are prepared!
+[12:22:32] [Render thread/INFO] (Minecraft) Deleting level New World
+[12:22:32] [Render thread/INFO] (Minecraft) Attempt 1...
+[12:22:33] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[12:22:33] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[12:22:34] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[12:22:34] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[12:22:35] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.174 ms
+[12:22:35] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[12:22:35] [Server thread/INFO] (Minecraft) Generating keypair
+[12:22:40] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[12:22:40] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[12:22:41] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[12:22:41] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[12:22:42] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[12:22:42] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
+[12:22:42] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
+[12:22:43] [Render thread/INFO] (Minecraft) Preparing spawn area: 4%
+[12:22:43] [Render thread/INFO] (Minecraft) Preparing spawn area: 4%
+[12:22:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 6%
+[12:22:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 9%
+[12:22:45] [Render thread/INFO] (Minecraft) Preparing spawn area: 11%
+[12:22:45] [Render thread/INFO] (Minecraft) Preparing spawn area: 13%
+[12:22:46] [Render thread/INFO] (Minecraft) Preparing spawn area: 15%
+[12:22:46] [Render thread/INFO] (Minecraft) Preparing spawn area: 18%
+[12:22:47] [Render thread/INFO] (Minecraft) Preparing spawn area: 21%
+[12:22:47] [Render thread/INFO] (Minecraft) Preparing spawn area: 23%
+[12:22:48] [Render thread/INFO] (Minecraft) Preparing spawn area: 28%
+[12:22:48] [Render thread/INFO] (Minecraft) Preparing spawn area: 31%
+[12:22:49] [Render thread/INFO] (Minecraft) Preparing spawn area: 34%
+[12:22:49] [Render thread/INFO] (Minecraft) Preparing spawn area: 38%
+[12:22:50] [Render thread/INFO] (Minecraft) Preparing spawn area: 41%
+[12:22:50] [Render thread/INFO] (Minecraft) Preparing spawn area: 44%
+[12:22:51] [Render thread/INFO] (Minecraft) Preparing spawn area: 47%
+[12:22:51] [Render thread/INFO] (Minecraft) Preparing spawn area: 50%
+[12:22:52] [Render thread/INFO] (Minecraft) Preparing spawn area: 54%
+[12:22:52] [Render thread/INFO] (Minecraft) Preparing spawn area: 59%
+[12:22:53] [Render thread/INFO] (Minecraft) Preparing spawn area: 62%
+[12:22:53] [Render thread/INFO] (Minecraft) Preparing spawn area: 66%
+[12:22:54] [Render thread/INFO] (Minecraft) Preparing spawn area: 69%
+[12:22:54] [Render thread/INFO] (Minecraft) Preparing spawn area: 73%
+[12:22:55] [Render thread/INFO] (Minecraft) Preparing spawn area: 77%
+[12:22:55] [Render thread/INFO] (Minecraft) Preparing spawn area: 81%
+[12:22:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 84%
+[12:22:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 87%
+[12:22:57] [Render thread/INFO] (Minecraft) Preparing spawn area: 91%
+[12:22:57] [Render thread/INFO] (Minecraft) Preparing spawn area: 95%
+[12:22:58] [Render thread/INFO] (Minecraft) Preparing spawn area: 99%
+[12:22:58] [Render thread/INFO] (Minecraft) Time elapsed: 18041 ms
+[12:22:58] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[12:22:58] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[12:22:59] [Server thread/INFO] (Minecraft) Player162[local:E:89a7891d] logged in with entity id 54 at (181.5, 93.0, -274.5)
+[12:22:59] [Server thread/INFO] (Minecraft) Player162 joined the game
+[12:23:00] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[12:23:02] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[12:23:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12:23:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12:23:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12:23:04] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2485ms or 49 ticks behind
+[12:23:19] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[12:23:19] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12:23:19] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12:23:19] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12:23:20] [Server thread/INFO] (Minecraft) Player162 lost connection: Disconnected
+[12:23:20] [Server thread/INFO] (Minecraft) Player162 left the game
+[12:23:20] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[12:23:20] [Server thread/INFO] (Minecraft) Stopping server
+[12:23:20] [Server thread/INFO] (Minecraft) Saving players
+[12:23:20] [Server thread/INFO] (Minecraft) Saving worlds
+[12:23:21] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12:23:25] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12:23:25] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12:23:25] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
+[12:23:25] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12:23:25] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12:23:25] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[12:23:26] [Render thread/INFO] (Minecraft) Stopping!
