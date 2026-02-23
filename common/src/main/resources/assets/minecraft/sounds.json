@@ -234,6 +234,169 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "entity.bogged.ambient": {
+    "sounds": [
+      "mob/bogged/ambient1",
+      "mob/bogged/ambient2",
+      "mob/bogged/ambient3",
+      "mob/bogged/ambient4"
+    ],
+    "subtitle": "subtitles.entity.bogged.ambient"
+  },
+  "entity.bogged.death": {
+    "sounds": [
+      "mob/bogged/death"
+    ],
+    "subtitle": "subtitles.entity.bogged.death"
+  },
+  "entity.bogged.hurt": {
+    "sounds": [
+      "mob/bogged/hurt1",
+      "mob/bogged/hurt2",
+      "mob/bogged/hurt3",
+      "mob/bogged/hurt4"
+    ],
+    "subtitle": "subtitles.entity.bogged.hurt"
+  },
+  "entity.bogged.shear": {
+    "sounds": [
+      "mob/sheep/shear"
+    ],
+    "subtitle": "subtitles.item.shears.shear"
+  },
+  "entity.bogged.step": {
+    "sounds": [
+      "mob/bogged/step1",
+      "mob/bogged/step2",
+      "mob/bogged/step3",
+      "mob/bogged/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "entity.breeze.charge": {
+    "sounds": [
+      "mob/breeze/charge1",
+      "mob/breeze/charge2",
+      "mob/breeze/charge3"
+    ],
+    "subtitle": "subtitles.entity.breeze.charge"
+  },
+  "entity.breeze.death": {
+    "sounds": [
+      "mob/breeze/death1",
+      "mob/breeze/death2"
+    ],
+    "subtitle": "subtitles.entity.breeze.death"
+  },
+  "entity.breeze.deflect": {
+    "sounds": [
+      "mob/breeze/deflect1",
+      "mob/breeze/deflect2",
+      "mob/breeze/deflect3"
+    ],
+    "subtitle": "subtitles.entity.breeze.deflect"
+  },
+  "entity.breeze.hurt": {
+    "sounds": [
+      "mob/breeze/hurt1",
+      "mob/breeze/hurt2",
+      "mob/breeze/hurt3"
+    ],
+    "subtitle": "subtitles.entity.breeze.hurt"
+  },
+  "entity.breeze.idle_air": {
+    "sounds": [
+      "mob/breeze/idle_air1",
+      "mob/breeze/idle_air2",
+      "mob/breeze/idle_air3",
+      "mob/breeze/idle_air4"
+    ],
+    "subtitle": "subtitles.entity.breeze.idle_air"
+  },
+  "entity.breeze.idle_ground": {
+    "sounds": [
+      "mob/breeze/idle1",
+      "mob/breeze/idle2",
+      "mob/breeze/idle3",
+      "mob/breeze/idle4"
+    ],
+    "subtitle": "subtitles.entity.breeze.idle_ground"
+  },
+  "entity.breeze.inhale": {
+    "sounds": [
+      "mob/breeze/inhale1",
+      {
+        "name": "mob/breeze/inhale1",
+        "pitch": 1.1
+      },
+      "mob/breeze/inhale2",
+      {
+        "name": "mob/breeze/inhale2",
+        "pitch": 1.1
+      }
+    ],
+    "subtitle": "subtitles.entity.breeze.inhale"
+  },
+  "entity.breeze.jump": {
+    "sounds": [
+      "mob/breeze/jump1",
+      "mob/breeze/jump2"
+    ],
+    "subtitle": "subtitles.entity.breeze.jump"
+  },
+  "entity.breeze.land": {
+    "sounds": [
+      "mob/breeze/land1",
+      "mob/breeze/land2"
+    ],
+    "subtitle": "subtitles.entity.breeze.land"
+  },
+  "entity.breeze.shoot": {
+    "sounds": [
+      "mob/breeze/shoot",
+      {
+        "name": "mob/breeze/shoot",
+        "pitch": 1.1
+      },
+      {
+        "name": "mob/breeze/shoot",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.entity.breeze.shoot"
+  },
+  "entity.breeze.slide": {
+    "sounds": [
+      "mob/breeze/slide1",
+      "mob/breeze/slide2",
+      "mob/breeze/slide3",
+      "mob/breeze/slide4"
+    ],
+    "subtitle": "subtitles.entity.breeze.slide"
+  },
+  "entity.breeze.whirl": {
+    "sounds": [
+      "mob/breeze/whirl"
+    ],
+    "subtitle": "subtitles.entity.breeze.whirl"
+  },
+  "entity.breeze.wind_burst": {
+    "sounds": [
+      {
+        "name": "mob/breeze/wind_burst1",
+        "pitch": 1.2
+      },
+      {
+        "name": "mob/breeze/wind_burst2",
+        "pitch": 1.2
+      },
+      {
+        "name": "mob/breeze/wind_burst3",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.entity.breeze.wind_burst"
+  },
   "entity.wind_charge.throw": {
     "sounds": [
       "random/bow"

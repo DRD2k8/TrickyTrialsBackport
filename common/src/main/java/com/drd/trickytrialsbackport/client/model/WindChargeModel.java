@@ -1,6 +1,6 @@
 package com.drd.trickytrialsbackport.client.model;
 
-import com.drd.trickytrialsbackport.entity.WindCharge;
+import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;

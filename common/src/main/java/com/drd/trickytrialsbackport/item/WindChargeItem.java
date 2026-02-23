@@ -1,6 +1,6 @@
 package com.drd.trickytrialsbackport.item;
 
-import com.drd.trickytrialsbackport.entity.WindCharge;
+import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import net.minecraft.sounds.SoundSource;

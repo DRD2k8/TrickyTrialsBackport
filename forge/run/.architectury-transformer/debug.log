@@ -1,7 +1,7 @@
 [Architectury Transformer] Architectury Runtime 5.2.87
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
 [Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Provided 105 classpath jar(s):
+[Architectury Transformer DEBUG] Provided 107 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\fabric-loom\1.20.1\forge\1.20.1-47.4.10\client-extra.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.18.4\dc4682125d5db647d6ce80a98b98945835adcd4b\fabric-loader-0.18.4.jar
@@ -105,22 +105,24 @@
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\maven\modrinth\backport-copper-age-0cd3bb3a\BeVdLB9R\backport-copper-age-0cd3bb3a-BeVdLB9R.jar
+[Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\software\bernie\geckolib\geckolib-forge-1.20.1-0cd3bb3a\4.8.3\geckolib-forge-1.20.1-0cd3bb3a-4.8.3.jar
+[Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\com\eliotlash\mclib\mclib-0cd3bb3a\20\mclib-0cd3bb3a-20.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\maven\modrinth\trimmed-0cd3bb3a\1.20.1-2.1.4+forge\trimmed-0cd3bb3a-1.20.1-2.1.4+forge.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\maven\modrinth\sherdsapi-0cd3bb3a\4.0.4+Forge\sherdsapi-0cd3bb3a-4.0.4+Forge.jar
-[Architectury Transformer] Read classpath in 1.506 s
+[Architectury Transformer] Read classpath in 1.194 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
-[Architectury Transformer DEBUG] Transforming 8 transformer(s) from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\16359357355779520325.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@6a2f6f80
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@45b4c3a9
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@399c4be1
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@291caca8
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@385e9564
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@5b94b04d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@8c3b9d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@4c39bec8
-[Architectury Transformer DEBUG] Transforming from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\16359357355779520325.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming 8 transformer(s) from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\6832106857368731854.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@5f683daf
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@78ffe6dc
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@8317c52
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@76f2bbc1
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@68e965f5
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@6f27a732
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@6c779568
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@f381794
+[Architectury Transformer DEBUG] Transforming from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\6832106857368731854.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
@@ -128,15 +130,29 @@
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/TrickyTrialsBackport with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/block/HeavyCoreBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/model/WindChargeModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle$Provider with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustSeedParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/registry/ModModelLayers with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/WindCharge with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/NoParticleAbstractHurtingProjectile with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge$WindChargePlayerDamageCalculator with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge$WindChargeDamageCalculator with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/MaceItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/WindChargeItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSounds with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModBlocks with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/RegistryHelper with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSounds with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModItems with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$4 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModEntities with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/util/ModSoundTypes with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /trickytrialsbackport.mixins.json is a mixin config.
@@ -144,15 +160,15 @@
 [Architectury Transformer DEBUG] Found mixin config(s): trickytrialsbackport.mixins.json
 [Architectury Transformer DEBUG] Appended Launch Argument: [--mixin.config, trickytrialsbackport.mixins.json]
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\dandi\AppData\Local\Temp\16359357355779520325.jar
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\dandi\AppData\Local\Temp\6832106857368731854.jar
 [Architectury Transformer] Listening at D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\dandi\AppData\Local\Temp\16359357355779520325.jar] contains packages: com.drd.trickytrialsbackport.client.registry, com.drd.trickytrialsbackport, com.drd.trickytrialsbackport.util, com.drd.trickytrialsbackport.registry, com.drd.trickytrialsbackport.entity, com.drd.trickytrialsbackport.client.model, com.drd.trickytrialsbackport.block, com.drd.trickytrialsbackport.client.renderer, com.drd.trickytrialsbackport.item
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\dandi\AppData\Local\Temp\6832106857368731854.jar] contains packages: com.drd.trickytrialsbackport.entity.projectile.windcharge, com.drd.trickytrialsbackport.entity.projectile, com.drd.trickytrialsbackport.client.registry, com.drd.trickytrialsbackport, com.drd.trickytrialsbackport.util, com.drd.trickytrialsbackport.registry, com.drd.trickytrialsbackport.client.model, com.drd.trickytrialsbackport.block, com.drd.trickytrialsbackport.client.particle, com.drd.trickytrialsbackport.client.renderer, com.drd.trickytrialsbackport.item
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\forge\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Classpath entry [D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/RegistryHelper.class to com/drd/trickytrialsbackport/registry/RegistryHelper.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping with Dirty Mappings...
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
@@ -160,104 +176,274 @@
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/RegistryHelper with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/RegistryHelper in 217.9 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/RegistryHelper in 103.6 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/TrickyTrialsBackport.class to com/drd/trickytrialsbackport/TrickyTrialsBackport.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/TrickyTrialsBackport with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/TrickyTrialsBackport in 14.64 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/TrickyTrialsBackport in 11.38 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModSounds.class to com/drd/trickytrialsbackport/registry/ModSounds.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSounds with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSounds in 69.47 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSounds in 60.43 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModBlocks.class to com/drd/trickytrialsbackport/registry/ModBlocks.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModBlocks with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModBlocks in 11.31 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModBlocks in 13.86 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/block/HeavyCoreBlock.class to com/drd/trickytrialsbackport/block/HeavyCoreBlock.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/block/HeavyCoreBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/block/HeavyCoreBlock in 12.47 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/block/HeavyCoreBlock in 9.135 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModEntities.class to com/drd/trickytrialsbackport/registry/ModEntities.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModEntities with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModEntities in 8.532 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModEntities in 7.842 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModItems.class to com/drd/trickytrialsbackport/registry/ModItems.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModItems in 6.615 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/MaceItem.class to com/drd/trickytrialsbackport/item/MaceItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
-[Architectury Transformer DEBUG] Remapping Classes:
-[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
-[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/MaceItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/MaceItem in 47.71 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModItems in 9.072 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/WindChargeItem.class to com/drd/trickytrialsbackport/item/WindChargeItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/WindChargeItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/WindChargeItem in 9.873 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/WindChargeItem in 8.638 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/MaceItem.class to com/drd/trickytrialsbackport/item/MaceItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/MaceItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/MaceItem in 7.876 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles.class to com/drd/trickytrialsbackport/registry/ModParticles.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles in 6.242 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$3.class to com/drd/trickytrialsbackport/registry/ModParticles$3.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$3 in 6.095 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$4.class to com/drd/trickytrialsbackport/registry/ModParticles$4.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$4 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$4 in 5.777 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$2.class to com/drd/trickytrialsbackport/registry/ModParticles$2.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$2 in 5.004 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$1.class to com/drd/trickytrialsbackport/registry/ModParticles$1.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$1 in 4.884 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/util/ModSoundTypes.class to com/drd/trickytrialsbackport/util/ModSoundTypes.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/util/ModSoundTypes with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/util/ModSoundTypes in 10.98 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/WindCharge.class to com/drd/trickytrialsbackport/entity/WindCharge.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/util/ModSoundTypes in 11.73 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/NoParticleAbstractHurtingProjectile.class to com/drd/trickytrialsbackport/entity/projectile/NoParticleAbstractHurtingProjectile.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x00000274ba08f788@7690781
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/WindCharge with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/NoParticleAbstractHurtingProjectile with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/WindCharge in 9.530 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/NoParticleAbstractHurtingProjectile in 8.757 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge.class to com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge in 6.312 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge.class to com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge in 4.841 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge$WindChargeDamageCalculator.class to com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge$WindChargeDamageCalculator.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge$WindChargeDamageCalculator with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/AbstractWindCharge$WindChargeDamageCalculator in 5.240 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge$WindChargePlayerDamageCalculator.class to com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge$WindChargePlayerDamageCalculator.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge$WindChargePlayerDamageCalculator with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge$WindChargePlayerDamageCalculator in 2.988 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustParticle$Provider.class to com/drd/trickytrialsbackport/client/particle/GustParticle$Provider.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle$Provider with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle$Provider in 7.711 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustParticle.class to com/drd/trickytrialsbackport/client/particle/GustParticle.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle in 5.517 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider.class to com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider in 4.408 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustSeedParticle.class to com/drd/trickytrialsbackport/client/particle/GustSeedParticle.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustSeedParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustSeedParticle in 4.171 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider.class to com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider in 3.925 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/registry/ModModelLayers.class to com/drd/trickytrialsbackport/client/registry/ModModelLayers.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/registry/ModModelLayers with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/registry/ModModelLayers in 8.295 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/model/WindChargeModel.class to com/drd/trickytrialsbackport/client/model/WindChargeModel.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/model/WindChargeModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/WindChargeModel in 5.451 ms
+[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer.class to com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002059d08f9d0@fba92d3
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: trickytrialsbackport-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer in 31.63 ms

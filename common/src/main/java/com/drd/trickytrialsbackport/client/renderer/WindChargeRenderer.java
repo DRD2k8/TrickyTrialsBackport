@@ -2,7 +2,7 @@ package com.drd.trickytrialsbackport.client.renderer;
 
 import com.drd.trickytrialsbackport.client.model.WindChargeModel;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
-import com.drd.trickytrialsbackport.entity.WindCharge;
+import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;

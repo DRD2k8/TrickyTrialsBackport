@@ -1,6 +1,6 @@
 package com.drd.trickytrialsbackport.registry;
 
-import com.drd.trickytrialsbackport.entity.WindCharge;
+import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

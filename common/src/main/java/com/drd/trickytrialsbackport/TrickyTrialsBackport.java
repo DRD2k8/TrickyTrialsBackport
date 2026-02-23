@@ -11,5 +11,6 @@ public final class TrickyTrialsBackport {
         ModBlocks.register();
         ModEntities.register();
         ModItems.register();
+        ModParticles.register();
     }
 }
