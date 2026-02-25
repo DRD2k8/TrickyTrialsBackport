@@ -16,11 +16,13 @@ public abstract class RegistryHelper {
 
     static {
         // Always add the stuff here so that way they can register in the minecraft namespace
+        VANILLA_BACKPORT_IDS.add("bolt_armor_trim_smithing_template");
         VANILLA_BACKPORT_IDS.add("breeze");
         VANILLA_BACKPORT_IDS.add("breeze_rod");
         VANILLA_BACKPORT_IDS.add("breeze_spawn_egg");
         VANILLA_BACKPORT_IDS.add("breeze_wind_charge");
         VANILLA_BACKPORT_IDS.add("flow");
+        VANILLA_BACKPORT_IDS.add("flow_armor_trim_smithing_template");
         VANILLA_BACKPORT_IDS.add("flow_banner_pattern");
         VANILLA_BACKPORT_IDS.add("gust");
         VANILLA_BACKPORT_IDS.add("guster");

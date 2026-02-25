@@ -65,6 +65,7 @@ public class CreativeTabPlacements {
         if (tab == CreativeModeTabs.INGREDIENTS) {
             entries.addAfter(Items.BLAZE_ROD, ModBlocks.HEAVY_CORE.get(), ModItems.BREEZE_ROD.get());
             entries.addAfter(Items.PIGLIN_BANNER_PATTERN, ModItems.GUSTER_BANNER_PATTERN.get(), ModItems.FLOW_BANNER_PATTERN.get());
+            entries.addAfter(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE, ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get(), ModItems.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE.get());
         }
 
         if (tab == CreativeModeTabs.SPAWN_EGGS) {
