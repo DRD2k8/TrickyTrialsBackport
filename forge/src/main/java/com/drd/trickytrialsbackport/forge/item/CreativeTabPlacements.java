@@ -65,5 +65,9 @@ public class CreativeTabPlacements {
         if (tab == CreativeModeTabs.INGREDIENTS) {
             entries.addAfter(Items.BLAZE_ROD, ModBlocks.HEAVY_CORE.get(), ModItems.BREEZE_ROD.get());
         }
+
+        if (tab == CreativeModeTabs.SPAWN_EGGS) {
+            entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get());
+        }
     }
 }

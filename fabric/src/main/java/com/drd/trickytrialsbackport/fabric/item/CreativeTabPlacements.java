@@ -38,8 +38,13 @@ public class CreativeTabPlacements {
         entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get(), ModBlocks.HEAVY_CORE.get());
     }
 
+    private static void addItemsToSpawnEggsTab(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get());
+    }
+
     public static void registerTabPlacements() {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(CreativeTabPlacements::addItemsToCombatTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(CreativeTabPlacements::addItemsToIngredientsTab);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(CreativeTabPlacements::addItemsToSpawnEggsTab);
     }
 }
