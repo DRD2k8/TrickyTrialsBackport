@@ -20,7 +20,11 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("breeze_rod");
         VANILLA_BACKPORT_IDS.add("breeze_spawn_egg");
         VANILLA_BACKPORT_IDS.add("breeze_wind_charge");
+        VANILLA_BACKPORT_IDS.add("flow");
+        VANILLA_BACKPORT_IDS.add("flow_banner_pattern");
         VANILLA_BACKPORT_IDS.add("gust");
+        VANILLA_BACKPORT_IDS.add("guster");
+        VANILLA_BACKPORT_IDS.add("guster_banner_pattern");
         VANILLA_BACKPORT_IDS.add("gust_emitter_large");
         VANILLA_BACKPORT_IDS.add("gust_emitter_small");
         VANILLA_BACKPORT_IDS.add("small_gust");

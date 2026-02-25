@@ -36,6 +36,7 @@ public class CreativeTabPlacements {
 
     private static void addItemsToIngredientsTab(FabricItemGroupEntries entries) {
         entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get(), ModBlocks.HEAVY_CORE.get());
+        entries.addAfter(Items.PIGLIN_BANNER_PATTERN, ModItems.FLOW_BANNER_PATTERN.get(), ModItems.GUSTER_BANNER_PATTERN.get());
     }
 
     private static void addItemsToSpawnEggsTab(FabricItemGroupEntries entries) {

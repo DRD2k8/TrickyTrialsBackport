@@ -15,6 +15,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem("breeze_rod");
+        simpleItem("flow_banner_pattern");
+        simpleItem("guster_banner_pattern");
         evenSimplerBlockItem("heavy_core");
         simpleItem("wind_charge");
     }

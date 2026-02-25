@@ -8,6 +8,7 @@ public final class TrickyTrialsBackport {
 
     public static void init() {
         ModSounds.register();
+        ModBannerPatterns.register();
         ModBlocks.register();
         ModEntities.register();
         ModItems.register();

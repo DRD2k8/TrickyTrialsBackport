@@ -2,10 +2,7 @@ package com.drd.trickytrialsbackport.datagen;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.datagen.client.ModItemModelProvider;
-import com.drd.trickytrialsbackport.datagen.server.ModBlockTagProvider;
-import com.drd.trickytrialsbackport.datagen.server.ModItemTagProvider;
-import com.drd.trickytrialsbackport.datagen.server.ModLootTableProvider;
-import com.drd.trickytrialsbackport.datagen.server.ModRecipeProvider;
+import com.drd.trickytrialsbackport.datagen.server.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
