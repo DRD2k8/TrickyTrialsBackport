@@ -115,15 +115,15 @@
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-resource-loader-v0-525a49f8\0.11.12+fb82e9d777\fabric-resource-loader-v0-525a49f8-0.11.12+fb82e9d777.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-sound-api-v1-525a49f8\1.0.14+1802ada577\fabric-sound-api-v1-525a49f8-1.0.14+1802ada577.jar
 [Architectury Transformer DEBUG]  - D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1-525a49f8\4.3.2+1802ada577\fabric-transitive-access-wideners-v1-525a49f8-4.3.2+1802ada577.jar
-[Architectury Transformer] Read classpath in 3.250 s
+[Architectury Transformer] Read classpath in 1.571 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\18434346411916942847.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@2d2ffcb7
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@762ef0ea
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@31f9b85e
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@424e1977
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@10d68fcd
-[Architectury Transformer DEBUG] Transforming from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\18434346411916942847.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\3428533774678374291.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@2898ac89
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@683dbc2c
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@68267da0
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@2638011
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@6ff29830
+[Architectury Transformer DEBUG] Transforming from D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar to C:\Users\dandi\AppData\Local\Temp\3428533774678374291.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/block/HeavyCoreBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/animation/BreezeAnimation with maxs=true frames=true
@@ -142,6 +142,8 @@
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/layer/BreezeEyesLayer with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/layer/BreezeWindLayer with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/compat/vanillabackport/client/renderer/ModSpawnEggRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/compat/vanillabackport/client/VanillaBackportClientEvents with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/ai/behavior/LongJumpUtil with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/ai/sensing/BreezeAttackEntitySensor with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/Breeze with maxs=true frames=true
@@ -176,193 +178,161 @@
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/util/ModTags with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /trickytrialsbackport-common-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Checking whether /trickytrialsbackport.mixins.json is a mixin config.
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\dandi\AppData\Local\Temp\18434346411916942847.jar
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\dandi\AppData\Local\Temp\3428533774678374291.jar
 [Architectury Transformer] Listening at D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\dandi\AppData\Local\Temp\18434346411916942847.jar] contains packages: com.drd.trickytrialsbackport.client.registry, com.drd.trickytrialsbackport, com.drd.trickytrialsbackport.util, com.drd.trickytrialsbackport.registry, com.drd.trickytrialsbackport.entity.ai.behavior, com.drd.trickytrialsbackport.block, com.drd.trickytrialsbackport.client.particle, com.drd.trickytrialsbackport.client.animation, com.drd.trickytrialsbackport.client.renderer, com.drd.trickytrialsbackport.item, com.drd.trickytrialsbackport.entity.monster.breeze, com.drd.trickytrialsbackport.platform, com.drd.trickytrialsbackport.entity.projectile.windcharge, com.drd.trickytrialsbackport.entity.ai.sensing, com.drd.trickytrialsbackport.client.model, com.drd.trickytrialsbackport.client.renderer.layer, com.drd.trickytrialsbackport.mixin
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\dandi\AppData\Local\Temp\3428533774678374291.jar] contains packages: com.drd.trickytrialsbackport.client.registry, com.drd.trickytrialsbackport, com.drd.trickytrialsbackport.compat.vanillabackport.client, com.drd.trickytrialsbackport.util, com.drd.trickytrialsbackport.registry, com.drd.trickytrialsbackport.entity.ai.behavior, com.drd.trickytrialsbackport.block, com.drd.trickytrialsbackport.client.particle, com.drd.trickytrialsbackport.client.animation, com.drd.trickytrialsbackport.client.renderer, com.drd.trickytrialsbackport.item, com.drd.trickytrialsbackport.entity.monster.breeze, com.drd.trickytrialsbackport.platform, com.drd.trickytrialsbackport.entity.projectile.windcharge, com.drd.trickytrialsbackport.compat.vanillabackport.client.renderer, com.drd.trickytrialsbackport.entity.ai.sensing, com.drd.trickytrialsbackport.client.model, com.drd.trickytrialsbackport.client.renderer.layer, com.drd.trickytrialsbackport.mixin
 [Architectury Transformer DEBUG] Closed File Systems for D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\devlibs\trickytrialsbackport-common-2026.1-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\fabric\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Classpath entry [D:\minecraft_mod_repository_branches\TrickyTrialsBackportOfficial\common\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/mixin/SensorTypeInvoker.class to com/drd/trickytrialsbackport/mixin/SensorTypeInvoker.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/mixin/SensorTypeInvoker with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/mixin/SensorTypeInvoker in 1.252 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/mixin/SensorTypeInvoker in 1.168 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/RegistryHelper.class to com/drd/trickytrialsbackport/registry/RegistryHelper.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/RegistryHelper with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/RegistryHelper in 2.598 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/RegistryHelper in 1.978 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/TrickyTrialsBackport.class to com/drd/trickytrialsbackport/TrickyTrialsBackport.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/TrickyTrialsBackport with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/TrickyTrialsBackport in 350.2 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/TrickyTrialsBackport in 229.3 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModSounds.class to com/drd/trickytrialsbackport/registry/ModSounds.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSounds with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSounds in 753.7 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSounds in 1.546 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModBlocks.class to com/drd/trickytrialsbackport/registry/ModBlocks.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModBlocks with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModBlocks in 557.1 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModBlocks in 2.307 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/block/HeavyCoreBlock.class to com/drd/trickytrialsbackport/block/HeavyCoreBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/block/HeavyCoreBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/block/HeavyCoreBlock in 577.0 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/block/HeavyCoreBlock in 1.429 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/util/ModSoundTypes.class to com/drd/trickytrialsbackport/util/ModSoundTypes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/util/ModSoundTypes with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/util/ModSoundTypes in 320.2 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/util/ModSoundTypes in 331.7 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModEntities.class to com/drd/trickytrialsbackport/registry/ModEntities.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModEntities with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModEntities in 822.7 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModEntities in 3.572 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/Breeze.class to com/drd/trickytrialsbackport/entity/monster/breeze/Breeze.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/Breeze with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/Breeze in 1.528 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/Breeze in 8.039 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/windcharge/BreezeWindCharge.class to com/drd/trickytrialsbackport/entity/projectile/windcharge/BreezeWindCharge.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/BreezeWindCharge with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/BreezeWindCharge in 3.470 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/BreezeWindCharge in 1.301 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge.class to com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge in 784.4 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/projectile/windcharge/WindCharge in 681.4 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModItems.class to com/drd/trickytrialsbackport/registry/ModItems.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModItems with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModItems in 388.7 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModItems in 462.1 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/MaceItem.class to com/drd/trickytrialsbackport/item/MaceItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/MaceItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/MaceItem in 694.3 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/MaceItem in 1.229 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/WindChargeItem.class to com/drd/trickytrialsbackport/item/WindChargeItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/WindChargeItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/WindChargeItem in 341.5 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/WindChargeItem in 365.5 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/item/ModItemHelper.class to com/drd/trickytrialsbackport/item/ModItemHelper.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/item/ModItemHelper with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/ModItemHelper in 199.5 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/item/ModItemHelper in 201.4 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/platform/Services.class to com/drd/trickytrialsbackport/platform/Services.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/platform/Services with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/platform/Services in 342.0 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/platform/Services in 579.3 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModMemoryModuleTypes.class to com/drd/trickytrialsbackport/registry/ModMemoryModuleTypes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModMemoryModuleTypes with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModMemoryModuleTypes in 729.2 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModMemoryModuleTypes in 484.2 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles.class to com/drd/trickytrialsbackport/registry/ModParticles.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles in 1.097 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles in 386.3 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$1.class to com/drd/trickytrialsbackport/registry/ModParticles$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$1 in 7.464 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$1 in 178.9 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$3.class to com/drd/trickytrialsbackport/registry/ModParticles$3.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$3 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$3 in 379.3 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$3 in 176.8 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$2.class to com/drd/trickytrialsbackport/registry/ModParticles$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$2 in 578.2 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$2 in 176.4 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModParticles$4.class to com/drd/trickytrialsbackport/registry/ModParticles$4.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModParticles$4 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$4 in 213.2 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModParticles$4 in 189.6 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/registry/ModSensorTypes.class to com/drd/trickytrialsbackport/registry/ModSensorTypes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/registry/ModSensorTypes with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSensorTypes in 258.4 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/registry/ModSensorTypes in 258.3 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/ai/sensing/BreezeAttackEntitySensor.class to com/drd/trickytrialsbackport/entity/ai/sensing/BreezeAttackEntitySensor.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/ai/sensing/BreezeAttackEntitySensor with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/ai/sensing/BreezeAttackEntitySensor in 634.1 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/ai/sensing/BreezeAttackEntitySensor in 487.0 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/renderer/BreezeRenderer.class to com/drd/trickytrialsbackport/client/renderer/BreezeRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/BreezeRenderer with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/BreezeRenderer in 1.297 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/BreezeRenderer in 661.1 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/model/BreezeModel.class to com/drd/trickytrialsbackport/client/model/BreezeModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/model/BreezeModel with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/BreezeModel in 3.018 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/BreezeModel in 1.416 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/renderer/layer/BreezeWindLayer.class to com/drd/trickytrialsbackport/client/renderer/layer/BreezeWindLayer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/layer/BreezeWindLayer with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/layer/BreezeWindLayer in 566.0 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/layer/BreezeWindLayer in 379.5 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/renderer/layer/BreezeEyesLayer.class to com/drd/trickytrialsbackport/client/renderer/layer/BreezeEyesLayer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/layer/BreezeEyesLayer with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/layer/BreezeEyesLayer in 366.8 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/layer/BreezeEyesLayer in 1.198 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/renderer/BreezeWindChargeRenderer.class to com/drd/trickytrialsbackport/client/renderer/BreezeWindChargeRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/BreezeWindChargeRenderer with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/BreezeWindChargeRenderer in 319.9 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/BreezeWindChargeRenderer in 516.3 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer.class to com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer in 1.350 ms
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/renderer/WindChargeRenderer in 427.4 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/registry/ModModelLayers.class to com/drd/trickytrialsbackport/client/registry/ModModelLayers.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/registry/ModModelLayers with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/registry/ModModelLayers in 252.3 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/registry/ModModelLayers in 250.8 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/model/BreezeWindChargeModel.class to com/drd/trickytrialsbackport/client/model/BreezeWindChargeModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/model/BreezeWindChargeModel with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/BreezeWindChargeModel in 401.1 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/BreezeWindChargeModel in 456.4 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/model/WindChargeModel.class to com/drd/trickytrialsbackport/client/model/WindChargeModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/model/WindChargeModel with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/WindChargeModel in 392.7 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/model/WindChargeModel in 5.276 ms
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustParticle$Provider.class to com/drd/trickytrialsbackport/client/particle/GustParticle$Provider.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle$Provider with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle$Provider in 240.1 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle$Provider in 307.9 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustParticle.class to com/drd/trickytrialsbackport/client/particle/GustParticle.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle in 296.5 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle in 542.4 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider.class to com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider in 255.1 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustSeedParticle$Provider in 503.5 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustSeedParticle.class to com/drd/trickytrialsbackport/client/particle/GustSeedParticle.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustSeedParticle with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustSeedParticle in 301.8 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustSeedParticle in 329.8 μs
 [Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider.class to com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider in 270.1 μs
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi.class to com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi in 5.589 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi$SlideToTargetSink.class to com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi$SlideToTargetSink.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi$SlideToTargetSink with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/BreezeAi$SlideToTargetSink in 11.45 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/Shoot.class to com/drd/trickytrialsbackport/entity/monster/breeze/Shoot.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/Shoot with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/Shoot in 1.069 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/ShootWhenStuck.class to com/drd/trickytrialsbackport/entity/monster/breeze/ShootWhenStuck.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/ShootWhenStuck with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/ShootWhenStuck in 353.4 μs
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/LongJump.class to com/drd/trickytrialsbackport/entity/monster/breeze/LongJump.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/LongJump with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/LongJump in 2.316 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/entity/monster/breeze/Slide.class to com/drd/trickytrialsbackport/entity/monster/breeze/Slide.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/entity/monster/breeze/Slide with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/entity/monster/breeze/Slide in 3.425 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/animation/BreezeAnimation.class to com/drd/trickytrialsbackport/client/animation/BreezeAnimation.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/animation/BreezeAnimation with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/animation/BreezeAnimation in 1.316 ms
-[Architectury Transformer DEBUG] Transforming from com/drd/trickytrialsbackport/client/registry/ModRenderTypes.class to com/drd/trickytrialsbackport/client/registry/ModRenderTypes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing com/drd/trickytrialsbackport/client/registry/ModRenderTypes with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/registry/ModRenderTypes in 176.9 μs
+[Architectury Transformer DEBUG] Transformed com/drd/trickytrialsbackport/client/particle/GustParticle$SmallProvider in 329.5 μs

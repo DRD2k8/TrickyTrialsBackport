@@ -10,6 +10,7 @@ import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
+import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModParticles;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -17,6 +18,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -27,6 +29,9 @@ public class TrickyTrialsBackportForgeClient {
         EntityRenderers.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
         EntityRenderers.register(ModEntities.WIND_CHARGE.get(), WindChargeRenderer::new);
+        if (ModList.get().isLoaded("vanillabackport")) {
+            VanillaBackportClientEvents.specialModels();
+        }
     }
 
     @SubscribeEvent

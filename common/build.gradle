@@ -10,4 +10,8 @@ dependencies {
 
     // Required dependencies
     modCompileOnly "maven.modrinth:sherdsapi:${sherdsapi_version}+Forge"
+
+    // Optional dependencies
+    modCompileOnly "maven.modrinth:vanillabackport:${vanillabackport_forge_id}"
+    modCompileOnly "maven.modrinth:platform:${platform_forge_id}"
 }
