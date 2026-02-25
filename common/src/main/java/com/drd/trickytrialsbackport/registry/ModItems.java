@@ -18,8 +18,11 @@ public class ModItems {
     public static Supplier<Item> BREEZE_SPAWN_EGG;
     public static Supplier<Item> FLOW_ARMOR_TRIM_SMITHING_TEMPLATE;
     public static Supplier<Item> FLOW_BANNER_PATTERN;
+    public static Supplier<Item> FLOW_POTTERY_SHERD;
     public static Supplier<Item> GUSTER_BANNER_PATTERN;
+    public static Supplier<Item> GUSTER_POTTERY_SHERD;
     public static Supplier<Item> MACE;
+    public static Supplier<Item> SCRAPE_POTTERY_SHERD;
     public static Supplier<Item> WIND_CHARGE;
 
     public static void register() {
@@ -30,8 +33,11 @@ public class ModItems {
         BREEZE_SPAWN_EGG = helper.registerAuto(Registries.ITEM, "breeze_spawn_egg", () -> ModItemHelper.createSpawnEggItem(ModEntities.BREEZE, 11506911, 9529055));
         FLOW_ARMOR_TRIM_SMITHING_TEMPLATE = helper.registerAuto(Registries.ITEM, "flow_armor_trim_smithing_template", () -> new TrimmedSmithingTemplateItem(new Item.Properties(), "flow"));
         FLOW_BANNER_PATTERN = helper.registerAuto(Registries.ITEM, "flow_banner_pattern", () -> new BannerPatternItem(ModTags.BannerPatterns.FLOW, new Item.Properties()));
+        FLOW_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "flow_pottery_sherd", () -> new Item(new Item.Properties()));
         GUSTER_BANNER_PATTERN = helper.registerAuto(Registries.ITEM, "guster_banner_pattern", () -> new BannerPatternItem(ModTags.BannerPatterns.GUSTER, new Item.Properties()));
+        GUSTER_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "guster_pottery_sherd", () -> new Item(new Item.Properties()));
         MACE = helper.registerAuto(Registries.ITEM, "mace", () -> new MaceItem(new Item.Properties().rarity(Rarity.EPIC).durability(500)));
+        SCRAPE_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "scrape_pottery_sherd", () -> new Item(new Item.Properties()));
         WIND_CHARGE = helper.registerAuto(Registries.ITEM, "wind_charge", () -> new WindChargeItem(new Item.Properties()));
     }
 }

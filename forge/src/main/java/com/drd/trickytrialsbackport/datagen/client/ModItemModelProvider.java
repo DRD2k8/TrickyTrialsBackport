@@ -18,8 +18,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem("breeze_rod");
         simpleItem("flow_armor_trim_smithing_template");
         simpleItem("flow_banner_pattern");
+        simpleItem("flow_pottery_sherd");
         simpleItem("guster_banner_pattern");
+        simpleItem("guster_pottery_sherd");
         evenSimplerBlockItem("heavy_core");
+        simpleItem("scrape_pottery_sherd");
         simpleItem("wind_charge");
     }
 

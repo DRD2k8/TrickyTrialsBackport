@@ -15,5 +15,6 @@ public final class TrickyTrialsBackport {
         ModMemoryModuleTypes.register();
         ModParticles.register();
         ModSensorTypes.register();
+        ModSherds.register();
     }
 }

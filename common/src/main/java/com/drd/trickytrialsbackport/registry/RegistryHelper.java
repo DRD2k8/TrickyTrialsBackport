@@ -23,15 +23,21 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("breeze_wind_charge");
         VANILLA_BACKPORT_IDS.add("flow");
         VANILLA_BACKPORT_IDS.add("flow_armor_trim_smithing_template");
+        VANILLA_BACKPORT_IDS.add("flow_pottery_pattern");
         VANILLA_BACKPORT_IDS.add("flow_banner_pattern");
+        VANILLA_BACKPORT_IDS.add("flow_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("gust");
-        VANILLA_BACKPORT_IDS.add("guster");
-        VANILLA_BACKPORT_IDS.add("guster_banner_pattern");
         VANILLA_BACKPORT_IDS.add("gust_emitter_large");
         VANILLA_BACKPORT_IDS.add("gust_emitter_small");
+        VANILLA_BACKPORT_IDS.add("guster");
+        VANILLA_BACKPORT_IDS.add("guster_banner_pattern");
+        VANILLA_BACKPORT_IDS.add("guster_pottery_pattern");
+        VANILLA_BACKPORT_IDS.add("guster_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("small_gust");
         VANILLA_BACKPORT_IDS.add("heavy_core");
         VANILLA_BACKPORT_IDS.add("mace");
+        VANILLA_BACKPORT_IDS.add("scrape_pottery_pattern");
+        VANILLA_BACKPORT_IDS.add("scrape_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("wind_charge");
     }
 
