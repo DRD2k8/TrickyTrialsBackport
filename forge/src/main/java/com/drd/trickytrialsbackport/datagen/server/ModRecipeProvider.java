@@ -18,6 +18,44 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        stairs(Items.TUFF, ModBlocks.TUFF_STAIRS.get(), consumer);
+        slab(Items.TUFF, ModBlocks.TUFF_SLAB.get(), consumer);
+        wall(Items.TUFF, ModBlocks.TUFF_WALL.get(), consumer);
+        chiseledBlock(ModBlocks.TUFF_SLAB.get(), ModBlocks.CHISELED_TUFF.get(), consumer);
+        polishing(Items.TUFF, ModBlocks.POLISHED_TUFF.get(), consumer);
+        stairs(Items.TUFF, ModBlocks.POLISHED_TUFF_STAIRS.get(), consumer);
+        slab(Items.TUFF, ModBlocks.POLISHED_TUFF_SLAB.get(), consumer);
+        wall(Items.TUFF, ModBlocks.POLISHED_TUFF_WALL.get(), consumer);
+        polishing(ModBlocks.POLISHED_TUFF.get(), ModBlocks.TUFF_BRICKS.get(), consumer);
+        stairs(ModBlocks.TUFF_BRICKS.get(), ModBlocks.TUFF_BRICK_STAIRS.get(), consumer);
+        slab(ModBlocks.TUFF_BRICKS.get(), ModBlocks.TUFF_BRICK_SLAB.get(), consumer);
+        wall(ModBlocks.TUFF_BRICKS.get(), ModBlocks.TUFF_BRICK_WALL.get(), consumer);
+        chiseledBlock(ModBlocks.TUFF_BRICK_SLAB.get(), ModBlocks.CHISELED_TUFF_BRICKS.get(), consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_STAIRS.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_SLAB.get(), Items.TUFF, 2);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_WALL.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_TUFF.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF_STAIRS.get(), ModBlocks.POLISHED_TUFF.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF_SLAB.get(), ModBlocks.POLISHED_TUFF.get(), 2);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF_WALL.get(), ModBlocks.POLISHED_TUFF.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF_STAIRS.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF_SLAB.get(), Items.TUFF, 2);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_TUFF_WALL.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICKS.get(), ModBlocks.POLISHED_TUFF.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICKS.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_STAIRS.get(), ModBlocks.TUFF_BRICKS.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_SLAB.get(), ModBlocks.TUFF_BRICKS.get(), 2);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_WALL.get(), ModBlocks.TUFF_BRICKS.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_STAIRS.get(), ModBlocks.POLISHED_TUFF.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_SLAB.get(), ModBlocks.POLISHED_TUFF.get(), 2);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_WALL.get(), ModBlocks.POLISHED_TUFF.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_STAIRS.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_SLAB.get(), Items.TUFF, 2);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TUFF_BRICK_WALL.get(), Items.TUFF);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_TUFF_BRICKS.get(), ModBlocks.TUFF_BRICKS.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_TUFF_BRICKS.get(), ModBlocks.POLISHED_TUFF.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_TUFF_BRICKS.get(), Items.TUFF);
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MACE.get())
                 .pattern("#")
                 .pattern("I")
@@ -44,6 +82,51 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, unpackedItem, count)
                 .requires(packedItem)
                 .unlockedBy(getHasName(packedItem), has(packedItem))
+                .save(consumer);
+    }
+
+    protected static void stairs(ItemLike base, ItemLike stairs, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairs, 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .define('#', base)
+                .unlockedBy(getHasName(base), has(base))
+                .save(consumer);
+    }
+
+    protected static void slab(ItemLike base, ItemLike slab, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
+                .pattern("###")
+                .define('#', base)
+                .unlockedBy(getHasName(base), has(base))
+                .save(consumer);
+    }
+
+    protected static void wall(ItemLike base, ItemLike wall, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wall, 6)
+                .pattern("###")
+                .pattern("###")
+                .define('#', base)
+                .unlockedBy(getHasName(base), has(base))
+                .save(consumer);
+    }
+
+    protected static void polishing(ItemLike unpolishedBlock, ItemLike polishedBlock, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, polishedBlock, 4)
+                .pattern("##")
+                .pattern("##")
+                .define('#', unpolishedBlock)
+                .unlockedBy(getHasName(unpolishedBlock), has(unpolishedBlock))
+                .save(consumer);
+    }
+
+    protected static void chiseledBlock(ItemLike slab, ItemLike chiseledBlock, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, chiseledBlock)
+                .pattern("#")
+                .pattern("#")
+                .define('#', slab)
+                .unlockedBy(getHasName(slab), has(slab))
                 .save(consumer);
     }
 

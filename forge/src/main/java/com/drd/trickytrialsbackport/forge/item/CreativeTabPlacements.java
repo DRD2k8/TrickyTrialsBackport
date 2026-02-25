@@ -52,6 +52,24 @@ public class CreativeTabPlacements {
             }
         };
 
+        if (tab == CreativeModeTabs.BUILDING_BLOCKS) {
+            entries.addAfter(Items.REINFORCED_DEEPSLATE,
+                    ModBlocks.CHISELED_TUFF_BRICKS.get(),
+                    ModBlocks.TUFF_BRICK_WALL.get(),
+                    ModBlocks.TUFF_BRICK_SLAB.get(),
+                    ModBlocks.TUFF_BRICK_STAIRS.get(),
+                    ModBlocks.TUFF_BRICKS.get(),
+                    ModBlocks.POLISHED_TUFF_WALL.get(),
+                    ModBlocks.POLISHED_TUFF_SLAB.get(),
+                    ModBlocks.POLISHED_TUFF_STAIRS.get(),
+                    ModBlocks.POLISHED_TUFF.get(),
+                    ModBlocks.CHISELED_TUFF.get(),
+                    ModBlocks.TUFF_WALL.get(),
+                    ModBlocks.TUFF_SLAB.get(),
+                    ModBlocks.TUFF_STAIRS.get(),
+                    Items.TUFF);
+        }
+
         if (tab == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             entries.addAfter(Items.MUSIC_DISC_11, ModItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get());
             entries.addAfter(Items.MUSIC_DISC_WAIT, ModItems.MUSIC_DISC_PRECIPICE.get(), ModItems.MUSIC_DISC_CREATOR.get());

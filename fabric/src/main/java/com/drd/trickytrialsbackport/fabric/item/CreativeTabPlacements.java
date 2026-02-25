@@ -24,6 +24,24 @@ public class CreativeTabPlacements {
      * }}</pre>
      */
 
+    private static void addItemsToBuildingBlocksTab(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.REINFORCED_DEEPSLATE,
+                Items.TUFF,
+                ModBlocks.TUFF_STAIRS.get(),
+                ModBlocks.TUFF_SLAB.get(),
+                ModBlocks.TUFF_WALL.get(),
+                ModBlocks.CHISELED_TUFF.get(),
+                ModBlocks.POLISHED_TUFF.get(),
+                ModBlocks.POLISHED_TUFF_STAIRS.get(),
+                ModBlocks.POLISHED_TUFF_SLAB.get(),
+                ModBlocks.POLISHED_TUFF_WALL.get(),
+                ModBlocks.TUFF_BRICKS.get(),
+                ModBlocks.TUFF_BRICK_STAIRS.get(),
+                ModBlocks.TUFF_BRICK_SLAB.get(),
+                ModBlocks.TUFF_BRICK_WALL.get(),
+                ModBlocks.CHISELED_TUFF_BRICKS.get());
+    }
+
     private static void addItemsToToolsTab(FabricItemGroupEntries entries) {
         entries.addAfter(Items.MUSIC_DISC_11, ModItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get());
         entries.addAfter(Items.MUSIC_DISC_WAIT, ModItems.MUSIC_DISC_CREATOR.get(), ModItems.MUSIC_DISC_PRECIPICE.get());
@@ -53,6 +71,7 @@ public class CreativeTabPlacements {
     }
 
     public static void registerTabPlacements() {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(CreativeTabPlacements::addItemsToBuildingBlocksTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(CreativeTabPlacements::addItemsToToolsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(CreativeTabPlacements::addItemsToCombatTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(CreativeTabPlacements::addItemsToIngredientsTab);

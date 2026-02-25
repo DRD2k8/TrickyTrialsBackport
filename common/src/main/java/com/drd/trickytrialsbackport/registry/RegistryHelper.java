@@ -26,6 +26,8 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("breeze_wind_charge");
         VANILLA_BACKPORT_IDS.add("cavebird");
         VANILLA_BACKPORT_IDS.add("changing");
+        VANILLA_BACKPORT_IDS.add("chiseled_tuff");
+        VANILLA_BACKPORT_IDS.add("chiseled_tuff_bricks");
         VANILLA_BACKPORT_IDS.add("cotan");
         VANILLA_BACKPORT_IDS.add("endboss");
         VANILLA_BACKPORT_IDS.add("fern");
@@ -54,12 +56,23 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("orb");
         VANILLA_BACKPORT_IDS.add("owlemons");
         VANILLA_BACKPORT_IDS.add("passage");
+        VANILLA_BACKPORT_IDS.add("polished_tuff");
+        VANILLA_BACKPORT_IDS.add("polished_tuff_slab");
+        VANILLA_BACKPORT_IDS.add("polished_tuff_stairs");
+        VANILLA_BACKPORT_IDS.add("polished_tuff_wall");
         VANILLA_BACKPORT_IDS.add("pond");
         VANILLA_BACKPORT_IDS.add("prairie_ride");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_pattern");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("sunflowers");
         VANILLA_BACKPORT_IDS.add("tides");
+        VANILLA_BACKPORT_IDS.add("tuff_brick_slab");
+        VANILLA_BACKPORT_IDS.add("tuff_brick_stairs");
+        VANILLA_BACKPORT_IDS.add("tuff_brick_wall");
+        VANILLA_BACKPORT_IDS.add("tuff_bricks");
+        VANILLA_BACKPORT_IDS.add("tuff_slab");
+        VANILLA_BACKPORT_IDS.add("tuff_stairs");
+        VANILLA_BACKPORT_IDS.add("tuff_wall");
         VANILLA_BACKPORT_IDS.add("unpacked");
         VANILLA_BACKPORT_IDS.add("wind_charge");
     }

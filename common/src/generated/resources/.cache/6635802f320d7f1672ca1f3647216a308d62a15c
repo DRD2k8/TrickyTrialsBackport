@@ -1,4 +1,7 @@
-// 1.20.1	2026-02-24T19:11:17.5441685	Tags for minecraft:item mod id trickytrialsbackport
+// 1.20.1	2026-02-24T21:01:39.1648299	Tags for minecraft:item mod id trickytrialsbackport
 76540fce3dd0270e850ff04054055c73c8ba462c data/minecraft/tags/items/decorated_pot_sherds.json
 dac75bb05e32a9b99b7750aca7964e640758f8fb data/minecraft/tags/items/music_discs.json
+e4e0677676c88b770fb2f198c8904b8e4899ab59 data/minecraft/tags/items/slabs.json
+5e7030f5aec0cfe272652f20c67807d98bc94854 data/minecraft/tags/items/stairs.json
 288b145d757801cacf96990652cd40081971ad3e data/minecraft/tags/items/trim_templates.json
+4566532194d000f068193f3b594b6cf17b268601 data/minecraft/tags/items/walls.json

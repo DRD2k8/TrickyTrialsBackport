@@ -1,3 +1,16 @@
-// 1.20.1	2026-02-24T16:09:13.2097254	Loot Tables
+// 1.20.1	2026-02-24T21:01:39.1658301	Loot Tables
+9b4b36aefabb3b58409943b5271b118edeaaf0c3 data/minecraft/loot_tables/blocks/chiseled_tuff.json
+ba3bc0c6f708e608b83a249fca6ba3a2bac274d6 data/minecraft/loot_tables/blocks/chiseled_tuff_bricks.json
 2d5ad448add21f53ad08b31cb86efe160673cf88 data/minecraft/loot_tables/blocks/heavy_core.json
+519e15df3f60a78e0ec3fa90d75acbda4f381f46 data/minecraft/loot_tables/blocks/polished_tuff.json
+4f58c4268a59ce2191d47792116a6894c652b4ec data/minecraft/loot_tables/blocks/polished_tuff_slab.json
+0dcdebae4f0b726a064e014d103229dee8ab4196 data/minecraft/loot_tables/blocks/polished_tuff_stairs.json
+b0e2b655f576991dee637ef4a4b14187d01d24f4 data/minecraft/loot_tables/blocks/polished_tuff_wall.json
+9c0d88e9a2b440587dcab2549f67fd231809435e data/minecraft/loot_tables/blocks/tuff_bricks.json
+9f05cc0d560515835a7c8fef640e9994850b8c6b data/minecraft/loot_tables/blocks/tuff_brick_slab.json
+59ed69b8e5b2a30e9d5fd1e8d4cf5879addeccd5 data/minecraft/loot_tables/blocks/tuff_brick_stairs.json
+7aeeadf72b46a99f3c16f582b72516daa5d0a3ef data/minecraft/loot_tables/blocks/tuff_brick_wall.json
+a5caf77b221fdcdb6748ad320fbcd3c87ff1aa2e data/minecraft/loot_tables/blocks/tuff_slab.json
+116fa23aeb315112db7799af4f75f8b8c2b201c1 data/minecraft/loot_tables/blocks/tuff_stairs.json
+4349492ef3d21a2c35c99f682cbae5b95013d150 data/minecraft/loot_tables/blocks/tuff_wall.json
 cef68ae9b2082116a5aa1afc48c5167e1cad7b77 data/minecraft/loot_tables/entities/breeze.json
