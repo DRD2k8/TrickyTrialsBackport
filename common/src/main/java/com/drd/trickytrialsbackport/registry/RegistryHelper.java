@@ -36,6 +36,9 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("small_gust");
         VANILLA_BACKPORT_IDS.add("heavy_core");
         VANILLA_BACKPORT_IDS.add("mace");
+        VANILLA_BACKPORT_IDS.add("music_disc_creator");
+        VANILLA_BACKPORT_IDS.add("music_disc_creator_music_box");
+        VANILLA_BACKPORT_IDS.add("music_disc_precipice");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_pattern");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("wind_charge");

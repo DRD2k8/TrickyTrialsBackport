@@ -4,6 +4,7 @@ import com.drd.trickytrialsbackport.item.MaceItem;
 import com.drd.trickytrialsbackport.item.ModItemHelper;
 import com.drd.trickytrialsbackport.item.TrimmedSmithingTemplateItem;
 import com.drd.trickytrialsbackport.item.WindChargeItem;
+import com.drd.trickytrialsbackport.mixin.RecordItemInvoker;
 import com.drd.trickytrialsbackport.util.ModTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BannerPatternItem;
@@ -22,6 +23,9 @@ public class ModItems {
     public static Supplier<Item> GUSTER_BANNER_PATTERN;
     public static Supplier<Item> GUSTER_POTTERY_SHERD;
     public static Supplier<Item> MACE;
+    public static Supplier<Item> MUSIC_DISC_CREATOR;
+    public static Supplier<Item> MUSIC_DISC_CREATOR_MUSIC_BOX;
+    public static Supplier<Item> MUSIC_DISC_PRECIPICE;
     public static Supplier<Item> SCRAPE_POTTERY_SHERD;
     public static Supplier<Item> WIND_CHARGE;
 
@@ -37,6 +41,9 @@ public class ModItems {
         GUSTER_BANNER_PATTERN = helper.registerAuto(Registries.ITEM, "guster_banner_pattern", () -> new BannerPatternItem(ModTags.BannerPatterns.GUSTER, new Item.Properties()));
         GUSTER_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "guster_pottery_sherd", () -> new Item(new Item.Properties()));
         MACE = helper.registerAuto(Registries.ITEM, "mace", () -> new MaceItem(new Item.Properties().rarity(Rarity.EPIC).durability(500)));
+        MUSIC_DISC_CREATOR = helper.registerAuto(Registries.ITEM, "music_disc_creator", () -> RecordItemInvoker.create(12, ModSounds.MUSIC_DISC_CREATOR.get(), new Item.Properties().rarity(Rarity.RARE), 176));
+        MUSIC_DISC_CREATOR_MUSIC_BOX = helper.registerAuto(Registries.ITEM, "music_disc_creator_music_box", () -> RecordItemInvoker.create(11, ModSounds.MUSIC_DISC_CREATOR_MUSIC_BOX.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 73));
+        MUSIC_DISC_PRECIPICE = helper.registerAuto(Registries.ITEM, "music_disc_precipice", () -> RecordItemInvoker.create(13, ModSounds.MUSIC_DISC_PRECIPICE.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 299));
         SCRAPE_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "scrape_pottery_sherd", () -> new Item(new Item.Properties()));
         WIND_CHARGE = helper.registerAuto(Registries.ITEM, "wind_charge", () -> new WindChargeItem(new Item.Properties()));
     }

@@ -1,4 +1,4 @@
-// 1.20.1	2026-02-24T18:52:28.7264921	Item Models: minecraft
+// 1.20.1	2026-02-24T19:11:17.5411677	Item Models: minecraft
 97bd06211e549840dfc80a940ffd14cf8c4248fb assets/minecraft/models/item/bolt_armor_trim_smithing_template.json
 a45e4c8d7981b771460e80c1a352f915c7e10afb assets/minecraft/models/item/breeze_rod.json
 fb426147938d7c20a54677f8dbd4467aaf646faa assets/minecraft/models/item/flow_armor_trim_smithing_template.json
@@ -7,5 +7,8 @@ e5bd3476070010018c1bc420faaa3f9908d0b204 assets/minecraft/models/item/flow_potte
 5db649a7f26d0e856aa9ce2240b0d7cc152b58dc assets/minecraft/models/item/guster_banner_pattern.json
 20e64e7a6d4de9d62f30836ce8e897cf6582733e assets/minecraft/models/item/guster_pottery_sherd.json
 db55763f751fe04c2ec41fd2ca9d6eb63be5a448 assets/minecraft/models/item/heavy_core.json
+9bc6f060a7b79ea123b791dcb36d4ae8b84861ae assets/minecraft/models/item/music_disc_creator.json
+b1c04e12bfbec11591d672a6f433ee0e2c0e0247 assets/minecraft/models/item/music_disc_creator_music_box.json
+69a660eb83a9adcb19f2c3ec22dad543c987568c assets/minecraft/models/item/music_disc_precipice.json
 7074b7030c5fc81c8d91c799db9e7802d226d469 assets/minecraft/models/item/scrape_pottery_sherd.json
 94d6148d5f9a77e4120d54cf04cb275bc10705b0 assets/minecraft/models/item/wind_charge.json

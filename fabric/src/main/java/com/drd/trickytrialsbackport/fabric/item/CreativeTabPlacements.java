@@ -24,6 +24,11 @@ public class CreativeTabPlacements {
      * }}</pre>
      */
 
+    private static void addItemsToToolsTab(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.MUSIC_DISC_11, ModItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get());
+        entries.addAfter(Items.MUSIC_DISC_WAIT, ModItems.MUSIC_DISC_CREATOR.get(), ModItems.MUSIC_DISC_PRECIPICE.get());
+    }
+
     private static void addItemsToCombatTab(FabricItemGroupEntries entries) {
         entries.addAfter(Items.TRIDENT, ModItems.MACE.get());
 
@@ -48,6 +53,7 @@ public class CreativeTabPlacements {
     }
 
     public static void registerTabPlacements() {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(CreativeTabPlacements::addItemsToToolsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(CreativeTabPlacements::addItemsToCombatTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(CreativeTabPlacements::addItemsToIngredientsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(CreativeTabPlacements::addItemsToSpawnEggsTab);

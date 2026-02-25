@@ -52,6 +52,11 @@ public class CreativeTabPlacements {
             }
         };
 
+        if (tab == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            entries.addAfter(Items.MUSIC_DISC_11, ModItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get());
+            entries.addAfter(Items.MUSIC_DISC_WAIT, ModItems.MUSIC_DISC_PRECIPICE.get(), ModItems.MUSIC_DISC_CREATOR.get());
+        }
+
         if (tab == CreativeModeTabs.COMBAT) {
             entries.addAfter(Items.TRIDENT, ModItems.MACE.get());
 

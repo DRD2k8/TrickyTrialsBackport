@@ -22,6 +22,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem("guster_banner_pattern");
         simpleItem("guster_pottery_sherd");
         evenSimplerBlockItem("heavy_core");
+        musicDisc("music_disc_creator");
+        musicDisc("music_disc_creator_music_box");
+        musicDisc("music_disc_precipice");
         simpleItem("scrape_pottery_sherd");
         simpleItem("wind_charge");
     }
@@ -35,5 +38,11 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void evenSimplerBlockItem(String blockName) {
         String name = blockName;
         this.withExistingParent( name, modLoc("block/" + name) );
+    }
+
+    private ItemModelBuilder musicDisc(String itemName) {
+        return withExistingParent(itemName,
+                ResourceLocation.withDefaultNamespace("item/template_music_disc")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(TrickyTrialsBackport.NAMESPACE,"item/" + itemName));
     }
 }

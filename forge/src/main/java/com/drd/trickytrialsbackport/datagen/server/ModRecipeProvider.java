@@ -36,7 +36,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', Items.WAXED_COPPER_BLOCK)
                 .define('S', ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get())
                 .unlockedBy(getHasName(ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get()), has(ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get()))
-                .save(consumer, TrickyTrialsBackport.MOD_ID + ":bolt_armor_trim_smithing_template_from_waxed_copper_block");
+                .save(consumer, TrickyTrialsBackport.NAMESPACE + ":bolt_armor_trim_smithing_template_from_waxed_copper_block");
         trimDuplication(ModItems.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE.get(), ModItems.BREEZE_ROD.get(), consumer);
     }
 
