@@ -1,9 +1,13 @@
 package com.drd.trickytrialsbackport.fabric.client;
 
+import com.drd.trickytrialsbackport.client.model.BreezeModel;
+import com.drd.trickytrialsbackport.client.model.BreezeWindChargeModel;
 import com.drd.trickytrialsbackport.client.model.WindChargeModel;
 import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
+import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModParticles;
@@ -15,7 +19,13 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 public final class TrickyTrialsBackportFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        EntityRendererRegistry.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
         EntityRendererRegistry.register(ModEntities.WIND_CHARGE.get(), WindChargeRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE, BreezeModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_EYES, BreezeModel::createEyesLayer);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_WIND, BreezeModel::createWindBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_WIND_CHARGE, BreezeWindChargeModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.WIND_CHARGE, WindChargeModel::createBodyLayer);
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST.get(), GustParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST_EMITTER_LARGE.get(), new GustSeedParticle.Provider(3.0, 7, 0));

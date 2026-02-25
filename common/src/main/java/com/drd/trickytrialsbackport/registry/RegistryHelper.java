@@ -16,6 +16,7 @@ public abstract class RegistryHelper {
 
     static {
         // Always add the stuff here so that way they can register in the minecraft namespace
+        VANILLA_BACKPORT_IDS.add("breeze");
         VANILLA_BACKPORT_IDS.add("breeze_rod");
         VANILLA_BACKPORT_IDS.add("breeze_wind_charge");
         VANILLA_BACKPORT_IDS.add("gust");

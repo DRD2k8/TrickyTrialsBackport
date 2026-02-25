@@ -1,0 +1,140 @@
+package com.drd.trickytrialsbackport.entity.monster.breeze;
+
+import com.drd.trickytrialsbackport.registry.ModMemoryModuleTypes;
+import com.drd.trickytrialsbackport.registry.ModSensorTypes;
+import com.drd.trickytrialsbackport.registry.ModSounds;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Unit;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.Brain;
+import net.minecraft.world.entity.ai.behavior.*;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import net.minecraft.world.entity.ai.sensing.Sensor;
+import net.minecraft.world.entity.ai.sensing.SensorType;
+import net.minecraft.world.entity.schedule.Activity;
+
+import java.util.List;
+import java.util.Set;
+
+public class BreezeAi {
+    public static final float SPEED_MULTIPLIER_WHEN_SLIDING = 0.6F;
+    public static final float JUMP_CIRCLE_INNER_RADIUS = 4.0F;
+    public static final float JUMP_CIRCLE_MIDDLE_RADIUS = 8.0F;
+    public static final float JUMP_CIRCLE_OUTER_RADIUS = 20.0F;
+
+    static final List<SensorType<? extends Sensor<? super Breeze>>> SENSOR_TYPES;
+    static final List<MemoryModuleType<?>> MEMORY_TYPES;
+
+    public BreezeAi() {}
+
+    public static Brain<Breeze> makeBrain(Brain<Breeze> brain) {
+        initCoreActivity(brain);
+        initFightActivity(brain);
+
+        brain.setCoreActivities(Set.of(Activity.CORE));
+        brain.setDefaultActivity(Activity.FIGHT);
+        brain.useDefaultActivity();
+
+        return brain;
+    }
+
+    private static void initCoreActivity(Brain<Breeze> brain) {
+        brain.addActivity(
+                Activity.CORE,
+                0,
+                ImmutableList.of(
+                        new Swim(0.8F),
+                        new LookAtTargetSink(45, 90),
+                        new SlideToTargetSink(20, 100)
+                )
+        );
+    }
+
+    private static void initFightActivity(Brain<Breeze> brain) {
+        brain.addActivityWithConditions(
+                Activity.FIGHT,
+                ImmutableList.of(
+                        Pair.of(0, StartAttacking.create(b -> b.getBrain().getMemory(MemoryModuleType.NEAREST_ATTACKABLE))),
+                        Pair.of(1, StopAttackingIfTargetInvalid.create()),
+                        Pair.of(2, new Shoot()),
+                        Pair.of(3, new ShootWhenStuck()),
+                        Pair.of(4, new LongJump()),
+                        Pair.of(5, new Slide()),
+                        Pair.of(6, new RunOne(
+                                ImmutableList.of(
+                                        Pair.of(new DoNothing(20, 100), 1),
+                                        Pair.of(RandomStroll.stroll(0.6F), 2)
+                                )
+                        ))
+                ),
+                Set.of()
+        );
+    }
+
+    public static class SlideToTargetSink extends MoveToTargetSink {
+
+        @VisibleForTesting
+        public SlideToTargetSink(int minDuration, int maxDuration) {
+            super(minDuration, maxDuration);
+        }
+
+        @Override
+        protected void start(ServerLevel level, Mob mob, long gameTime) {
+            super.start(level, mob, gameTime);
+
+            mob.playSound(ModSounds.BREEZE_SLIDE.get());
+
+            if (mob instanceof Breeze breeze) {
+                breeze.setBreezeState(Breeze.STATE_SLIDING);
+            }
+        }
+
+        @Override
+        protected void stop(ServerLevel level, Mob mob, long gameTime) {
+            super.stop(level, mob, gameTime);
+
+            if (mob instanceof Breeze breeze) {
+                breeze.setBreezeState(Breeze.STATE_IDLE);
+
+                if (breeze.getBrain().hasMemoryValue(MemoryModuleType.ATTACK_TARGET)) {
+                    breeze.getBrain().setMemoryWithExpiry(
+                            ModMemoryModuleTypes.BREEZE_SHOOT.get(),
+                            Unit.INSTANCE,
+                            60L
+                    );
+                }
+            }
+        }
+    }
+
+    static {
+        SENSOR_TYPES = ImmutableList.of(
+                SensorType.NEAREST_LIVING_ENTITIES,
+                SensorType.HURT_BY,
+                SensorType.NEAREST_PLAYERS,
+                ModSensorTypes.BREEZE_ATTACK_ENTITY_SENSOR.get()
+        );
+
+        MEMORY_TYPES = ImmutableList.of(
+                MemoryModuleType.LOOK_TARGET,
+                MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES,
+                MemoryModuleType.NEAREST_ATTACKABLE,
+                MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE,
+                MemoryModuleType.ATTACK_TARGET,
+                MemoryModuleType.WALK_TARGET,
+                ModMemoryModuleTypes.BREEZE_JUMP_COOLDOWN.get(),
+                ModMemoryModuleTypes.BREEZE_JUMP_INHALING.get(),
+                ModMemoryModuleTypes.BREEZE_SHOOT.get(),
+                ModMemoryModuleTypes.BREEZE_SHOOT_CHARGING.get(),
+                ModMemoryModuleTypes.BREEZE_SHOOT_RECOVERING.get(),
+                ModMemoryModuleTypes.BREEZE_SHOOT_COOLDOWN.get(),
+                ModMemoryModuleTypes.BREEZE_JUMP_TARGET.get(),
+                MemoryModuleType.HURT_BY,
+                MemoryModuleType.HURT_BY_ENTITY,
+                MemoryModuleType.PATH
+        );
+    }
+}
