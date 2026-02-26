@@ -8,6 +8,8 @@ import net.minecraft.sounds.SoundEvent;
 import java.util.function.Supplier;
 
 public class ModSounds {
+    public static Supplier<SoundEvent> CRAFTER_CRAFT;
+    public static Supplier<SoundEvent> CRAFTER_FAIL;
     public static Supplier<SoundEvent> HEAVY_CORE_BREAK;
     public static Supplier<SoundEvent> HEAVY_CORE_STEP;
     public static Supplier<SoundEvent> HEAVY_CORE_FALL;
@@ -53,6 +55,8 @@ public class ModSounds {
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
 
+        CRAFTER_CRAFT = registerSound(helper, "block.crafter.craft");
+        CRAFTER_FAIL = registerSound(helper, "block.crafter.fail");
         HEAVY_CORE_BREAK = registerSound(helper, "block.heavy_core.break");
         HEAVY_CORE_STEP = registerSound(helper, "block.heavy_core.step");
         HEAVY_CORE_FALL = registerSound(helper, "block.heavy_core.fall");

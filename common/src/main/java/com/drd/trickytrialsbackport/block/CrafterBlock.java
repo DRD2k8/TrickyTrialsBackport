@@ -88,7 +88,15 @@ public class CrafterBlock extends BaseEntityBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        this.dispenseFrom(state, level, pos);
+        BlockEntity be = level.getBlockEntity(pos);
+        if (!(be instanceof CrafterBlockEntity crafter)) return;
+
+        boolean crafted = crafter.tryCraft(level);
+
+        if (crafted) {
+            level.setBlock(pos, state.setValue(CRAFTING, true), Block.UPDATE_CLIENTS);
+            crafter.setCraftingTicksRemaining(10); // matches vanilla
+        }
     }
 
     @Nullable
@@ -175,12 +183,11 @@ public class CrafterBlock extends BaseEntityBlock {
             if (be instanceof CrafterBlockEntity crafter) {
                 player.openMenu(crafter);
                 crafter.setLastInteractingPlayer(player);
-                crafter.tryCraft((ServerLevel) level, crafter.getLastInteractingPlayer());
+                crafter.tryCraft((ServerLevel) level);
             }
             return InteractionResult.CONSUME;
         }
     }
-
 
     protected void dispenseFrom(BlockState state, ServerLevel level, BlockPos pos) {
         BlockEntity be = level.getBlockEntity(pos);

@@ -4,6 +4,7 @@ import com.drd.trickytrialsbackport.advancement.ModCriteriaTriggers;
 import com.drd.trickytrialsbackport.block.CrafterBlock;
 import com.drd.trickytrialsbackport.gui.CrafterMenu;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
+import com.drd.trickytrialsbackport.registry.ModSounds;
 import com.google.common.annotations.VisibleForTesting;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
@@ -13,6 +14,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.player.Inventory;
@@ -253,14 +255,13 @@ public class CrafterBlockEntity extends RandomizableContainerBlockEntity impleme
         return this.containerData.get(9) == 1;
     }
 
-    public static void serverTick(Level p_311764_, BlockPos p_309568_, BlockState p_311393_, CrafterBlockEntity p_313070_) {
-        int $$4 = p_313070_.craftingTicksRemaining - 1;
-        if ($$4 >= 0) {
-            p_313070_.craftingTicksRemaining = $$4;
-            if ($$4 == 0) {
-                p_311764_.setBlock(p_309568_, (BlockState)p_311393_.setValue(CrafterBlock.CRAFTING, false), 3);
+    public static void serverTick(Level level, BlockPos pos, BlockState state, CrafterBlockEntity be) {
+        int remaining = be.craftingTicksRemaining - 1;
+        if (remaining >= 0) {
+            be.craftingTicksRemaining = remaining;
+            if (remaining == 0) {
+                level.setBlock(pos, state.setValue(CrafterBlock.CRAFTING, false), 3);
             }
-
         }
     }
 
@@ -297,16 +298,18 @@ public class CrafterBlockEntity extends RandomizableContainerBlockEntity impleme
         return null;
     }
 
-    public boolean tryCraft(ServerLevel level, @Nullable ServerPlayer player) {
+    public boolean tryCraft(ServerLevel level) {
         Optional<CraftingRecipe> recipe = level.getRecipeManager()
                 .getRecipeFor(RecipeType.CRAFTING, this, level);
 
         if (recipe.isEmpty()) {
+            level.playSound(null, worldPosition, ModSounds.CRAFTER_FAIL.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
             return false;
         }
 
         ItemStack result = recipe.get().assemble(this, level.registryAccess());
         if (result.isEmpty()) {
+            level.playSound(null, worldPosition, ModSounds.CRAFTER_FAIL.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
             return false;
         }
 
@@ -322,8 +325,12 @@ public class CrafterBlockEntity extends RandomizableContainerBlockEntity impleme
 
         Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), result);
 
-        if (player != null) {
-            ModCriteriaTriggers.CRAFTER_RECIPE_CRAFTED.trigger(player);
+        level.playSound(null, worldPosition, ModSounds.CRAFTER_CRAFT.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+
+        ServerPlayer sp = this.getLastInteractingPlayer();
+        CraftingRecipe r = recipe.get();
+        if (sp != null) {
+            ModCriteriaTriggers.CRAFTER_RECIPE_CRAFTED.trigger(sp, r.getId());
         }
 
         this.setChanged();
