@@ -174,10 +174,13 @@ public class CrafterBlock extends BaseEntityBlock {
             BlockEntity be = level.getBlockEntity(pos);
             if (be instanceof CrafterBlockEntity crafter) {
                 player.openMenu(crafter);
+                crafter.setLastInteractingPlayer(player);
+                crafter.tryCraft((ServerLevel) level, crafter.getLastInteractingPlayer());
             }
             return InteractionResult.CONSUME;
         }
     }
+
 
     protected void dispenseFrom(BlockState state, ServerLevel level, BlockPos pos) {
         BlockEntity be = level.getBlockEntity(pos);

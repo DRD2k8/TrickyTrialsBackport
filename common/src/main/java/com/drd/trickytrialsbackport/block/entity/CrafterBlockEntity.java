@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.block.entity;
 
+import com.drd.trickytrialsbackport.advancement.ModCriteriaTriggers;
 import com.drd.trickytrialsbackport.block.CrafterBlock;
 import com.drd.trickytrialsbackport.gui.CrafterMenu;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
@@ -10,7 +11,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.Containers;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
@@ -18,11 +22,16 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
+import java.util.Optional;
+import java.util.UUID;
 
 public class CrafterBlockEntity extends RandomizableContainerBlockEntity implements CraftingContainer {
     public static final int CONTAINER_WIDTH = 3;
@@ -35,6 +44,7 @@ public class CrafterBlockEntity extends RandomizableContainerBlockEntity impleme
     private NonNullList<ItemStack> items;
     private int craftingTicksRemaining;
     protected final ContainerData containerData;
+    private UUID lastInteractingPlayer;
 
     public CrafterBlockEntity(BlockPos p_309972_, BlockState p_313058_) {
         super(ModBlockEntities.CRAFTER.get(), p_309972_, p_313058_);
@@ -273,5 +283,50 @@ public class CrafterBlockEntity extends RandomizableContainerBlockEntity impleme
 
     private boolean slotCanBeDisabled(int p_309429_) {
         return p_309429_ > -1 && p_309429_ < 9 && ((ItemStack)this.items.get(p_309429_)).isEmpty();
+    }
+
+    public void setLastInteractingPlayer(Player player) {
+        this.lastInteractingPlayer = player.getUUID();
+    }
+
+    @Nullable
+    public ServerPlayer getLastInteractingPlayer() {
+        if (this.level instanceof ServerLevel server) {
+            return server.getServer().getPlayerList().getPlayer(this.lastInteractingPlayer);
+        }
+        return null;
+    }
+
+    public boolean tryCraft(ServerLevel level, @Nullable ServerPlayer player) {
+        Optional<CraftingRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(RecipeType.CRAFTING, this, level);
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+        ItemStack result = recipe.get().assemble(this, level.registryAccess());
+        if (result.isEmpty()) {
+            return false;
+        }
+
+        for (int i = 0; i < this.getContainerSize(); i++) {
+            if (!this.isSlotDisabled(i)) {
+                ItemStack stack = this.getItem(i);
+                if (!stack.isEmpty()) {
+                    stack.shrink(1);
+                    this.setItem(i, stack);
+                }
+            }
+        }
+
+        Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), result);
+
+        if (player != null) {
+            ModCriteriaTriggers.CRAFTER_RECIPE_CRAFTED.trigger(player);
+        }
+
+        this.setChanged();
+        return true;
     }
 }

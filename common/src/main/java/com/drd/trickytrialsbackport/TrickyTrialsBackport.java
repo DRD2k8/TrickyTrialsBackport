@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport;
 
+import com.drd.trickytrialsbackport.advancement.ModCriteriaTriggers;
 import com.drd.trickytrialsbackport.registry.*;
 
 public final class TrickyTrialsBackport {
@@ -19,5 +20,7 @@ public final class TrickyTrialsBackport {
         ModParticles.register();
         ModSensorTypes.register();
         ModSherds.register();
+
+        ModCriteriaTriggers.register();
     }
 }
