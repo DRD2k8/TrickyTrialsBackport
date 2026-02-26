@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.registry;
 
+import com.drd.trickytrialsbackport.block.CrafterBlock;
 import com.drd.trickytrialsbackport.block.HeavyCoreBlock;
 import com.drd.trickytrialsbackport.mixin.StairBlockInvoker;
 import com.drd.trickytrialsbackport.util.ModSoundTypes;
@@ -25,6 +26,7 @@ public class ModBlocks {
 
     public static Supplier<Block> CHISELED_TUFF;
     public static Supplier<Block> CHISELED_TUFF_BRICKS;
+    public static Supplier<Block> CRAFTER;
     public static Supplier<Block> HEAVY_CORE;
     public static Supplier<Block> POLISHED_TUFF;
     public static Supplier<Block> POLISHED_TUFF_SLAB;
@@ -71,6 +73,8 @@ public class ModBlocks {
                 () -> new Block(BlockBehaviour.Properties.copy(Blocks.TUFF)));
         CHISELED_TUFF_BRICKS = registerBlockWithItem("chiseled_tuff_bricks",
                 () -> new Block(BlockBehaviour.Properties.copy(Blocks.TUFF).sound(ModSoundTypes.TUFF_BRICKS)));
+        CRAFTER = registerBlockWithItem("crafter",
+                () -> new CrafterBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5f, 3.5f)));
         HEAVY_CORE = registerBlockWithRarity("heavy_core",
                 () -> new HeavyCoreBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.SNARE)
                         .sound(ModSoundTypes.HEAVY_CORE).explosionResistance(1200f).strength(10f).pushReaction(PushReaction.NORMAL)), Rarity.EPIC);

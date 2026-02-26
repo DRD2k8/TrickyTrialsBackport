@@ -42,6 +42,10 @@ public class CreativeTabPlacements {
                 ModBlocks.CHISELED_TUFF_BRICKS.get());
     }
 
+    private static void addItemsToRedstoneTab(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.DROPPER, ModBlocks.CRAFTER.get());
+    }
+
     private static void addItemsToToolsTab(FabricItemGroupEntries entries) {
         entries.addAfter(Items.MUSIC_DISC_11, ModItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get());
         entries.addAfter(Items.MUSIC_DISC_WAIT, ModItems.MUSIC_DISC_CREATOR.get(), ModItems.MUSIC_DISC_PRECIPICE.get());
@@ -72,6 +76,7 @@ public class CreativeTabPlacements {
 
     public static void registerTabPlacements() {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(CreativeTabPlacements::addItemsToBuildingBlocksTab);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(CreativeTabPlacements::addItemsToRedstoneTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(CreativeTabPlacements::addItemsToToolsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(CreativeTabPlacements::addItemsToCombatTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(CreativeTabPlacements::addItemsToIngredientsTab);

@@ -1,6 +1,7 @@
-// 1.20.1	2026-02-25T12:34:41.8065678	Loot Tables
+// 1.20.1	2026-02-26T12:26:10.343885	Loot Tables
 9b4b36aefabb3b58409943b5271b118edeaaf0c3 data/minecraft/loot_tables/blocks/chiseled_tuff.json
 ba3bc0c6f708e608b83a249fca6ba3a2bac274d6 data/minecraft/loot_tables/blocks/chiseled_tuff_bricks.json
+998fdf24bfca3ab4a1b96d665eea53e6b8d1177b data/minecraft/loot_tables/blocks/crafter.json
 2d5ad448add21f53ad08b31cb86efe160673cf88 data/minecraft/loot_tables/blocks/heavy_core.json
 519e15df3f60a78e0ec3fa90d75acbda4f381f46 data/minecraft/loot_tables/blocks/polished_tuff.json
 4f58c4268a59ce2191d47792116a6894c652b4ec data/minecraft/loot_tables/blocks/polished_tuff_slab.json

@@ -47,6 +47,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.TUFF_BRICK_STAIRS.get())
                 .add(ModBlocks.TUFF_BRICK_SLAB.get())
                 .add(ModBlocks.TUFF_BRICK_WALL.get())
-                .add(ModBlocks.CHISELED_TUFF_BRICKS.get());
+                .add(ModBlocks.CHISELED_TUFF_BRICKS.get())
+                .add(ModBlocks.CRAFTER.get());
+
+        this.tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.CRAFTER.get());
     }
 }

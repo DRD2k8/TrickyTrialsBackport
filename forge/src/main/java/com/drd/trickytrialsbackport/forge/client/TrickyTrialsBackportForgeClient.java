@@ -9,9 +9,12 @@ import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
+import com.drd.trickytrialsbackport.client.screen.CrafterScreen;
 import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
 import com.drd.trickytrialsbackport.registry.ModEntities;
+import com.drd.trickytrialsbackport.registry.ModMenuTypes;
 import com.drd.trickytrialsbackport.registry.ModParticles;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -29,6 +32,7 @@ public class TrickyTrialsBackportForgeClient {
         EntityRenderers.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
         EntityRenderers.register(ModEntities.WIND_CHARGE.get(), WindChargeRenderer::new);
+        MenuScreens.register(ModMenuTypes.CRAFTER_3x3.get(), CrafterScreen::new);
         if (ModList.get().isLoaded("vanillabackport")) {
             VanillaBackportClientEvents.specialModels();
         }

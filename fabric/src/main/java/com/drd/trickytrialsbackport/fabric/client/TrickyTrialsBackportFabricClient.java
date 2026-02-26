@@ -8,14 +8,17 @@ import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
+import com.drd.trickytrialsbackport.client.screen.CrafterScreen;
 import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
 import com.drd.trickytrialsbackport.registry.ModEntities;
+import com.drd.trickytrialsbackport.registry.ModMenuTypes;
 import com.drd.trickytrialsbackport.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.gui.screens.MenuScreens;
 
 public final class TrickyTrialsBackportFabricClient implements ClientModInitializer {
     @Override
@@ -31,6 +34,7 @@ public final class TrickyTrialsBackportFabricClient implements ClientModInitiali
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_WIND, BreezeModel::createWindBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_WIND_CHARGE, BreezeWindChargeModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.WIND_CHARGE, WindChargeModel::createBodyLayer);
+        MenuScreens.register(ModMenuTypes.CRAFTER_3x3.get(), CrafterScreen::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST.get(), GustParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST_EMITTER_LARGE.get(), new GustSeedParticle.Provider(3.0, 7, 0));
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST_EMITTER_SMALL.get(), new GustSeedParticle.Provider(1.0, 3, 2));

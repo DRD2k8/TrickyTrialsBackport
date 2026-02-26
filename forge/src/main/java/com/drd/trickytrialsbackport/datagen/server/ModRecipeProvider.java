@@ -76,6 +76,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get()), has(ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get()))
                 .save(consumer, TrickyTrialsBackport.NAMESPACE + ":bolt_armor_trim_smithing_template_from_waxed_copper_block");
         trimDuplication(ModItems.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE.get(), ModItems.BREEZE_ROD.get(), consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CRAFTER.get())
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("RDR")
+                .define('#', Items.IRON_INGOT)
+                .define('C', Items.CRAFTING_TABLE)
+                .define('D', Items.DROPPER)
+                .define('R', Items.REDSTONE)
+                .unlockedBy(getHasName(Items.DROPPER), has(Items.DROPPER))
+                .save(consumer);
     }
 
     protected static void unpack(ItemLike packedItem, ItemLike unpackedItem, int count, Consumer<FinishedRecipe> consumer) {

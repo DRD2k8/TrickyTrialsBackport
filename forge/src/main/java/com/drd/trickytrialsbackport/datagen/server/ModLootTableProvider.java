@@ -47,6 +47,7 @@ public class ModLootTableProvider {
         protected void generate() {
             this.dropSelf(ModBlocks.CHISELED_TUFF.get());
             this.dropSelf(ModBlocks.CHISELED_TUFF_BRICKS.get());
+            this.dropSelf(ModBlocks.CRAFTER.get());
             this.dropSelf(ModBlocks.HEAVY_CORE.get());
             this.dropSelf(ModBlocks.POLISHED_TUFF.get());
             this.add(ModBlocks.POLISHED_TUFF_SLAB.get(), block -> createSlabItemTable(ModBlocks.POLISHED_TUFF_SLAB.get()));

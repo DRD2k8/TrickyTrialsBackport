@@ -31,6 +31,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("chiseled_tuff");
         VANILLA_BACKPORT_IDS.add("chiseled_tuff_bricks");
         VANILLA_BACKPORT_IDS.add("cotan");
+        VANILLA_BACKPORT_IDS.add("crafter");
         VANILLA_BACKPORT_IDS.add("endboss");
         VANILLA_BACKPORT_IDS.add("fern");
         VANILLA_BACKPORT_IDS.add("finding");
