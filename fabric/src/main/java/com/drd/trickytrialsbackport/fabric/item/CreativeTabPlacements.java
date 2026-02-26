@@ -67,7 +67,7 @@ public class CreativeTabPlacements {
     }
 
     private static void addItemsToSpawnEggsTab(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get());
+        entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BOGGED_SPAWN_EGG.get(), ModItems.BREEZE_SPAWN_EGG.get());
     }
 
     public static void registerTabPlacements() {

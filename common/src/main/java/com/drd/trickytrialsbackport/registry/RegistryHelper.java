@@ -18,6 +18,8 @@ public abstract class RegistryHelper {
         // Always add the stuff here so that way they can register in the minecraft namespace
         VANILLA_BACKPORT_IDS.add("backyard");
         VANILLA_BACKPORT_IDS.add("baroque");
+        VANILLA_BACKPORT_IDS.add("bogged");
+        VANILLA_BACKPORT_IDS.add("bogged_spawn_egg");
         VANILLA_BACKPORT_IDS.add("bolt_armor_trim_smithing_template");
         VANILLA_BACKPORT_IDS.add("bouquet");
         VANILLA_BACKPORT_IDS.add("breeze");

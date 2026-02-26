@@ -4,6 +4,8 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
 public class ModModelLayers {
+    public static final ModelLayerLocation BOGGED = register("bogged");
+    public static final ModelLayerLocation BOGGED_OUTER_LAYER = register("bogged", "outer");
     public static final ModelLayerLocation BREEZE = register("breeze");
     public static final ModelLayerLocation BREEZE_EYES = register("breeze", "eyes");
     public static final ModelLayerLocation BREEZE_WIND = register("breeze", "wind");

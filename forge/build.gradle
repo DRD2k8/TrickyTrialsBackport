@@ -14,6 +14,7 @@ sourceSets {
 loom {
     forge {
         mixinConfig "trickytrialsbackport.mixins.json"
+        mixinConfig "trickytrialsbackport.forge.mixins.json"
     }
     runs {
         data {

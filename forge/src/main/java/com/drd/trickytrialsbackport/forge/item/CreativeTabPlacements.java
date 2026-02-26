@@ -95,7 +95,7 @@ public class CreativeTabPlacements {
         }
 
         if (tab == CreativeModeTabs.SPAWN_EGGS) {
-            entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get());
+            entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get(), ModItems.BOGGED_SPAWN_EGG.get());
         }
     }
 }

@@ -14,6 +14,7 @@ import net.minecraft.world.item.Rarity;
 import java.util.function.Supplier;
 
 public class ModItems {
+    public static Supplier<Item> BOGGED_SPAWN_EGG;
     public static Supplier<Item> BOLT_ARMOR_TRIM_SMITHING_TEMPLATE;
     public static Supplier<Item> BREEZE_ROD;
     public static Supplier<Item> BREEZE_SPAWN_EGG;
@@ -32,6 +33,7 @@ public class ModItems {
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
 
+        BOGGED_SPAWN_EGG = helper.registerAuto(Registries.ITEM, "bogged_spawn_egg", () -> ModItemHelper.createSpawnEggItem(ModEntities.BOGGED, 9084018, 3231003));
         BOLT_ARMOR_TRIM_SMITHING_TEMPLATE = helper.registerAuto(Registries.ITEM, "bolt_armor_trim_smithing_template", () -> new TrimmedSmithingTemplateItem(new Item.Properties(), "bolt"));
         BREEZE_ROD = helper.registerAuto(Registries.ITEM, "breeze_rod", () -> new Item(new Item.Properties()));
         BREEZE_SPAWN_EGG = helper.registerAuto(Registries.ITEM, "breeze_spawn_egg", () -> ModItemHelper.createSpawnEggItem(ModEntities.BREEZE, 11506911, 9529055));

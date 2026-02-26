@@ -29,6 +29,7 @@ import java.util.Set;
 
 public class ModSpawnEggRenderer implements DynamicItemRenderer.Renderer {
     public static final Set<ItemLike> SPAWN_EGGS = Set.of(
+            ModItems.BOGGED_SPAWN_EGG.get(),
             ModItems.BREEZE_SPAWN_EGG.get()
     );
 

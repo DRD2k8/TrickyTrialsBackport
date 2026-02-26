@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.datagen.server;
 
+import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.registry.ModBlocks;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModItems;
@@ -7,14 +8,18 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -71,6 +76,37 @@ public class ModLootTableProvider {
 
         @Override
         public void generate() {
+            LootPool.Builder arrows = LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(LootItem.lootTableItem(Items.ARROW)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
+                            .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                    );
+
+            LootPool.Builder bones = LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(LootItem.lootTableItem(Items.BONE)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
+                            .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                    );
+
+            LootPool.Builder tipped = LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                    .add(LootItem.lootTableItem(Items.TIPPED_ARROW)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                            .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)).setLimit(1))
+                            .apply(SetPotionFunction.setPotion(Potions.POISON))
+                    );
+
+            this.add(ModEntities.BOGGED.get(),
+                    LootTable.lootTable()
+                            .withPool(arrows)
+                            .withPool(bones)
+                            .withPool(tipped)
+                            .setRandomSequence(new ResourceLocation(TrickyTrialsBackport.NAMESPACE, "entities/bogged"))
+            );
+
             this.add(ModEntities.BREEZE.get(), LootTable.lootTable()
                     .withPool(LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1.0F))

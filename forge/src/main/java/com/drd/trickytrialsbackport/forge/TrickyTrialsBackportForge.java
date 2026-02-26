@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.forge;
 
+import com.drd.trickytrialsbackport.entity.monster.Bogged;
 import com.drd.trickytrialsbackport.entity.monster.breeze.Breeze;
 import com.drd.trickytrialsbackport.forge.registry.ForgeRegistryHelper;
 import com.drd.trickytrialsbackport.registry.ModEntities;
@@ -33,6 +34,7 @@ public final class TrickyTrialsBackportForge {
     public static class ModEvents {
         @SubscribeEvent
         public static void registerAttributes(EntityAttributeCreationEvent event) {
+            event.put(ModEntities.BOGGED.get(), Bogged.createAttributes().build());
             event.put(ModEntities.BREEZE.get(), Breeze.createAttributes().build());
         }
     }

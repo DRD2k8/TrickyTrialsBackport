@@ -1,12 +1,11 @@
 package com.drd.trickytrialsbackport.forge.client;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
-import com.drd.trickytrialsbackport.client.model.BreezeModel;
-import com.drd.trickytrialsbackport.client.model.BreezeWindChargeModel;
-import com.drd.trickytrialsbackport.client.model.WindChargeModel;
+import com.drd.trickytrialsbackport.client.model.*;
 import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
+import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
@@ -26,6 +25,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class TrickyTrialsBackportForgeClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
+        EntityRenderers.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
         EntityRenderers.register(ModEntities.WIND_CHARGE.get(), WindChargeRenderer::new);
@@ -36,6 +36,8 @@ public class TrickyTrialsBackportForgeClient {
 
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModModelLayers.BOGGED, BoggedModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.BOGGED_OUTER_LAYER, BoggedOuterModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.BREEZE, BreezeModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.BREEZE_EYES, BreezeModel::createEyesLayer);
         event.registerLayerDefinition(ModModelLayers.BREEZE_WIND, BreezeModel::createWindBodyLayer);

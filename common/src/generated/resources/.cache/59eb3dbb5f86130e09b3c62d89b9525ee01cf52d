@@ -1,4 +1,4 @@
-// 1.20.1	2026-02-24T21:01:39.1658301	Loot Tables
+// 1.20.1	2026-02-25T12:34:41.8065678	Loot Tables
 9b4b36aefabb3b58409943b5271b118edeaaf0c3 data/minecraft/loot_tables/blocks/chiseled_tuff.json
 ba3bc0c6f708e608b83a249fca6ba3a2bac274d6 data/minecraft/loot_tables/blocks/chiseled_tuff_bricks.json
 2d5ad448add21f53ad08b31cb86efe160673cf88 data/minecraft/loot_tables/blocks/heavy_core.json
@@ -13,4 +13,5 @@ b0e2b655f576991dee637ef4a4b14187d01d24f4 data/minecraft/loot_tables/blocks/polis
 a5caf77b221fdcdb6748ad320fbcd3c87ff1aa2e data/minecraft/loot_tables/blocks/tuff_slab.json
 116fa23aeb315112db7799af4f75f8b8c2b201c1 data/minecraft/loot_tables/blocks/tuff_stairs.json
 4349492ef3d21a2c35c99f682cbae5b95013d150 data/minecraft/loot_tables/blocks/tuff_wall.json
+ff9dc702d55203aa0545e869a21db7ae6a26abb0 data/minecraft/loot_tables/entities/bogged.json
 cef68ae9b2082116a5aa1afc48c5167e1cad7b77 data/minecraft/loot_tables/entities/breeze.json

@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.registry;
 
+import com.drd.trickytrialsbackport.entity.monster.Bogged;
 import com.drd.trickytrialsbackport.entity.monster.breeze.Breeze;
 import com.drd.trickytrialsbackport.entity.projectile.windcharge.BreezeWindCharge;
 import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
@@ -15,6 +16,7 @@ import java.util.function.Supplier;
 public class ModEntities {
     public static final List<Supplier<EntityType<?>>> ENTITIES = new ArrayList<>();
 
+    public static Supplier<EntityType<Bogged>> BOGGED;
     public static Supplier<EntityType<Breeze>> BREEZE;
     public static Supplier<EntityType<BreezeWindCharge>> BREEZE_WIND_CHARGE;
     public static Supplier<EntityType<WindCharge>> WIND_CHARGE;
@@ -22,6 +24,8 @@ public class ModEntities {
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
 
+        BOGGED = registerMob("bogged",
+                () -> EntityType.Builder.of(Bogged::new, MobCategory.MONSTER).sized(0.6f, 1.99f).clientTrackingRange(8).build("bogged"));
         BREEZE = registerMob("breeze",
                 () -> EntityType.Builder.of(Breeze::new, MobCategory.MONSTER).sized(0.6f, 1.7f).clientTrackingRange(10).build("breeze"));
         BREEZE_WIND_CHARGE = helper.registerAuto(

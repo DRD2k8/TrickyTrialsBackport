@@ -1,11 +1,10 @@
 package com.drd.trickytrialsbackport.fabric.client;
 
-import com.drd.trickytrialsbackport.client.model.BreezeModel;
-import com.drd.trickytrialsbackport.client.model.BreezeWindChargeModel;
-import com.drd.trickytrialsbackport.client.model.WindChargeModel;
+import com.drd.trickytrialsbackport.client.model.*;
 import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
+import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
@@ -21,9 +20,12 @@ import net.fabricmc.loader.api.FabricLoader;
 public final class TrickyTrialsBackportFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        EntityRendererRegistry.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
         EntityRendererRegistry.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRendererRegistry.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
         EntityRendererRegistry.register(ModEntities.WIND_CHARGE.get(), WindChargeRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BOGGED, BoggedModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BOGGED_OUTER_LAYER, BoggedOuterModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE, BreezeModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_EYES, BreezeModel::createEyesLayer);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BREEZE_WIND, BreezeModel::createWindBodyLayer);
