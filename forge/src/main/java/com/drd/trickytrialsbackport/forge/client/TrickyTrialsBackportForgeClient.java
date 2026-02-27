@@ -2,8 +2,10 @@ package com.drd.trickytrialsbackport.forge.client;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.client.model.*;
+import com.drd.trickytrialsbackport.client.particle.FlyStraightTowardsParticle;
 import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
+import com.drd.trickytrialsbackport.client.particle.TrialSpawnerDetectionParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
 import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
@@ -11,10 +13,14 @@ import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
 import com.drd.trickytrialsbackport.client.screen.CrafterScreen;
 import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
+import com.drd.trickytrialsbackport.registry.ModBlocks;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModMenuTypes;
 import com.drd.trickytrialsbackport.registry.ModParticles;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.particle.SpellParticle;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -28,6 +34,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class TrickyTrialsBackportForgeClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
+        });
         EntityRenderers.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
@@ -54,6 +63,10 @@ public class TrickyTrialsBackportForgeClient {
         event.registerSpriteSet(ModParticles.GUST.get(), GustParticle.Provider::new);
         event.registerSpecial(ModParticles.GUST_EMITTER_LARGE.get(), new GustSeedParticle.Provider(3.0, 7, 0));
         event.registerSpecial(ModParticles.GUST_EMITTER_SMALL.get(), new GustSeedParticle.Provider(1.0, 3, 2));
+        event.registerSpriteSet(ModParticles.OMINOUS_SPAWNING.get(), FlyStraightTowardsParticle.OminousSpawnProvider::new);
         event.registerSpriteSet(ModParticles.SMALL_GUST.get(), GustParticle.SmallProvider::new);
+        event.registerSpriteSet(ModParticles.TRIAL_OMEN.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER.get(), TrialSpawnerDetectionParticle.Provider::new);
+        event.registerSpriteSet(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS.get(), TrialSpawnerDetectionParticle.Provider::new);
     }
 }

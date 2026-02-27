@@ -22,6 +22,15 @@ public class ModSoundTypes {
             ModSounds.POLISHED_TUFF_HIT.get(),
             ModSounds.POLISHED_TUFF_FALL.get()
     );
+    public static SoundType TRIAL_SPAWNER = new SoundType(
+            1f,
+            1f,
+            ModSounds.TRIAL_SPAWNER_BREAK.get(),
+            ModSounds.TRIAL_SPAWNER_STEP.get(),
+            ModSounds.TRIAL_SPAWNER_PLACE.get(),
+            ModSounds.TRIAL_SPAWNER_HIT.get(),
+            ModSounds.TRIAL_SPAWNER_FALL.get()
+    );
     public static SoundType TUFF_BRICKS = new SoundType(
             1f,
             1f,

@@ -8,6 +8,9 @@ import net.minecraft.sounds.SoundEvent;
 import java.util.function.Supplier;
 
 public class ModSounds {
+    public static Supplier<SoundEvent> APPLY_EFFECT_BAD_OMEN;
+    public static Supplier<SoundEvent> APPLY_EFFECT_RAID_OMEN;
+    public static Supplier<SoundEvent> APPLY_EFFECT_TRIAL_OMEN;
     public static Supplier<SoundEvent> CRAFTER_CRAFT;
     public static Supplier<SoundEvent> CRAFTER_FAIL;
     public static Supplier<SoundEvent> HEAVY_CORE_BREAK;
@@ -20,6 +23,22 @@ public class ModSounds {
     public static Supplier<SoundEvent> POLISHED_TUFF_FALL;
     public static Supplier<SoundEvent> POLISHED_TUFF_PLACE;
     public static Supplier<SoundEvent> POLISHED_TUFF_HIT;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_AMBIENT;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_AMBIENT_OMINOUS;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_BREAK;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_CLOSE_SHUTTER;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_DETECT_PLAYER;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_EJECT_ITEM;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_FALL;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_HIT;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_OMINOUS_ACTIVATE;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_OPEN_SHUTTER;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_PLACE;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_SPAWN_ITEM;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_SPAWN_ITEM_BEGIN;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_SPAWN_MOB;
+    public static Supplier<SoundEvent> TRIAL_SPAWNER_STEP;
     public static Supplier<SoundEvent> TUFF_BRICKS_BREAK;
     public static Supplier<SoundEvent> TUFF_BRICKS_STEP;
     public static Supplier<SoundEvent> TUFF_BRICKS_FALL;
@@ -55,6 +74,9 @@ public class ModSounds {
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
 
+        APPLY_EFFECT_BAD_OMEN = registerSound(helper, "event.mob_effect.bad_omen");
+        APPLY_EFFECT_RAID_OMEN = registerSound(helper, "event.mob_effect.raid_omen");
+        APPLY_EFFECT_TRIAL_OMEN = registerSound(helper, "event.mob_effect.trial_omen");
         CRAFTER_CRAFT = registerSound(helper, "block.crafter.craft");
         CRAFTER_FAIL = registerSound(helper, "block.crafter.fail");
         HEAVY_CORE_BREAK = registerSound(helper, "block.heavy_core.break");
@@ -67,6 +89,22 @@ public class ModSounds {
         POLISHED_TUFF_FALL = registerSound(helper, "block.polished_tuff.fall");
         POLISHED_TUFF_PLACE = registerSound(helper, "block.polished_tuff.place");
         POLISHED_TUFF_HIT = registerSound(helper, "block.polished_tuff.hit");
+        TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM = registerSound(helper, "block.trial_spawner.about_to_spawn_item");
+        TRIAL_SPAWNER_AMBIENT = registerSound(helper, "block.trial_spawner.ambient");
+        TRIAL_SPAWNER_AMBIENT_OMINOUS = registerSound(helper, "block.trial_spawner.ambient_ominous");
+        TRIAL_SPAWNER_BREAK = registerSound(helper, "block.trial_spawner.break");
+        TRIAL_SPAWNER_CLOSE_SHUTTER = registerSound(helper, "block.trial_spawner.close_shutter");
+        TRIAL_SPAWNER_DETECT_PLAYER = registerSound(helper, "block.trial_spawner.detect_player");
+        TRIAL_SPAWNER_EJECT_ITEM = registerSound(helper, "block.trial_spawner.eject_item");
+        TRIAL_SPAWNER_FALL = registerSound(helper, "block.trial_spawner.fall");
+        TRIAL_SPAWNER_HIT = registerSound(helper, "block.trial_spawner.hit");
+        TRIAL_SPAWNER_OMINOUS_ACTIVATE = registerSound(helper, "block.trial_spawner.ominous_activate");
+        TRIAL_SPAWNER_OPEN_SHUTTER = registerSound(helper, "block.trial_spawner.open_shutter");
+        TRIAL_SPAWNER_PLACE = registerSound(helper, "block.trial_spawner.place");
+        TRIAL_SPAWNER_SPAWN_ITEM = registerSound(helper, "block.trial_spawner.spawn_item");
+        TRIAL_SPAWNER_SPAWN_ITEM_BEGIN = registerSound(helper, "block.trial_spawner.spawn_item_begin");
+        TRIAL_SPAWNER_SPAWN_MOB = registerSound(helper, "block.trial_spawner.spawn_mob");
+        TRIAL_SPAWNER_STEP = registerSound(helper, "block.trial_spawner.step");
         TUFF_BRICKS_BREAK = registerSound(helper, "block.tuff_bricks.break");
         TUFF_BRICKS_STEP = registerSound(helper, "block.tuff_bricks.step");
         TUFF_BRICKS_FALL = registerSound(helper, "block.tuff_bricks.fall");

@@ -56,6 +56,8 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("music_disc_creator");
         VANILLA_BACKPORT_IDS.add("music_disc_creator_music_box");
         VANILLA_BACKPORT_IDS.add("music_disc_precipice");
+        VANILLA_BACKPORT_IDS.add("ominous_spawning");
+        VANILLA_BACKPORT_IDS.add("ominous_trial_spawner");
         VANILLA_BACKPORT_IDS.add("orb");
         VANILLA_BACKPORT_IDS.add("owlemons");
         VANILLA_BACKPORT_IDS.add("passage");
@@ -65,10 +67,15 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("polished_tuff_wall");
         VANILLA_BACKPORT_IDS.add("pond");
         VANILLA_BACKPORT_IDS.add("prairie_ride");
+        VANILLA_BACKPORT_IDS.add("raid_omen");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_pattern");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("sunflowers");
         VANILLA_BACKPORT_IDS.add("tides");
+        VANILLA_BACKPORT_IDS.add("trial_omen");
+        VANILLA_BACKPORT_IDS.add("trial_spawner");
+        VANILLA_BACKPORT_IDS.add("trial_spawner_detection");
+        VANILLA_BACKPORT_IDS.add("trial_spawner_detection_ominous");
         VANILLA_BACKPORT_IDS.add("tuff_brick_slab");
         VANILLA_BACKPORT_IDS.add("tuff_brick_stairs");
         VANILLA_BACKPORT_IDS.add("tuff_brick_wall");

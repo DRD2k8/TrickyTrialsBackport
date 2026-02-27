@@ -1,9 +1,6 @@
 package com.drd.trickytrialsbackport.registry;
 
-import com.drd.trickytrialsbackport.item.MaceItem;
-import com.drd.trickytrialsbackport.item.ModItemHelper;
-import com.drd.trickytrialsbackport.item.TrimmedSmithingTemplateItem;
-import com.drd.trickytrialsbackport.item.WindChargeItem;
+import com.drd.trickytrialsbackport.item.*;
 import com.drd.trickytrialsbackport.mixin.RecordItemInvoker;
 import com.drd.trickytrialsbackport.util.ModTags;
 import net.minecraft.core.registries.Registries;
@@ -27,6 +24,7 @@ public class ModItems {
     public static Supplier<Item> MUSIC_DISC_CREATOR;
     public static Supplier<Item> MUSIC_DISC_CREATOR_MUSIC_BOX;
     public static Supplier<Item> MUSIC_DISC_PRECIPICE;
+    public static Supplier<Item> TRIAL_SPAWNER;
     public static Supplier<Item> SCRAPE_POTTERY_SHERD;
     public static Supplier<Item> WIND_CHARGE;
 
@@ -47,6 +45,7 @@ public class ModItems {
         MUSIC_DISC_CREATOR_MUSIC_BOX = helper.registerAuto(Registries.ITEM, "music_disc_creator_music_box", () -> RecordItemInvoker.create(11, ModSounds.MUSIC_DISC_CREATOR_MUSIC_BOX.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 73));
         MUSIC_DISC_PRECIPICE = helper.registerAuto(Registries.ITEM, "music_disc_precipice", () -> RecordItemInvoker.create(13, ModSounds.MUSIC_DISC_PRECIPICE.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 299));
         SCRAPE_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "scrape_pottery_sherd", () -> new Item(new Item.Properties()));
+        TRIAL_SPAWNER = helper.registerAuto(Registries.ITEM, "trial_spawner", () -> new TrialSpawnerItem(ModBlocks.TRIAL_SPAWNER.get(), new Item.Properties()));
         WIND_CHARGE = helper.registerAuto(Registries.ITEM, "wind_charge", () -> new WindChargeItem(new Item.Properties()));
     }
 }

@@ -1,8 +1,10 @@
 package com.drd.trickytrialsbackport.fabric.client;
 
 import com.drd.trickytrialsbackport.client.model.*;
+import com.drd.trickytrialsbackport.client.particle.FlyStraightTowardsParticle;
 import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
+import com.drd.trickytrialsbackport.client.particle.TrialSpawnerDetectionParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
 import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
@@ -10,19 +12,24 @@ import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
 import com.drd.trickytrialsbackport.client.screen.CrafterScreen;
 import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
+import com.drd.trickytrialsbackport.registry.ModBlocks;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModMenuTypes;
 import com.drd.trickytrialsbackport.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.particle.SpellParticle;
+import net.minecraft.client.renderer.RenderType;
 
 public final class TrickyTrialsBackportFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
         EntityRendererRegistry.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
         EntityRendererRegistry.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRendererRegistry.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);
@@ -38,7 +45,11 @@ public final class TrickyTrialsBackportFabricClient implements ClientModInitiali
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST.get(), GustParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST_EMITTER_LARGE.get(), new GustSeedParticle.Provider(3.0, 7, 0));
         ParticleFactoryRegistry.getInstance().register(ModParticles.GUST_EMITTER_SMALL.get(), new GustSeedParticle.Provider(1.0, 3, 2));
+        ParticleFactoryRegistry.getInstance().register(ModParticles.OMINOUS_SPAWNING.get(), FlyStraightTowardsParticle.OminousSpawnProvider::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.SMALL_GUST.get(), GustParticle.SmallProvider::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.TRIAL_OMEN.get(), SpellParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER.get(), TrialSpawnerDetectionParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS.get(), TrialSpawnerDetectionParticle.Provider::new);
 
         if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
             VanillaBackportClientEvents.specialModels();

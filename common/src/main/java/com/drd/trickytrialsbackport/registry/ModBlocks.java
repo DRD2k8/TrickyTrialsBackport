@@ -2,17 +2,21 @@ package com.drd.trickytrialsbackport.registry;
 
 import com.drd.trickytrialsbackport.block.CrafterBlock;
 import com.drd.trickytrialsbackport.block.HeavyCoreBlock;
+import com.drd.trickytrialsbackport.block.TrialSpawnerBlock;
 import com.drd.trickytrialsbackport.mixin.StairBlockInvoker;
 import com.drd.trickytrialsbackport.util.ModSoundTypes;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -32,6 +36,7 @@ public class ModBlocks {
     public static Supplier<Block> POLISHED_TUFF_SLAB;
     public static Supplier<Block> POLISHED_TUFF_STAIRS;
     public static Supplier<Block> POLISHED_TUFF_WALL;
+    public static Supplier<Block> TRIAL_SPAWNER;
     public static Supplier<Block> TUFF_BRICKS;
     public static Supplier<Block> TUFF_BRICK_SLAB;
     public static Supplier<Block> TUFF_BRICK_STAIRS;
@@ -66,6 +71,10 @@ public class ModBlocks {
         return registerBlockWithItem(material + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(copiedBlock.get())));
     }
 
+    private static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {
+        return false;
+    }
+
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
 
@@ -83,6 +92,9 @@ public class ModBlocks {
         POLISHED_TUFF_SLAB = registerSlab("polished_tuff", POLISHED_TUFF);
         POLISHED_TUFF_STAIRS = registerStairs("polished_tuff", POLISHED_TUFF);
         POLISHED_TUFF_WALL = registerWall("polished_tuff", POLISHED_TUFF);
+        TRIAL_SPAWNER = helper.registerAuto(Registries.BLOCK, "trial_spawner", () -> new TrialSpawnerBlock(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel(light -> light.getValue(TrialSpawnerBlock.STATE).lightLevel())
+                .sound(ModSoundTypes.TRIAL_SPAWNER).isViewBlocking(ModBlocks::never).noOcclusion()));
         TUFF_BRICKS = registerBlockWithItem("tuff_bricks",
                 () -> new Block(BlockBehaviour.Properties.copy(Blocks.TUFF).sound(ModSoundTypes.TUFF_BRICKS)));
         TUFF_BRICK_SLAB = registerSlab("tuff_brick", TUFF_BRICKS);
@@ -94,5 +106,7 @@ public class ModBlocks {
                 () -> StairBlockInvoker.create(Blocks.TUFF.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.TUFF)));
         TUFF_WALL = registerBlockWithItem("tuff_wall",
                 () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+
+        BLOCKS.add(TRIAL_SPAWNER);
     }
 }

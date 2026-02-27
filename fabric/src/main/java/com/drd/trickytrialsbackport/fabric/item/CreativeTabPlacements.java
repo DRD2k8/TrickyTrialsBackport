@@ -71,7 +71,13 @@ public class CreativeTabPlacements {
     }
 
     private static void addItemsToSpawnEggsTab(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BOGGED_SPAWN_EGG.get(), ModItems.BREEZE_SPAWN_EGG.get());
+        entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get(), ModItems.BOGGED_SPAWN_EGG.get());
+
+        ItemLike creakingHeart = BuiltInRegistries.ITEM.get(
+                new ResourceLocation("minecraft", "creaking_heart")
+        );
+        entries.addBefore(creakingHeart, ModItems.TRIAL_SPAWNER.get());
+        entries.addAfter(Items.SPAWNER, ModItems.TRIAL_SPAWNER.get());
     }
 
     public static void registerTabPlacements() {

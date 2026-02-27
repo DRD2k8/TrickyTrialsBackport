@@ -1,236 +1,445 @@
-[14:17:41] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.20.1-5, --assetsDir, C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\fabric-loom\assets, --gameDir, ., --fml.forgeVersion, 47.4.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, -mixin.config, trickytrialsbackport.mixins.json, -mixin.config, trickytrialsbackport.forge.mixins.json, --mixin.config, trickytrialsbackport.mixins.json]
-[14:17:41] [main/INFO] (Launcher) ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.10 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[14:17:41] [main/INFO] (unprotect) Initializing Unprotect using ModLauncher backend, target: Minecraft and loader classes (minecraft+forge)
-[14:17:41] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
-[14:17:41] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
-[14:17:41] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
-[14:17:42] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.12/cf1f787f58d3b08b0cb53ecbba7928c09a1893c8/mixin-patched-0.8.5.12.jar%23130!/ Service=ModLauncher Env=CLIENT
-[14:17:42] [pool-5-thread-1/INFO] (EARLYDISPLAY) GL info: AMD Radeon RX 6800 GL version 4.6.14757 Core Profile Forward-Compatible Context 20.12.1 27.20.14501.28009, ATI Technologies Inc.
-[14:17:42] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.10\ccc533c7dd67e0983217197d7549c8b49e7ab453\javafmllanguage-1.20.1-47.4.10.jar is missing mods.toml file
-[14:17:42] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.10\e9a2879fe3612ea34b9728ec2633304a1e67d480\lowcodelanguage-1.20.1-47.4.10.jar is missing mods.toml file
-[14:17:42] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.10\ec5cefbbc65c67302b8fac317010faab85fa14b9\mclanguage-1.20.1-47.4.10.jar is missing mods.toml file
-[14:17:42] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.10\94dae566be650566ea9115a1414ab76bfcf5a804\fmlcore-1.20.1-47.4.10.jar is missing mods.toml file
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file javafmllanguage-1.20.1-47.4.10.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file lowcodelanguage-1.20.1-47.4.10.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file mclanguage-1.20.1-47.4.10.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file fmlcore-1.20.1-47.4.10.jar of type LIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file main of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file  of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@4a1b710
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file backport-copper-age-0cd3bb3a-BeVdLB9R.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file trimmed-0cd3bb3a-1.20.1-2.1.4+forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file sherdsapi-0cd3bb3a-4.0.4+Forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file vanillabackport-0cd3bb3a-lXAo1yJs.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file platform-0cd3bb3a-XCJNVCRh.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.3.2.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file 5663901351745391122.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file backport-copper-age-0cd3bb3a-BeVdLB9R.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file trimmed-0cd3bb3a-1.20.1-2.1.4+forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file sherdsapi-0cd3bb3a-4.0.4+Forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file vanillabackport-0cd3bb3a-lXAo1yJs.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file platform-0cd3bb3a-XCJNVCRh.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.3.2.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file 5663901351745391122.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@1000303a
-[14:17:42] [main/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
-[14:17:42] [main/INFO] (ModDiscoverer) Found mod file MixinExtras-0.3.2.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator@2fd79ac6
-[14:17:44] [main/INFO] (mixin) Compatibility level set to JAVA_17
-[14:17:44] [main/ERROR] (mixin) Mixin config copperagebackport.forge.mixins.json does not specify "minVersion" property
-[14:17:44] [main/INFO] (LaunchServiceHandler) Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\fabric-loom\assets, --assetIndex, 1.20.1-5]
-[14:17:44] [main/INFO] (mixin) Remapping refMap VanillaBackport-common-1.20.1-common-refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (mixin) Remapping refMap VanillaBackport-forge-1.20.1-forge-refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (mixin) Remapping refMap copperagebackport.forge.refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (unprotect) Found 7423 Minecraft classes
-[14:17:44] [main/INFO] (mixin) Remapping refMap sherdsapi.refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (mixin) Remapping refMap trimmed.refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (mixin) Remapping refMap trimmed.refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (mixin) Remapping refMap Platform-forge-1.20.1-forge-refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/INFO] (mixin) Remapping refMap Platform-common-1.20.1-common-refmap.json using RemapperChain (Architectury Patched)
-[14:17:44] [main/WARN] (mixin) Error loading class: net/mehvahdjukaar/moonlight/api/set/leaves/LeavesType (java.lang.ClassNotFoundException: net.mehvahdjukaar.moonlight.api.set.leaves.LeavesType)
-[14:17:44] [main/WARN] (mixin) Error loading class: net/mehvahdjukaar/moonlight/api/set/wood/WoodType (java.lang.ClassNotFoundException: net.mehvahdjukaar.moonlight.api.set.wood.WoodType)
-[14:17:44] [main/WARN] (mixin) Error loading class: jeresources/api/util/BiomeHelper (java.lang.ClassNotFoundException: jeresources.api.util.BiomeHelper)
-[14:17:44] [main/WARN] (mixin) Error loading class: yalter/mousetweaks/Main (java.lang.ClassNotFoundException: yalter.mousetweaks.Main)
-[14:17:45] [main/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.2).
-[26Feb2026 14:17:46.836] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[26Feb2026 14:17:50.334] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 456 milliseconds
-[26Feb2026 14:17:52.269] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.4.10-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10/forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/assets/.mcassetsroot' uses unexpected schema
-[26Feb2026 14:17:52.269] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.4.10-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10/forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/data/.mcassetsroot' uses unexpected schema
-[26Feb2026 14:17:52.284] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[26Feb2026 14:17:52.288] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[26Feb2026 14:17:52.374] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
-[26Feb2026 14:17:52.632] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Loaded config: golemBuildSpawning=true, golemPressesButtons=true, buttonPressChance=5%, golemTransportStackSize=16, weatheringTickFrom=504000, weatheringTickTo=552000
-[26Feb2026 14:17:52.637] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Initializing Copper-Age-Backport on Forge
-[26Feb2026 14:17:52.638] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering sounds for Copper-Age-Backport
-[26Feb2026 14:17:52.642] [modloading-worker-0/INFO] [Sherds API/]: Initializing Sherds API for Forge in a development environment...
-[26Feb2026 14:17:52.651] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering memory module types for Copper-Age-Backport
-[26Feb2026 14:17:52.654] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering particles for Copper-Age-Backport
-[26Feb2026 14:17:52.659] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering blocks for Copper-Age-Backport
-[26Feb2026 14:17:52.681] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.10, for MC 1.20.1 with MCP 20230612.114412
-[26Feb2026 14:17:52.681] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.10 Initialized
-[26Feb2026 14:17:52.740] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering block entities for Copper-Age-Backport
-[26Feb2026 14:17:52.741] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering entities for Copper-Age-Backport
-[26Feb2026 14:17:52.745] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering items for Copper-Age-Backport
-[26Feb2026 14:17:52.827] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Mod 'fastchest' not loaded, skipping compatibility module
-[26Feb2026 14:17:52.829] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Mod 'sophisticatedstorage' not loaded, skipping compatibility module
-[26Feb2026 14:17:52.830] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Mod 'ironchest' not loaded, skipping compatibility module
-[26Feb2026 14:17:52.830] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Initializing 0 compatibility modules...
-[26Feb2026 14:17:52.830] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Initialization complete. 0 chest handlers, 0 container handlers registered.
-[26Feb2026 14:17:52.830] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Copper-Age-Backport initialized successfully!
-[26Feb2026 14:17:54.230] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
-[26Feb2026 14:17:54.479] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[26Feb2026 14:17:54.752] [Worker-Main-2/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[26Feb2026 14:17:55.632] [Worker-Main-1/WARN] [net.minecraft.client.renderer.texture.SpriteLoader/]: Texture sherdsapi:entity/decorated_pot/api with size 1464x1464 limits mip level from 4 to 3
-[26Feb2026 14:17:55.861] [Render thread/INFO] [Copper-Age-Backport/]: Fired 1 registration callbacks
-[26Feb2026 14:17:56.079] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [sherdsapi] Starting version check at https://api.modrinth.com/updates/sherdsapi/forge_updates.json
-[26Feb2026 14:17:56.463] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [sherdsapi] Found status: UP_TO_DATE Current: 4.0.4 Target: null
-[26Feb2026 14:17:56.463] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[26Feb2026 14:17:56.676] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: UP_TO_DATE Current: 47.4.10 Target: null
-[26Feb2026 14:17:56.934] [Render thread/INFO] [Trimmed/]: Client tags loaded!
-[26Feb2026 14:17:56.935] [Render thread/INFO] [Trimmed/]: Client maps loaded!
-[26Feb2026 14:17:57.845] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[26Feb2026 14:17:57.845] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[26Feb2026 14:17:57.846] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: trickytrialsbackport:music.disc.creator
-[26Feb2026 14:17:57.846] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: trickytrialsbackport:music.disc.creator_music_box
-[26Feb2026 14:17:57.846] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: trickytrialsbackport:music.disc.precipice
-[26Feb2026 14:17:57.924] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Speakers (Realtek High Definition Audio)
-[26Feb2026 14:17:57.924] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[26Feb2026 14:17:58.010] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
-[26Feb2026 14:17:58.100] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[26Feb2026 14:17:58.103] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[26Feb2026 14:17:58.105] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[26Feb2026 14:17:58.108] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[26Feb2026 14:17:58.129] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/chest.png-atlas
-[26Feb2026 14:17:58.131] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x2048x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[26Feb2026 14:17:58.133] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[26Feb2026 14:17:58.135] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[26Feb2026 14:17:58.227] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[26Feb2026 14:17:58.271] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[26Feb2026 14:17:58.277] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[26Feb2026 14:17:58.278] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[26Feb2026 14:17:58.281] [Render thread/INFO] [com.blackgear.vanillabackport.core.VanillaBackport/]: Loaded 2 custom leaf colors: [minecraft:azalea_leaves, minecraft:flowering_azalea_leaves]
-[26Feb2026 14:17:58.281] [Render thread/INFO] [Trimmed/]: Item model overrides loaded!
-[26Feb2026 14:17:58.281] [Render thread/INFO] [Trimmed/]: Trimmed templates are prepared!
-[26Feb2026 14:17:58.743] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
-[26Feb2026 14:18:02.860] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Deleting level New World
-[26Feb2026 14:18:02.860] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Attempt 1...
-[26Feb2026 14:18:03.967] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.974] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.979] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.984] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.986] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.988] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_palegardenbackport as it's serializer returned null
-[26Feb2026 14:18:03.989] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.990] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:03.997] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_vanilliabackports as it's serializer returned null
-[26Feb2026 14:18:04.000] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[26Feb2026 14:18:04.079] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1374 advancements
-[26Feb2026 14:18:05.327] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.330] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.333] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.336] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.336] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.337] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_palegardenbackport as it's serializer returned null
-[26Feb2026 14:18:05.338] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.339] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
-[26Feb2026 14:18:05.343] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_vanilliabackports as it's serializer returned null
-[26Feb2026 14:18:05.345] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[26Feb2026 14:18:05.378] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1374 advancements
-[26Feb2026 14:18:07.047] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[26Feb2026 14:18:07.048] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[26Feb2026 14:18:07.157] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file .\saves\New World\serverconfig\forge-server.toml is not correct. Correcting
-[26Feb2026 14:18:07.160] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
-[26Feb2026 14:18:07.160] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
-[26Feb2026 14:18:07.160] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
-[26Feb2026 14:18:07.160] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
-[26Feb2026 14:18:07.160] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. 
-[26Feb2026 14:18:07.161] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. 
-[26Feb2026 14:18:07.161] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
-[26Feb2026 14:18:07.161] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
-[26Feb2026 14:18:07.161] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. 
-[26Feb2026 14:18:11.379] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[26Feb2026 14:18:11.826] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[26Feb2026 14:18:11.966] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[26Feb2026 14:18:12.400] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[26Feb2026 14:18:12.925] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 1%
-[26Feb2026 14:18:13.404] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 3%
-[26Feb2026 14:18:13.907] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 4%
-[26Feb2026 14:18:14.397] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 5%
-[26Feb2026 14:18:14.903] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 7%
-[26Feb2026 14:18:15.418] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 9%
-[26Feb2026 14:18:15.911] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 10%
-[26Feb2026 14:18:16.412] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 14%
-[26Feb2026 14:18:16.904] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 16%
-[26Feb2026 14:18:17.409] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 19%
-[26Feb2026 14:18:17.905] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 22%
-[26Feb2026 14:18:18.440] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 24%
-[26Feb2026 14:18:18.897] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 26%
-[26Feb2026 14:18:19.416] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 28%
-[26Feb2026 14:18:19.898] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 32%
-[26Feb2026 14:18:20.419] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 35%
-[26Feb2026 14:18:20.899] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 38%
-[26Feb2026 14:18:21.406] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 43%
-[26Feb2026 14:18:21.909] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 45%
-[26Feb2026 14:18:22.415] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 49%
-[26Feb2026 14:18:22.919] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 54%
-[26Feb2026 14:18:23.424] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 56%
-[26Feb2026 14:18:23.909] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 59%
-[26Feb2026 14:18:24.412] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 64%
-[26Feb2026 14:18:24.924] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 68%
-[26Feb2026 14:18:25.419] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 70%
-[26Feb2026 14:18:25.993] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 72%
-[26Feb2026 14:18:26.406] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 75%
-[26Feb2026 14:18:26.906] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 79%
-[26Feb2026 14:18:27.426] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 83%
-[26Feb2026 14:18:27.907] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 84%
-[26Feb2026 14:18:28.434] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 88%
-[26Feb2026 14:18:28.909] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 92%
-[26Feb2026 14:18:29.426] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 96%
-[26Feb2026 14:18:29.845] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[26Feb2026 14:18:29.849] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 18454 ms
-[26Feb2026 14:18:29.918] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[26Feb2026 14:18:29.920] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[26Feb2026 14:18:30.013] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[26Feb2026 14:18:30.344] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[26Feb2026 14:18:30.370] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:abb78216] logged in with entity id 122 at (5.5, 63.0, 182.5)
-[26Feb2026 14:18:30.480] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[26Feb2026 14:18:31.002] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
-[26Feb2026 14:18:52.261] [Server thread/INFO] [net.minecraft.server.commands.LocateCommand/]: Locating element minecraft:swamp took 139 ms
-[26Feb2026 14:18:52.266] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] The nearest minecraft:swamp is at [-411, 63, 182] (416 blocks away)
-[26Feb2026 14:19:04.338] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to -410.500000, 63.000000, 182.500000]
-[26Feb2026 14:19:04.339] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 7244ms or 144 ticks behind
-[26Feb2026 14:19:04.382] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to -410.500000, 63.000000, 182.500000
-[26Feb2026 14:19:21.859] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set the time to 13000]
-[26Feb2026 14:19:21.879] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set the time to 13000
-[26Feb2026 14:19:52.346] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 9201ms or 184 ticks behind
-[26Feb2026 14:19:52.347] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Could not find a biome of type "minecraft:mangrove_swamp" within reasonable distance
-[26Feb2026 14:19:55.991] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Not Secure] <Dev> F**K
-[26Feb2026 14:19:55.996] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [CHAT] <Dev> F**K
-[26Feb2026 14:20:10.694] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: ]
-[26Feb2026 14:20:10.694] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to 4583.894509, 86.006728, 5184.498308
-[26Feb2026 14:20:11.792] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to 9583.894509, 86.006728, 10184.498308]
-[26Feb2026 14:20:11.796] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to 9583.894509, 86.006728, 10184.498308
-[26Feb2026 14:20:12.647] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to 14583.894509, 86.006728, 15184.498308]
-[26Feb2026 14:20:12.705] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to 14583.894509, 86.006728, 15184.498308
-[26Feb2026 14:20:13.510] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 6166ms or 123 ticks behind
-[26Feb2026 14:20:20.674] [Server thread/INFO] [net.minecraft.server.commands.LocateCommand/]: Locating element minecraft:mangrove_swamp took 6002 ms
-[26Feb2026 14:20:20.678] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] The nearest minecraft:mangrove_swamp is at [19703, 86, 19248] (6536 blocks away)
-[26Feb2026 14:20:24.280] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to 19703.500000, 86.000000, 19248.500000]
-[26Feb2026 14:20:24.367] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to 19703.500000, 86.000000, 19248.500000
-[26Feb2026 14:21:00.635] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 4 advancements
-[26Feb2026 14:21:13.195] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[26Feb2026 14:21:13.213] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[26Feb2026 14:21:13.226] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[26Feb2026 14:21:13.229] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[26Feb2026 14:21:14.120] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[26Feb2026 14:21:14.121] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[26Feb2026 14:21:14.135] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[26Feb2026 14:21:14.180] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[26Feb2026 14:21:14.180] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[26Feb2026 14:21:14.180] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[26Feb2026 14:21:15.095] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[26Feb2026 14:21:21.628] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[26Feb2026 14:21:21.630] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[26Feb2026 14:21:21.657] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World): All chunks are saved
-[26Feb2026 14:21:21.657] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[26Feb2026 14:21:21.657] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[26Feb2026 14:21:21.657] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[26Feb2026 14:21:24.929] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[12:56:57] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.20.1-5, --assetsDir, C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\fabric-loom\assets, --gameDir, ., --fml.forgeVersion, 47.4.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, -mixin.config, trickytrialsbackport.mixins.json, -mixin.config, trickytrialsbackport.forge.mixins.json, --mixin.config, trickytrialsbackport.mixins.json]
+[12:56:57] [main/INFO] (Launcher) ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.10 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[12:56:57] [main/INFO] (unprotect) Initializing Unprotect using ModLauncher backend, target: Minecraft and loader classes (minecraft+forge)
+[12:56:57] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
+[12:56:57] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
+[12:56:58] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
+[12:56:58] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.12/cf1f787f58d3b08b0cb53ecbba7928c09a1893c8/mixin-patched-0.8.5.12.jar%23130!/ Service=ModLauncher Env=CLIENT
+[12:56:58] [pool-5-thread-1/INFO] (EARLYDISPLAY) GL info: AMD Radeon RX 6800 GL version 4.6.14757 Core Profile Forward-Compatible Context 20.12.1 27.20.14501.28009, ATI Technologies Inc.
+[12:56:58] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.10\ccc533c7dd67e0983217197d7549c8b49e7ab453\javafmllanguage-1.20.1-47.4.10.jar is missing mods.toml file
+[12:56:58] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.10\e9a2879fe3612ea34b9728ec2633304a1e67d480\lowcodelanguage-1.20.1-47.4.10.jar is missing mods.toml file
+[12:56:58] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.10\ec5cefbbc65c67302b8fac317010faab85fa14b9\mclanguage-1.20.1-47.4.10.jar is missing mods.toml file
+[12:56:58] [main/WARN] (ModFileParser) Mod file C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.10\94dae566be650566ea9115a1414ab76bfcf5a804\fmlcore-1.20.1-47.4.10.jar is missing mods.toml file
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file javafmllanguage-1.20.1-47.4.10.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file lowcodelanguage-1.20.1-47.4.10.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file mclanguage-1.20.1-47.4.10.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file fmlcore-1.20.1-47.4.10.jar of type LIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file main of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file  of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@411bed55
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file backport-copper-age-0cd3bb3a-BeVdLB9R.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file trimmed-0cd3bb3a-1.20.1-2.1.4+forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file sherdsapi-0cd3bb3a-4.0.4+Forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file vanillabackport-0cd3bb3a-lXAo1yJs.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file platform-0cd3bb3a-XCJNVCRh.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.3.2.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file 8027754332135409843.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file backport-copper-age-0cd3bb3a-BeVdLB9R.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file trimmed-0cd3bb3a-1.20.1-2.1.4+forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file sherdsapi-0cd3bb3a-4.0.4+Forge.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file vanillabackport-0cd3bb3a-lXAo1yJs.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file platform-0cd3bb3a-XCJNVCRh.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.3.2.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file 8027754332135409843.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@2df019b8
+[12:56:58] [main/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
+[12:56:58] [main/INFO] (ModDiscoverer) Found mod file MixinExtras-0.3.2.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator@76c5599b
+[12:57:00] [main/INFO] (mixin) Compatibility level set to JAVA_17
+[12:57:00] [main/ERROR] (mixin) Mixin config copperagebackport.forge.mixins.json does not specify "minVersion" property
+[12:57:00] [main/INFO] (LaunchServiceHandler) Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\dandi\scoop\apps\gradle\current\.gradle\caches\fabric-loom\assets, --assetIndex, 1.20.1-5]
+[12:57:00] [main/INFO] (mixin) Remapping refMap VanillaBackport-common-1.20.1-common-refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (mixin) Remapping refMap VanillaBackport-forge-1.20.1-forge-refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (mixin) Remapping refMap copperagebackport.forge.refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (unprotect) Found 7423 Minecraft classes
+[12:57:00] [main/INFO] (mixin) Remapping refMap sherdsapi.refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (mixin) Remapping refMap trimmed.refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (mixin) Remapping refMap trimmed.refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (mixin) Remapping refMap Platform-forge-1.20.1-forge-refmap.json using RemapperChain (Architectury Patched)
+[12:57:00] [main/INFO] (mixin) Remapping refMap Platform-common-1.20.1-common-refmap.json using RemapperChain (Architectury Patched)
+[12:57:01] [main/WARN] (mixin) Error loading class: net/mehvahdjukaar/moonlight/api/set/leaves/LeavesType (java.lang.ClassNotFoundException: net.mehvahdjukaar.moonlight.api.set.leaves.LeavesType)
+[12:57:01] [main/WARN] (mixin) Error loading class: net/mehvahdjukaar/moonlight/api/set/wood/WoodType (java.lang.ClassNotFoundException: net.mehvahdjukaar.moonlight.api.set.wood.WoodType)
+[12:57:01] [main/WARN] (mixin) Error loading class: jeresources/api/util/BiomeHelper (java.lang.ClassNotFoundException: jeresources.api.util.BiomeHelper)
+[12:57:01] [main/WARN] (mixin) Error loading class: yalter/mousetweaks/Main (java.lang.ClassNotFoundException: yalter.mousetweaks.Main)
+[12:57:01] [main/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.2).
+[27Feb2026 12:57:02.870] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[27Feb2026 12:57:05.816] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 305 milliseconds
+[27Feb2026 12:57:07.495] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.4.10-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10/forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/assets/.mcassetsroot' uses unexpected schema
+[27Feb2026 12:57:07.496] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/dandi/scoop/apps/gradle/current/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.4.10-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10/forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/data/.mcassetsroot' uses unexpected schema
+[27Feb2026 12:57:07.512] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[27Feb2026 12:57:07.516] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[27Feb2026 12:57:07.602] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
+[27Feb2026 12:57:07.857] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Loaded config: golemBuildSpawning=true, golemPressesButtons=true, buttonPressChance=5%, golemTransportStackSize=16, weatheringTickFrom=504000, weatheringTickTo=552000
+[27Feb2026 12:57:07.863] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Initializing Copper-Age-Backport on Forge
+[27Feb2026 12:57:07.864] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering sounds for Copper-Age-Backport
+[27Feb2026 12:57:07.866] [modloading-worker-0/INFO] [Sherds API/]: Initializing Sherds API for Forge in a development environment...
+[27Feb2026 12:57:07.873] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering memory module types for Copper-Age-Backport
+[27Feb2026 12:57:07.875] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering particles for Copper-Age-Backport
+[27Feb2026 12:57:07.884] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering blocks for Copper-Age-Backport
+[27Feb2026 12:57:07.928] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering block entities for Copper-Age-Backport
+[27Feb2026 12:57:07.930] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering entities for Copper-Age-Backport
+[27Feb2026 12:57:07.949] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.10, for MC 1.20.1 with MCP 20230612.114412
+[27Feb2026 12:57:07.949] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.10 Initialized
+[27Feb2026 12:57:07.983] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Registering items for Copper-Age-Backport
+[27Feb2026 12:57:08.018] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Mod 'fastchest' not loaded, skipping compatibility module
+[27Feb2026 12:57:08.019] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Mod 'sophisticatedstorage' not loaded, skipping compatibility module
+[27Feb2026 12:57:08.020] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Mod 'ironchest' not loaded, skipping compatibility module
+[27Feb2026 12:57:08.020] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Initializing 0 compatibility modules...
+[27Feb2026 12:57:08.020] [modloading-worker-0/INFO] [Copper-Age-Backport/]: ModCompat: Initialization complete. 0 chest handlers, 0 container handlers registered.
+[27Feb2026 12:57:08.020] [modloading-worker-0/INFO] [Copper-Age-Backport/]: Copper-Age-Backport initialized successfully!
+[27Feb2026 12:57:09.511] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
+[27Feb2026 12:57:09.765] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[27Feb2026 12:57:10.054] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[27Feb2026 12:57:10.813] [Worker-Main-2/WARN] [net.minecraft.client.renderer.texture.SpriteLoader/]: Texture sherdsapi:entity/decorated_pot/api with size 1464x1464 limits mip level from 4 to 3
+[27Feb2026 12:57:11.050] [Render thread/INFO] [Copper-Age-Backport/]: Fired 1 registration callbacks
+[27Feb2026 12:57:11.158] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [sherdsapi] Starting version check at https://api.modrinth.com/updates/sherdsapi/forge_updates.json
+[27Feb2026 12:57:11.523] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [sherdsapi] Found status: UP_TO_DATE Current: 4.0.4 Target: null
+[27Feb2026 12:57:11.523] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[27Feb2026 12:57:11.766] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: UP_TO_DATE Current: 47.4.10 Target: null
+[27Feb2026 12:57:12.074] [Render thread/INFO] [Trimmed/]: Client tags loaded!
+[27Feb2026 12:57:12.074] [Render thread/INFO] [Trimmed/]: Client maps loaded!
+[27Feb2026 12:57:13.065] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[27Feb2026 12:57:13.065] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[27Feb2026 12:57:13.066] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: trickytrialsbackport:music.disc.creator
+[27Feb2026 12:57:13.066] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: trickytrialsbackport:music.disc.creator_music_box
+[27Feb2026 12:57:13.066] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: trickytrialsbackport:music.disc.precipice
+[27Feb2026 12:57:13.195] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Speakers (Realtek High Definition Audio)
+[27Feb2026 12:57:13.195] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[27Feb2026 12:57:13.344] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[27Feb2026 12:57:13.518] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[27Feb2026 12:57:13.521] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[27Feb2026 12:57:13.526] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[27Feb2026 12:57:13.531] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[27Feb2026 12:57:13.578] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/chest.png-atlas
+[27Feb2026 12:57:13.595] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x2048x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[27Feb2026 12:57:13.601] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[27Feb2026 12:57:13.603] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[27Feb2026 12:57:13.754] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[27Feb2026 12:57:13.814] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[27Feb2026 12:57:13.821] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[27Feb2026 12:57:13.822] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[27Feb2026 12:57:13.826] [Render thread/INFO] [com.blackgear.vanillabackport.core.VanillaBackport/]: Loaded 2 custom leaf colors: [minecraft:azalea_leaves, minecraft:flowering_azalea_leaves]
+[27Feb2026 12:57:13.826] [Render thread/INFO] [Trimmed/]: Item model overrides loaded!
+[27Feb2026 12:57:13.826] [Render thread/INFO] [Trimmed/]: Trimmed templates are prepared!
+[27Feb2026 12:57:14.267] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[27Feb2026 12:57:17.547] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Deleting level New World
+[27Feb2026 12:57:17.547] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Attempt 1...
+[27Feb2026 12:57:18.705] [Worker-Main-2/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:minecraft:spawners/trial_chamber/key
+com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'minecraft:trial_key'
+	at net.minecraft.util.GsonHelper.method_17995(GsonHelper.java:145) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:145) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:153) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:55) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:40) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:151) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:129) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:86) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:74) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:102) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:471) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:481) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:872) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:849) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.method_51189(LootDataManager.java:55) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[27Feb2026 12:57:18.768] [Worker-Main-2/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:minecraft:spawners/trial_chamber/items_to_drop_when_ominous
+com.google.gson.JsonSyntaxException: Unknown potion 'minecraft:wind_charged'
+	at net.minecraft.world.level.storage.loot.functions.SetPotionFunction$Serializer.method_38931(SetPotionFunction.java:50) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.world.level.storage.loot.functions.SetPotionFunction$Serializer.deserialize(SetPotionFunction.java:50) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.functions.SetPotionFunction$Serializer.deserialize(SetPotionFunction.java:39) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction$Serializer.deserialize(LootItemConditionalFunction.java:99) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction$Serializer.deserialize(LootItemConditionalFunction.java:88) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:102) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:481) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:149) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:129) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:86) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:74) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:102) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:471) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:481) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:872) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:849) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.method_51189(LootDataManager.java:55) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[27Feb2026 12:57:18.877] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.885] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.890] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.894] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.895] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.897] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_palegardenbackport as it's serializer returned null
+[27Feb2026 12:57:18.898] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.900] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:18.905] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_vanilliabackports as it's serializer returned null
+[27Feb2026 12:57:18.908] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[27Feb2026 12:57:18.993] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1374 advancements
+[27Feb2026 12:57:20.047] [Worker-Main-4/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:minecraft:spawners/trial_chamber/key
+com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'minecraft:trial_key'
+	at net.minecraft.util.GsonHelper.method_17995(GsonHelper.java:145) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.util.GsonHelper.convertToItem(GsonHelper.java:145) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsItem(GsonHelper.java:153) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:55) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootItem$Serializer.deserialize(LootItem.java:40) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:151) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:129) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:86) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:74) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:102) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:471) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:481) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:872) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:849) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.method_51189(LootDataManager.java:55) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[27Feb2026 12:57:20.193] [Worker-Main-4/ERROR] [net.minecraftforge.common.ForgeHooks/]: Couldn't parse element loot_tables:minecraft:spawners/trial_chamber/items_to_drop_when_ominous
+com.google.gson.JsonSyntaxException: Unknown potion 'minecraft:wind_charged'
+	at net.minecraft.world.level.storage.loot.functions.SetPotionFunction$Serializer.method_38931(SetPotionFunction.java:50) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.world.level.storage.loot.functions.SetPotionFunction$Serializer.deserialize(SetPotionFunction.java:50) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.functions.SetPotionFunction$Serializer.deserialize(SetPotionFunction.java:39) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction$Serializer.deserialize(LootItemConditionalFunction.java:99) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction$Serializer.deserialize(LootItemConditionalFunction.java:88) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:102) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:481) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:149) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer$Serializer.deserializeCustom(LootPoolSingletonContainer.java:129) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:86) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Serializer.deserialize(LootPoolEntryContainer.java:74) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.GsonAdapterFactory$JsonAdapter.deserialize(GsonAdapterFactory.java:102) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:471) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:192) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootPool$Serializer.deserialize(LootPool.java:189) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.ArrayTypeAdapter.read(ArrayTypeAdapter.java:72) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1290) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:179) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraft.util.GsonHelper.convertToObject(GsonHelper.java:463) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.util.GsonHelper.getAsObject(GsonHelper.java:481) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:294) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootTable$Serializer.deserialize(LootTable.java:291) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1319) ~[gson-2.10.jar%23139!/:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1261) ~[gson-2.10.jar%23139!/:?]
+	at net.minecraftforge.common.ForgeHooks.loadLootTable(ForgeHooks.java:872) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraftforge.common.ForgeHooks.lambda$getLootTableDeserializer$3(ForgeHooks.java:849) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23200%23207!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataType.deserialize(LootDataType.java:45) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.lambda$scheduleElementParse$4(LootDataManager.java:56) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at net.minecraft.world.level.storage.loot.LootDataManager.method_51189(LootDataManager.java:55) ~[forge-1.20.1-47.4.10-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40359-v2-forge-1.20.1-47.4.10.jar%23201!/:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[27Feb2026 12:57:20.324] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.330] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.336] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.338] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.339] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_weathered_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.340] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_palegardenbackport as it's serializer returned null
+[27Feb2026 12:57:20.341] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:exposed_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.342] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:waxed_oxidized_lightning_rod_from_friendsandfoes as it's serializer returned null
+[27Feb2026 12:57:20.347] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Skipping loading recipe copperagebackport:pale_oak_shelf_from_vanilliabackports as it's serializer returned null
+[27Feb2026 12:57:20.348] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[27Feb2026 12:57:20.404] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1374 advancements
+[27Feb2026 12:57:23.078] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
+[27Feb2026 12:57:23.078] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[27Feb2026 12:57:23.218] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file .\saves\New World\serverconfig\forge-server.toml is not correct. Correcting
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. 
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. 
+[27Feb2026 12:57:23.219] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
+[27Feb2026 12:57:23.220] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[27Feb2026 12:57:23.220] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. 
+[27Feb2026 12:57:27.416] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[27Feb2026 12:57:27.910] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Feb2026 12:57:27.944] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Feb2026 12:57:28.605] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Feb2026 12:57:28.969] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Feb2026 12:57:29.436] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 1%
+[27Feb2026 12:57:29.946] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 2%
+[27Feb2026 12:57:30.631] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 3%
+[27Feb2026 12:57:30.981] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 4%
+[27Feb2026 12:57:31.493] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 6%
+[27Feb2026 12:57:31.928] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 6%
+[27Feb2026 12:57:32.446] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 9%
+[27Feb2026 12:57:32.971] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 10%
+[27Feb2026 12:57:33.439] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 11%
+[27Feb2026 12:57:33.964] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 14%
+[27Feb2026 12:57:34.429] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 16%
+[27Feb2026 12:57:34.942] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 18%
+[27Feb2026 12:57:35.474] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 21%
+[27Feb2026 12:57:35.935] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 23%
+[27Feb2026 12:57:36.464] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 25%
+[27Feb2026 12:57:36.943] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 30%
+[27Feb2026 12:57:37.463] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 33%
+[27Feb2026 12:57:37.933] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 35%
+[27Feb2026 12:57:38.445] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 40%
+[27Feb2026 12:57:38.998] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 43%
+[27Feb2026 12:57:39.485] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 44%
+[27Feb2026 12:57:39.928] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 47%
+[27Feb2026 12:57:40.434] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 49%
+[27Feb2026 12:57:40.948] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 53%
+[27Feb2026 12:57:41.434] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 56%
+[27Feb2026 12:57:41.943] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 59%
+[27Feb2026 12:57:42.452] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 63%
+[27Feb2026 12:57:42.936] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 68%
+[27Feb2026 12:57:43.430] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 71%
+[27Feb2026 12:57:43.940] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 73%
+[27Feb2026 12:57:44.429] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 76%
+[27Feb2026 12:57:44.936] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 80%
+[27Feb2026 12:57:45.442] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 83%
+[27Feb2026 12:57:45.954] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 86%
+[27Feb2026 12:57:46.441] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 89%
+[27Feb2026 12:57:46.941] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 93%
+[27Feb2026 12:57:47.434] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 96%
+[27Feb2026 12:57:47.802] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 20376 ms
+[27Feb2026 12:57:47.803] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[27Feb2026 12:57:47.864] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[27Feb2026 12:57:47.865] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[27Feb2026 12:57:47.935] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[27Feb2026 12:57:48.634] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[27Feb2026 12:57:48.660] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:cc88f710] logged in with entity id 106 at (2.5, 89.0, -32.5)
+[27Feb2026 12:57:48.727] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[27Feb2026 12:57:50.009] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
+[27Feb2026 12:58:02.759] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[27Feb2026 12:58:02.815] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[27Feb2026 12:58:03.001] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[27Feb2026 12:58:03.122] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[27Feb2026 12:58:03.484] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[27Feb2026 12:58:03.484] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[27Feb2026 12:58:03.592] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
+[27Feb2026 12:58:03.645] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[27Feb2026 12:58:03.646] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[27Feb2026 12:58:03.646] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[27Feb2026 12:58:06.525] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[27Feb2026 12:58:11.677] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[27Feb2026 12:58:11.679] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[27Feb2026 12:58:11.712] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World): All chunks are saved
+[27Feb2026 12:58:11.712] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[27Feb2026 12:58:11.712] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[27Feb2026 12:58:11.712] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[27Feb2026 12:58:12.982] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!

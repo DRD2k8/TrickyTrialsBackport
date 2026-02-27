@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.registry;
 
+import com.drd.trickytrialsbackport.entity.OminousItemSpawner;
 import com.drd.trickytrialsbackport.entity.monster.Bogged;
 import com.drd.trickytrialsbackport.entity.monster.breeze.Breeze;
 import com.drd.trickytrialsbackport.entity.projectile.windcharge.BreezeWindCharge;
@@ -19,6 +20,7 @@ public class ModEntities {
     public static Supplier<EntityType<Bogged>> BOGGED;
     public static Supplier<EntityType<Breeze>> BREEZE;
     public static Supplier<EntityType<BreezeWindCharge>> BREEZE_WIND_CHARGE;
+    public static Supplier<EntityType<OminousItemSpawner>> OMINOUS_ITEM_SPAWNER;
     public static Supplier<EntityType<WindCharge>> WIND_CHARGE;
 
     public static void register() {
@@ -32,6 +34,11 @@ public class ModEntities {
                 Registries.ENTITY_TYPE,
                 "breeze_wind_charge",
                 () -> EntityType.Builder.<BreezeWindCharge>of(BreezeWindCharge::new, MobCategory.MISC).sized(0.3125f, 0.3125f).clientTrackingRange(4).updateInterval(10).build("breeze_wind_charge")
+        );
+        OMINOUS_ITEM_SPAWNER = helper.registerAuto(
+                Registries.ENTITY_TYPE,
+                "ominous_item_spawner",
+                () -> EntityType.Builder.of(OminousItemSpawner::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(8).build("ominous_item_spawner")
         );
         WIND_CHARGE = helper.registerAuto(
                 Registries.ENTITY_TYPE,

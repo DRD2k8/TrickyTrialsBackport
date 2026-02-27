@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "MobEffectInvoker",
     "RecordItemInvoker",
     "SensorTypeInvoker",
     "StairBlockInvoker"

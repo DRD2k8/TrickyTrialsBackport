@@ -4,6 +4,9 @@ import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.registry.ModBlocks;
 import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModItems;
+import com.google.gson.JsonObject;
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.EntityLootSubProvider;
@@ -25,8 +28,10 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerC
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -123,6 +128,34 @@ public class ModLootTableProvider {
         @Override
         protected Stream<EntityType<?>> getKnownEntityTypes() {
             return ModEntities.ENTITIES.stream().map(Supplier::get);
+        }
+    }
+
+    public static class ModLootTableRawProvider implements DataProvider {
+        private final PackOutput output;
+
+        public ModLootTableRawProvider(PackOutput output) {
+            this.output = output;
+        }
+
+        @Override
+        public CompletableFuture<?> run(CachedOutput cache) {
+            JsonObject json = new JsonObject();
+            json.addProperty("type", "minecraft:block");
+            json.addProperty("random_sequence", "minecraft:blocks/trial_spawner");
+
+            Path path = output.getOutputFolder(PackOutput.Target.DATA_PACK)
+                    .resolve("minecraft")
+                    .resolve("loot_tables")
+                    .resolve("blocks")
+                    .resolve("trial_spawner.json");
+
+            return DataProvider.saveStable(cache, json, path);
+        }
+
+        @Override
+        public String getName() {
+            return "Raw Loot Tables (Random Sequence)";
         }
     }
 }

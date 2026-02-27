@@ -100,6 +100,12 @@ public class CreativeTabPlacements {
 
         if (tab == CreativeModeTabs.SPAWN_EGGS) {
             entries.addAfter(Items.BLAZE_SPAWN_EGG, ModItems.BREEZE_SPAWN_EGG.get(), ModItems.BOGGED_SPAWN_EGG.get());
+
+            ItemLike creakingHeart = BuiltInRegistries.ITEM.get(
+                    new ResourceLocation("minecraft", "creaking_heart")
+            );
+            entries.addBefore(creakingHeart, ModItems.TRIAL_SPAWNER.get());
+            entries.addAfter(Items.SPAWNER, ModItems.TRIAL_SPAWNER.get());
         }
     }
 }
