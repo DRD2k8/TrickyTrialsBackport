@@ -72,6 +72,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("scrape_pottery_sherd");
         VANILLA_BACKPORT_IDS.add("sunflowers");
         VANILLA_BACKPORT_IDS.add("tides");
+        VANILLA_BACKPORT_IDS.add("trial_key");
         VANILLA_BACKPORT_IDS.add("trial_omen");
         VANILLA_BACKPORT_IDS.add("trial_spawner");
         VANILLA_BACKPORT_IDS.add("trial_spawner_detection");
