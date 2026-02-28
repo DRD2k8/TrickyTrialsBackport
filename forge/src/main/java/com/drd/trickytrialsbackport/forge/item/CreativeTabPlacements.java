@@ -70,6 +70,10 @@ public class CreativeTabPlacements {
                     Items.TUFF);
         }
 
+        if (tab == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            entries.addAfter(Items.ENDER_EYE, ModBlocks.VAULT.get());
+        }
+
         if (tab == CreativeModeTabs.REDSTONE_BLOCKS) {
             entries.addAfter(Items.DROPPER, ModBlocks.CRAFTER.get());
         }

@@ -42,6 +42,10 @@ public class CreativeTabPlacements {
                 ModBlocks.CHISELED_TUFF_BRICKS.get());
     }
 
+    private static void addItemsToFunctionalBlocksTab(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.ENDER_EYE, ModBlocks.VAULT.get());
+    }
+
     private static void addItemsToRedstoneTab(FabricItemGroupEntries entries) {
         entries.addAfter(Items.DROPPER, ModBlocks.CRAFTER.get());
     }
@@ -83,6 +87,7 @@ public class CreativeTabPlacements {
 
     public static void registerTabPlacements() {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(CreativeTabPlacements::addItemsToBuildingBlocksTab);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(CreativeTabPlacements::addItemsToFunctionalBlocksTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(CreativeTabPlacements::addItemsToRedstoneTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(CreativeTabPlacements::addItemsToToolsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(CreativeTabPlacements::addItemsToCombatTab);
