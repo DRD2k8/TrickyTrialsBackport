@@ -3,6 +3,7 @@ package com.drd.trickytrialsbackport.registry;
 import com.drd.trickytrialsbackport.block.CrafterBlock;
 import com.drd.trickytrialsbackport.block.HeavyCoreBlock;
 import com.drd.trickytrialsbackport.block.TrialSpawnerBlock;
+import com.drd.trickytrialsbackport.block.VaultBlock;
 import com.drd.trickytrialsbackport.mixin.StairBlockInvoker;
 import com.drd.trickytrialsbackport.util.ModSoundTypes;
 import net.minecraft.core.BlockPos;
@@ -44,6 +45,7 @@ public class ModBlocks {
     public static Supplier<Block> TUFF_SLAB;
     public static Supplier<Block> TUFF_STAIRS;
     public static Supplier<Block> TUFF_WALL;
+    public static Supplier<Block> VAULT;
 
     public static <T extends Block> Supplier<T> registerBlockWithItem(String name, Supplier<T> block) {
         Supplier<T> toReturn = RegistryHelper.getInstance().registerAuto(Registries.BLOCK, name, block);
@@ -106,6 +108,10 @@ public class ModBlocks {
                 () -> StairBlockInvoker.create(Blocks.TUFF.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.TUFF)));
         TUFF_WALL = registerBlockWithItem("tuff_wall",
                 () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+        VAULT = registerBlockWithItem("vault",
+                () -> new VaultBlock(BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).noOcclusion().requiresCorrectToolForDrops()
+                        .sound(ModSoundTypes.VAULT).lightLevel(light -> light.getValue(VaultBlock.STATE).lightLevel()).strength(50f).isViewBlocking(ModBlocks::never)));
 
         BLOCKS.add(TRIAL_SPAWNER);
     }

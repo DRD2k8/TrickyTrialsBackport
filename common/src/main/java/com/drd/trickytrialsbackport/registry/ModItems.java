@@ -24,6 +24,8 @@ public class ModItems {
     public static Supplier<Item> MUSIC_DISC_CREATOR;
     public static Supplier<Item> MUSIC_DISC_CREATOR_MUSIC_BOX;
     public static Supplier<Item> MUSIC_DISC_PRECIPICE;
+    public static Supplier<Item> OMINOUS_TRIAL_KEY;
+    public static Supplier<Item> TRIAL_KEY;
     public static Supplier<Item> TRIAL_SPAWNER;
     public static Supplier<Item> SCRAPE_POTTERY_SHERD;
     public static Supplier<Item> WIND_CHARGE;
@@ -44,7 +46,9 @@ public class ModItems {
         MUSIC_DISC_CREATOR = helper.registerAuto(Registries.ITEM, "music_disc_creator", () -> RecordItemInvoker.create(12, ModSounds.MUSIC_DISC_CREATOR.get(), new Item.Properties().rarity(Rarity.RARE), 176));
         MUSIC_DISC_CREATOR_MUSIC_BOX = helper.registerAuto(Registries.ITEM, "music_disc_creator_music_box", () -> RecordItemInvoker.create(11, ModSounds.MUSIC_DISC_CREATOR_MUSIC_BOX.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 73));
         MUSIC_DISC_PRECIPICE = helper.registerAuto(Registries.ITEM, "music_disc_precipice", () -> RecordItemInvoker.create(13, ModSounds.MUSIC_DISC_PRECIPICE.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 299));
+        OMINOUS_TRIAL_KEY = helper.registerAuto(Registries.ITEM, "ominous_trial_key", () -> new Item(new Item.Properties()));
         SCRAPE_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "scrape_pottery_sherd", () -> new Item(new Item.Properties()));
+        TRIAL_KEY = helper.registerAuto(Registries.ITEM, "trial_key", () -> new Item(new Item.Properties()));
         TRIAL_SPAWNER = helper.registerAuto(Registries.ITEM, "trial_spawner", () -> new TrialSpawnerItem(ModBlocks.TRIAL_SPAWNER.get(), new Item.Properties()));
         WIND_CHARGE = helper.registerAuto(Registries.ITEM, "wind_charge", () -> new WindChargeItem(new Item.Properties()));
     }

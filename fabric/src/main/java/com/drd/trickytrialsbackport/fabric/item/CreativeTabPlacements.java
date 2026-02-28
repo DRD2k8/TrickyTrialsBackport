@@ -68,6 +68,7 @@ public class CreativeTabPlacements {
         entries.addAfter(Items.FRIEND_POTTERY_SHERD, ModItems.GUSTER_POTTERY_SHERD.get());
         entries.addAfter(Items.PRIZE_POTTERY_SHERD, ModItems.SCRAPE_POTTERY_SHERD.get());
         entries.addAfter(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE, ModItems.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE.get(), ModItems.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.get());
+        entries.addAfter(Items.EXPERIENCE_BOTTLE, ModItems.TRIAL_KEY.get(), ModItems.OMINOUS_TRIAL_KEY.get());
     }
 
     private static void addItemsToSpawnEggsTab(FabricItemGroupEntries entries) {

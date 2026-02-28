@@ -36,6 +36,7 @@ public class TrickyTrialsBackportForgeClient {
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.VAULT.get(), RenderType.cutout());
         });
         EntityRenderers.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
         EntityRenderers.register(ModEntities.BREEZE.get(), BreezeRenderer::new);

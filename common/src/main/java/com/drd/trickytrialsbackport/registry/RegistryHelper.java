@@ -57,7 +57,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("music_disc_creator_music_box");
         VANILLA_BACKPORT_IDS.add("music_disc_precipice");
         VANILLA_BACKPORT_IDS.add("ominous_spawning");
-        VANILLA_BACKPORT_IDS.add("ominous_trial_spawner");
+        VANILLA_BACKPORT_IDS.add("ominous_trial_key");
         VANILLA_BACKPORT_IDS.add("orb");
         VANILLA_BACKPORT_IDS.add("owlemons");
         VANILLA_BACKPORT_IDS.add("passage");
@@ -84,6 +84,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("tuff_stairs");
         VANILLA_BACKPORT_IDS.add("tuff_wall");
         VANILLA_BACKPORT_IDS.add("unpacked");
+        VANILLA_BACKPORT_IDS.add("vault");
         VANILLA_BACKPORT_IDS.add("wind_charge");
     }
 

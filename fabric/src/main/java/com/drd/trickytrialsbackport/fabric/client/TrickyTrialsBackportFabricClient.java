@@ -30,6 +30,7 @@ public final class TrickyTrialsBackportFabricClient implements ClientModInitiali
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VAULT.get(), RenderType.cutout());
         EntityRendererRegistry.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
         EntityRendererRegistry.register(ModEntities.BREEZE.get(), BreezeRenderer::new);
         EntityRendererRegistry.register(ModEntities.BREEZE_WIND_CHARGE.get(), BreezeWindChargeRenderer::new);

@@ -25,7 +25,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         musicDisc("music_disc_creator");
         musicDisc("music_disc_creator_music_box");
         musicDisc("music_disc_precipice");
+        simpleItem("ominous_trial_key");
         simpleItem("scrape_pottery_sherd");
+        simpleItem("trial_key");
         simpleItem("wind_charge");
     }
 

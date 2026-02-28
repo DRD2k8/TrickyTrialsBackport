@@ -40,6 +40,15 @@ public class ModSoundTypes {
             ModSounds.TUFF_BRICKS_HIT.get(),
             ModSounds.TUFF_BRICKS_FALL.get()
     );
+    public static SoundType VAULT = new SoundType(
+            1f,
+            1f,
+            ModSounds.VAULT_BREAK.get(),
+            ModSounds.VAULT_STEP.get(),
+            ModSounds.VAULT_PLACE.get(),
+            ModSounds.VAULT_HIT.get(),
+            ModSounds.VAULT_FALL.get()
+    );
 
     public static void register() {
     }
