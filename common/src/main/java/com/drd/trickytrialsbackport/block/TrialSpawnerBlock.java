@@ -3,6 +3,7 @@ package com.drd.trickytrialsbackport.block;
 import com.drd.trickytrialsbackport.block.entity.trialspawner.TrialSpawnerBlockEntity;
 import com.drd.trickytrialsbackport.block.entity.trialspawner.TrialSpawnerState;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
+import com.drd.trickytrialsbackport.util.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
@@ -19,18 +20,15 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import org.jetbrains.annotations.Nullable;
 
 public class TrialSpawnerBlock extends BaseEntityBlock {
-    public static final EnumProperty<TrialSpawnerState> STATE =
-            EnumProperty.create("trial_spawner_state", TrialSpawnerState.class);
+    public static final EnumProperty<TrialSpawnerState> STATE = ModBlockStateProperties.TRIAL_SPAWNER_STATE;
+    public static final BooleanProperty OMINOUS = ModBlockStateProperties.OMINOUS;
 
-    public static final BooleanProperty OMINOUS =
-            BooleanProperty.create("ominous");
-
-    public TrialSpawnerBlock(Properties settings) {
-        super(settings);
+    public TrialSpawnerBlock(Properties properties) {
+        super(properties);
         this.registerDefaultState(
                 this.stateDefinition.any()
                         .setValue(STATE, TrialSpawnerState.INACTIVE)
-                        .setValue(OMINOUS, false)
+                        .setValue(OMINOUS, Boolean.FALSE)
         );
     }
 
@@ -52,23 +50,16 @@ public class TrialSpawnerBlock extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
-            Level level,
-            BlockState state,
-            BlockEntityType<T> type
-    ) {
-        return level instanceof ServerLevel
-                ? createTickerHelper(
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+                                                                  BlockState state,
+                                                                  BlockEntityType<T> type) {
+        return createTickerHelper(
                 type,
                 ModBlockEntities.TRIAL_SPAWNER.get(),
-                (lvl, pos, st, be) -> be.getTrialSpawner()
-                        .tickServer((ServerLevel) lvl, pos, st.getValue(OMINOUS))
-        )
-                : createTickerHelper(
-                type,
-                ModBlockEntities.TRIAL_SPAWNER.get(),
-                (lvl, pos, st, be) -> be.getTrialSpawner()
-                        .tickClient(lvl, pos, st.getValue(OMINOUS))
+                (lvl, pos, st, be) -> {
+                    TrialSpawnerBlockEntity spawnerBe = (TrialSpawnerBlockEntity) be;
+                    spawnerBe.getTrialSpawner().tick(lvl, pos, st);
+                }
         );
     }
 }

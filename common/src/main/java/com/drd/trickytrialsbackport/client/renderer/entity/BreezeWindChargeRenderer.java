@@ -1,8 +1,8 @@
-package com.drd.trickytrialsbackport.client.renderer;
+package com.drd.trickytrialsbackport.client.renderer.entity;
 
-import com.drd.trickytrialsbackport.client.model.WindChargeModel;
+import com.drd.trickytrialsbackport.client.model.BreezeWindChargeModel;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
-import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
+import com.drd.trickytrialsbackport.entity.projectile.windcharge.BreezeWindCharge;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -13,19 +13,19 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
-public class WindChargeRenderer extends EntityRenderer<WindCharge> {
+public class BreezeWindChargeRenderer extends EntityRenderer<BreezeWindCharge> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("textures/entity/projectiles/wind_charge.png");
 
-    private final WindChargeModel model;
+    private final BreezeWindChargeModel model;
 
-    public WindChargeRenderer(EntityRendererProvider.Context ctx) {
+    public BreezeWindChargeRenderer(EntityRendererProvider.Context ctx) {
         super(ctx);
-        this.model = new WindChargeModel(ctx.bakeLayer(ModModelLayers.WIND_CHARGE));
+        this.model = new BreezeWindChargeModel(ctx.bakeLayer(ModModelLayers.WIND_CHARGE));
     }
 
     @Override
-    public void render(WindCharge entity, float yaw, float partialTicks,
+    public void render(BreezeWindCharge entity, float yaw, float partialTicks,
                        PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         poseStack.pushPose();
 
@@ -53,7 +53,7 @@ public class WindChargeRenderer extends EntityRenderer<WindCharge> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(WindCharge entity) {
+    public ResourceLocation getTextureLocation(BreezeWindCharge entity) {
         return TEXTURE;
     }
 }

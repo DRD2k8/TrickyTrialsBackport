@@ -1,8 +1,8 @@
-package com.drd.trickytrialsbackport.client.renderer;
+package com.drd.trickytrialsbackport.client.renderer.entity;
 
-import com.drd.trickytrialsbackport.client.model.BreezeWindChargeModel;
+import com.drd.trickytrialsbackport.client.model.WindChargeModel;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
-import com.drd.trickytrialsbackport.entity.projectile.windcharge.BreezeWindCharge;
+import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -13,19 +13,19 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
-public class BreezeWindChargeRenderer extends EntityRenderer<BreezeWindCharge> {
+public class WindChargeRenderer extends EntityRenderer<WindCharge> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("textures/entity/projectiles/wind_charge.png");
 
-    private final BreezeWindChargeModel model;
+    private final WindChargeModel model;
 
-    public BreezeWindChargeRenderer(EntityRendererProvider.Context ctx) {
+    public WindChargeRenderer(EntityRendererProvider.Context ctx) {
         super(ctx);
-        this.model = new BreezeWindChargeModel(ctx.bakeLayer(ModModelLayers.WIND_CHARGE));
+        this.model = new WindChargeModel(ctx.bakeLayer(ModModelLayers.WIND_CHARGE));
     }
 
     @Override
-    public void render(BreezeWindCharge entity, float yaw, float partialTicks,
+    public void render(WindCharge entity, float yaw, float partialTicks,
                        PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         poseStack.pushPose();
 
@@ -53,7 +53,7 @@ public class BreezeWindChargeRenderer extends EntityRenderer<BreezeWindCharge> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(BreezeWindCharge entity) {
+    public ResourceLocation getTextureLocation(WindCharge entity) {
         return TEXTURE;
     }
 }

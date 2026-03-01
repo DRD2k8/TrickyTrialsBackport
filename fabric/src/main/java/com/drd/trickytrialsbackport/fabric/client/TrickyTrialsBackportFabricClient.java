@@ -6,19 +6,18 @@ import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
 import com.drd.trickytrialsbackport.client.particle.TrialSpawnerDetectionParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
-import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
-import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
-import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
-import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.blockentity.TrialSpawnerRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.BoggedRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.BreezeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.BreezeWindChargeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.WindChargeRenderer;
 import com.drd.trickytrialsbackport.client.screen.CrafterScreen;
 import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
-import com.drd.trickytrialsbackport.registry.ModBlocks;
-import com.drd.trickytrialsbackport.registry.ModEntities;
-import com.drd.trickytrialsbackport.registry.ModMenuTypes;
-import com.drd.trickytrialsbackport.registry.ModParticles;
+import com.drd.trickytrialsbackport.registry.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.loader.api.FabricLoader;
@@ -29,6 +28,7 @@ import net.minecraft.client.renderer.RenderType;
 public final class TrickyTrialsBackportFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        BlockEntityRendererRegistry.register(ModBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VAULT.get(), RenderType.cutout());
         EntityRendererRegistry.register(ModEntities.BOGGED.get(), BoggedRenderer::new);

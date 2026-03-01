@@ -7,16 +7,14 @@ import com.drd.trickytrialsbackport.client.particle.GustParticle;
 import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
 import com.drd.trickytrialsbackport.client.particle.TrialSpawnerDetectionParticle;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
-import com.drd.trickytrialsbackport.client.renderer.BoggedRenderer;
-import com.drd.trickytrialsbackport.client.renderer.BreezeRenderer;
-import com.drd.trickytrialsbackport.client.renderer.BreezeWindChargeRenderer;
-import com.drd.trickytrialsbackport.client.renderer.WindChargeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.blockentity.TrialSpawnerRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.BoggedRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.BreezeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.BreezeWindChargeRenderer;
+import com.drd.trickytrialsbackport.client.renderer.entity.WindChargeRenderer;
 import com.drd.trickytrialsbackport.client.screen.CrafterScreen;
 import com.drd.trickytrialsbackport.compat.vanillabackport.client.VanillaBackportClientEvents;
-import com.drd.trickytrialsbackport.registry.ModBlocks;
-import com.drd.trickytrialsbackport.registry.ModEntities;
-import com.drd.trickytrialsbackport.registry.ModMenuTypes;
-import com.drd.trickytrialsbackport.registry.ModParticles;
+import com.drd.trickytrialsbackport.registry.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -46,6 +44,11 @@ public class TrickyTrialsBackportForgeClient {
         if (ModList.get().isLoaded("vanillabackport")) {
             VanillaBackportClientEvents.specialModels();
         }
+    }
+
+    @SubscribeEvent
+    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
     }
 
     @SubscribeEvent

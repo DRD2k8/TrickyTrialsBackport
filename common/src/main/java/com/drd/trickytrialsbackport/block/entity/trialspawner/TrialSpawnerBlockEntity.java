@@ -1,7 +1,7 @@
 package com.drd.trickytrialsbackport.block.entity.trialspawner;
 
-import com.drd.trickytrialsbackport.block.TrialSpawnerBlock;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
+import com.drd.trickytrialsbackport.util.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -13,39 +13,57 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, TrialSpawner.StateAccessor {
     private TrialSpawner trialSpawner;
+    private TrialSpawnerData data;
 
     public TrialSpawnerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.TRIAL_SPAWNER.get(), pos, state);
 
-        this.trialSpawner = new TrialSpawner(this);
+        PlayerDetector detector = PlayerDetector.NO_CREATIVE_PLAYERS;
+        PlayerDetector.EntitySelector selector = PlayerDetector.EntitySelector.SELECT_FROM_LEVEL;
+
+        this.trialSpawner = new TrialSpawner(this, detector, selector);
+        this.data = new TrialSpawnerData();
     }
 
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
 
-        if (tag.contains("normal_config")) {
-            CompoundTag merged = tag.getCompound("normal_config").copy();
-            merged.merge(tag.getCompound("ominous_config"));
-            tag.put("config", merged);
-        }
+        TrialSpawnerConfig normal = tag.contains("normal_config")
+                ? TrialSpawnerConfig.fromTag(tag.getCompound("normal_config"))
+                : TrialSpawnerConfig.DEFAULT;
 
-        if (tag.contains("config")) {
-            this.trialSpawner.load(tag.getCompound("config"));
-        }
+        TrialSpawnerConfig ominous = tag.contains("ominous_config")
+                ? TrialSpawnerConfig.fromTag(tag.getCompound("ominous_config"))
+                : TrialSpawnerConfig.DEFAULT;
 
-        if (this.level != null) {
-            markUpdated();
-        }
+        TrialSpawnerData data = tag.contains("spawner_data")
+                ? new TrialSpawnerData(tag.getCompound("spawner_data"))
+                : new TrialSpawnerData();
+
+        this.trialSpawner = new TrialSpawner(
+                normal,
+                ominous,
+                data,
+                36000,
+                14,
+                this,
+                PlayerDetector.NO_CREATIVE_PLAYERS,
+                PlayerDetector.EntitySelector.SELECT_FROM_LEVEL
+        );
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
 
-        CompoundTag config = new CompoundTag();
-        this.trialSpawner.save(config);
-        tag.put("config", config);
+        tag.put("normal_config", this.trialSpawner.normalConfig.toTag());
+
+        tag.put("ominous_config", this.trialSpawner.ominousConfig.toTag());
+
+        CompoundTag dataTag = new CompoundTag();
+        this.trialSpawner.getData().save(dataTag);
+        tag.put("spawner_data", dataTag);
     }
 
     @Override
@@ -56,14 +74,19 @@ public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, Tri
     @Override
     public CompoundTag getUpdateTag() {
         CompoundTag tag = new CompoundTag();
-        saveAdditional(tag);
+        this.saveAdditional(tag);
         return tag;
+    }
+
+    @Override
+    public boolean onlyOpCanSetNbt() {
+        return true;
     }
 
     @Override
     public void setEntityId(EntityType<?> type, RandomSource random) {
         this.trialSpawner.getData().setEntityId(this.trialSpawner, random, type);
-        setChanged();
+        this.setChanged();
     }
 
     public TrialSpawner getTrialSpawner() {
@@ -72,32 +95,28 @@ public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, Tri
 
     @Override
     public TrialSpawnerState getState() {
-        BlockState state = getBlockState();
-        if (!state.hasProperty(TrialSpawnerBlock.STATE)) {
+        if (!this.getBlockState().hasProperty(ModBlockStateProperties.TRIAL_SPAWNER_STATE)) {
             return TrialSpawnerState.INACTIVE;
         }
-        return state.getValue(TrialSpawnerBlock.STATE);
+        return this.getBlockState().getValue(ModBlockStateProperties.TRIAL_SPAWNER_STATE);
     }
 
     @Override
-    public void setState(Level level, TrialSpawnerState newState) {
-        setChanged();
-        level.setBlockAndUpdate(
-                worldPosition,
-                getBlockState().setValue(TrialSpawnerBlock.STATE, newState)
-        );
+    public void setState(Level level, TrialSpawnerState state) {
+        this.setChanged();
+        level.setBlockAndUpdate(this.worldPosition,
+                this.getBlockState().setValue(ModBlockStateProperties.TRIAL_SPAWNER_STATE, state));
     }
 
     @Override
     public void markUpdated() {
-        setChanged();
-        if (level != null) {
-            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        this.setChanged();
+        if (this.level != null) {
+            this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
         }
     }
 
-    @Override
-    public boolean onlyOpCanSetNbt() {
-        return true;
+    public static void serverTick(Level level, BlockPos pos, BlockState state, TrialSpawnerBlockEntity be) {
+        be.trialSpawner.tick(level, pos, state);
     }
 }

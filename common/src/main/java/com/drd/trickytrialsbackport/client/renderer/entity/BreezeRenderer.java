@@ -1,9 +1,9 @@
-package com.drd.trickytrialsbackport.client.renderer;
+package com.drd.trickytrialsbackport.client.renderer.entity;
 
 import com.drd.trickytrialsbackport.client.model.BreezeModel;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
-import com.drd.trickytrialsbackport.client.renderer.layer.BreezeEyesLayer;
-import com.drd.trickytrialsbackport.client.renderer.layer.BreezeWindLayer;
+import com.drd.trickytrialsbackport.client.renderer.entity.layer.BreezeEyesLayer;
+import com.drd.trickytrialsbackport.client.renderer.entity.layer.BreezeWindLayer;
 import com.drd.trickytrialsbackport.entity.monster.breeze.Breeze;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

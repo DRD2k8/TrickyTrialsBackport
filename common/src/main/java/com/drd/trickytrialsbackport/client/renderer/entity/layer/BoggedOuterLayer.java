@@ -1,4 +1,4 @@
-package com.drd.trickytrialsbackport.client.renderer.layer;
+package com.drd.trickytrialsbackport.client.renderer.entity.layer;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.client.model.BoggedModel;
