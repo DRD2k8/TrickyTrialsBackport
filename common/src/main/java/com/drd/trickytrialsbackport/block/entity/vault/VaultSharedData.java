@@ -1,111 +1,89 @@
 package com.drd.trickytrialsbackport.block.entity.vault;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.UUIDUtil;
+import net.minecraft.nbt.*;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.AABB;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class VaultSharedData {
-    public static final String TAG_NAME = "shared_data";
-
-    public static final Codec<VaultSharedData> CODEC = RecordCodecBuilder.create(instance ->
-            instance.group(
-                    ItemStack.CODEC
-                            .optionalFieldOf("display_item", ItemStack.EMPTY)
-                            .forGetter(d -> d.displayItem),
-
-                    Codec.list(UUIDUtil.CODEC)
-                            .optionalFieldOf("connected_players", List.of())
-                            .xmap(list -> {
-                                Set<UUID> set = new ObjectLinkedOpenHashSet<>();
-                                set.addAll(list);
-                                return set;
-                            }, set -> new ArrayList<>(set))
-                            .forGetter(d -> d.connectedPlayers),
-
-                    Codec.DOUBLE
-                            .optionalFieldOf("connected_particles_range", VaultConfig.DEFAULT.deactivationRange())
-                            .forGetter(d -> d.connectedParticlesRange)
-            ).apply(instance, VaultSharedData::new)
-    );
-
     private ItemStack displayItem = ItemStack.EMPTY;
-    private Set<UUID> connectedPlayers = new ObjectLinkedOpenHashSet<>();
-    private double connectedParticlesRange = VaultConfig.DEFAULT.deactivationRange();
-    boolean isDirty;
+    final Set<UUID> connectedPlayers = new HashSet<>();
+    private double connectedParticlesRange = 0.0D;
 
-    VaultSharedData(ItemStack displayItem,
-                    Set<UUID> connectedPlayers,
-                    double connectedParticlesRange) {
-        this.displayItem = displayItem;
-        this.connectedPlayers.addAll(connectedPlayers);
-        this.connectedParticlesRange = connectedParticlesRange;
+    public void load(CompoundTag tag) {
+        displayItem = ItemStack.EMPTY;
+        connectedPlayers.clear();
+        connectedParticlesRange = 0.0D;
+
+        if (tag.contains("display_item", Tag.TAG_COMPOUND)) {
+            displayItem = ItemStack.of(tag.getCompound("display_item"));
+        }
+
+        if (tag.contains("connected_players", Tag.TAG_LIST)) {
+            ListTag list = tag.getList("connected_players", Tag.TAG_INT_ARRAY);
+            for (Tag t : list) {
+                if (t instanceof IntArrayTag arr) {
+                    connectedPlayers.add(NbtUtils.loadUUID(arr));
+                }
+            }
+        }
+
+        if (tag.contains("connected_particles_range", Tag.TAG_DOUBLE)) {
+            connectedParticlesRange = tag.getDouble("connected_particles_range");
+        }
     }
 
-    public VaultSharedData() {
-    }
+    public CompoundTag save() {
+        CompoundTag tag = new CompoundTag();
 
-    public ItemStack getDisplayItem() {
-        return this.displayItem;
-    }
+        if (!displayItem.isEmpty()) {
+            tag.put("display_item", displayItem.save(new CompoundTag()));
+        }
 
-    public boolean hasDisplayItem() {
-        return !this.displayItem.isEmpty();
+        ListTag players = new ListTag();
+        for (UUID id : connectedPlayers) {
+            players.add(NbtUtils.createUUID(id));
+        }
+        tag.put("connected_players", players);
+
+        tag.putDouble("connected_particles_range", connectedParticlesRange);
+
+        return tag;
     }
 
     public void setDisplayItem(ItemStack stack) {
-        if (!ItemStack.matches(this.displayItem, stack)) {
-            this.displayItem = stack.copy();
-            this.markDirty();
+        this.displayItem = stack.copy();
+    }
+
+    public ItemStack getDisplayItem() {
+        return displayItem;
+    }
+
+    public boolean hasDisplayItem() {
+        return !displayItem.isEmpty();
+    }
+
+    public void updateConnectedPlayersWithinRange(ServerLevel level, BlockPos pos, VaultServerData serverData, VaultConfig config, double range) {
+        connectedPlayers.clear();
+
+        AABB box = new AABB(pos).inflate(range);
+        List<Player> players = level.getEntitiesOfClass(Player.class, box, p -> !p.isSpectator());
+
+        for (Player p : players) {
+            connectedPlayers.add(p.getUUID());
         }
+
+        connectedParticlesRange = range;
     }
 
-    boolean hasConnectedPlayers() {
-        return !this.connectedPlayers.isEmpty();
-    }
-
-    Set<UUID> getConnectedPlayers() {
-        return this.connectedPlayers;
-    }
-
-    double connectedParticlesRange() {
-        return this.connectedParticlesRange;
-    }
-
-    void updateConnectedPlayersWithinRange(ServerLevel level,
-                                           BlockPos pos,
-                                           VaultServerData serverData,
-                                           VaultConfig config,
-                                           double range) {
-
-        Set<UUID> newSet = config.playerDetector()
-                .detect(level, config.entitySelector(), pos, range, false)
-                .stream()
-                .filter(p -> !serverData.getRewardedPlayers().contains(p))
-                .collect(Collectors.toSet());
-
-        if (!this.connectedPlayers.equals(newSet)) {
-            this.connectedPlayers = newSet;
-            this.markDirty();
-        }
-    }
-
-    private void markDirty() {
-        this.isDirty = true;
-    }
-
-    void set(VaultSharedData other) {
-        this.displayItem = other.displayItem;
-        this.connectedPlayers = other.connectedPlayers;
-        this.connectedParticlesRange = other.connectedParticlesRange;
+    public boolean hasConnectedPlayers() {
+        return !connectedPlayers.isEmpty();
     }
 }

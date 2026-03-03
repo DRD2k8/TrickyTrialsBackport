@@ -70,6 +70,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("raid_omen");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_pattern");
         VANILLA_BACKPORT_IDS.add("scrape_pottery_sherd");
+        VANILLA_BACKPORT_IDS.add("set_ominous_bottle_amplifier");
         VANILLA_BACKPORT_IDS.add("sunflowers");
         VANILLA_BACKPORT_IDS.add("tides");
         VANILLA_BACKPORT_IDS.add("trial_key");
@@ -86,6 +87,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("tuff_wall");
         VANILLA_BACKPORT_IDS.add("unpacked");
         VANILLA_BACKPORT_IDS.add("vault");
+        VANILLA_BACKPORT_IDS.add("vault_connection");
         VANILLA_BACKPORT_IDS.add("wind_charge");
     }
 

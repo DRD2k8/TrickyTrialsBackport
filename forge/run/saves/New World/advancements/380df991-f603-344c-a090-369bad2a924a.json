@@ -1,21 +1,20 @@
 {
   "minecraft:adventure/minecraft_trials_edition": {
     "criteria": {
-      "minecraft_trials_edition": "2026-03-01 10:57:27 -0800"
+      "minecraft_trials_edition": "2026-03-02 21:58:13 -0800"
     },
     "done": true
   },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2026-03-01 10:56:14 -0800"
+      "unlock_right_away": "2026-03-02 21:57:08 -0800"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:dripstone_caves": "2026-03-01 10:57:24 -0800",
-      "minecraft:savanna": "2026-03-01 10:56:15 -0800",
-      "minecraft:plains": "2026-03-01 10:57:05 -0800"
+      "minecraft:dripstone_caves": "2026-03-02 21:57:59 -0800",
+      "minecraft:forest": "2026-03-02 21:57:09 -0800"
     },
     "done": false
   },

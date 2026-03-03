@@ -11,4 +11,6 @@ public class ModBuiltInLootTables {
             new ResourceLocation("minecraft", "spawners/trial_chamber/items_to_drop_when_ominous");
     public static final ResourceLocation TRIAL_CHAMBERS_REWARD =
             new ResourceLocation("minecraft", "chests/trial_chambers/reward");
+    public static final ResourceLocation TRIAL_CHAMBERS_REWARD_OMINOUS =
+            new ResourceLocation("minecraft", "chests/trial_chambers/reward_ominous");
 }

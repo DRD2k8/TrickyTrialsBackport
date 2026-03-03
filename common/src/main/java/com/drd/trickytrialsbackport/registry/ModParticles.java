@@ -14,6 +14,7 @@ public class ModParticles {
     public static Supplier<SimpleParticleType> TRIAL_OMEN;
     public static Supplier<SimpleParticleType> TRIAL_SPAWNER_DETECTED_PLAYER;
     public static Supplier<SimpleParticleType> TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS;
+    public static Supplier<SimpleParticleType> VAULT_CONNECTION;
 
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
@@ -33,6 +34,8 @@ public class ModParticles {
         TRIAL_SPAWNER_DETECTED_PLAYER = helper.registerAuto(Registries.PARTICLE_TYPE, "trial_spawner_detection",
                 () -> new SimpleParticleType(true) {});
         TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS = helper.registerAuto(Registries.PARTICLE_TYPE, "trial_spawner_detection_ominous",
+                () -> new SimpleParticleType(true) {});
+        VAULT_CONNECTION = helper.registerAuto(Registries.PARTICLE_TYPE, "vault_connection",
                 () -> new SimpleParticleType(true) {});
     }
 }

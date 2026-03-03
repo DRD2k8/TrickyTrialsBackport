@@ -2,56 +2,69 @@ package com.drd.trickytrialsbackport.block.entity.vault;
 
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.Vec3;
 
 public enum VaultState implements StringRepresentable {
     INACTIVE("inactive", LightLevel.HALF_LIT) {
         @Override
-        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared, boolean ominous) {
-            shared.setDisplayItem(ItemStack.EMPTY);
-            level.levelEvent(3016, pos, ominous ? 1 : 0);
+        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData, boolean ominous) {
+            sharedData.setDisplayItem(ItemStack.EMPTY);
+
+            level.playSound(null, pos, ModSounds.VAULT_DEACTIVATE.get(), SoundSource.BLOCKS, 1.0F, ominous ? 0.5F : 1.0F);
         }
     },
 
     ACTIVE("active", LightLevel.LIT) {
         @Override
-        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared, boolean ominous) {
-            if (!shared.hasDisplayItem()) {
-                VaultBlockEntity.Server.cycleDisplayItemFromLootTable(level, this, config, shared, pos);
+        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData, boolean ominous) {
+            if (!sharedData.hasDisplayItem()) {
+                VaultBlockEntity.cycleDisplayItem(level, this, config, sharedData, pos);
             }
-            level.levelEvent(3015, pos, ominous ? 1 : 0);
+
+            level.playSound(null, pos, ModSounds.VAULT_ACTIVATE.get(), SoundSource.BLOCKS, 1.0F, ominous ? 0.5F : 1.0F);
         }
     },
 
     UNLOCKING("unlocking", LightLevel.LIT) {
         @Override
-        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared, boolean ominous) {
-            level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM.get(), SoundSource.BLOCKS);
+        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData, boolean ominous) {
+            level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
         }
     },
 
     EJECTING("ejecting", LightLevel.LIT) {
         @Override
-        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared, boolean ominous) {
-            level.playSound(null, pos, ModSounds.VAULT_OPEN_SHUTTER.get(), SoundSource.BLOCKS);
+        protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData, boolean ominous) {
+            level.playSound(null, pos, ModSounds.VAULT_OPEN_SHUTTER.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
         }
 
         @Override
-        protected void onExit(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared) {
-            level.playSound(null, pos, ModSounds.VAULT_CLOSE_SHUTTER.get(), SoundSource.BLOCKS);
+        protected void onExit(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData) {
+            level.playSound(null, pos, ModSounds.VAULT_CLOSE_SHUTTER.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+        }
+
+        @Override
+        public void onTick(ServerLevel level, BlockPos pos, VaultConfig config,
+                              VaultSharedData sharedData, VaultServerData serverData) {
+            serverData.tickEjection();
+
+            if (serverData.getCurrentEjectingItem().isEmpty()) {
+
+                ItemStack next = serverData.popNextItemToEject();
+
+                if (next == null) {
+                    VaultBlockEntity be = (VaultBlockEntity) level.getBlockEntity(pos);
+                    if (be != null) {
+                        be.setState(VaultState.INACTIVE);
+                    }
+                }
+            }
         }
     };
-
-    private static final int UPDATE_CONNECTED_PLAYERS_TICK_RATE = 20;
-    private static final int DELAY_BETWEEN_EJECTIONS_TICKS = 20;
-    private static final int DELAY_AFTER_LAST_EJECTION_TICKS = 20;
-    private static final int DELAY_BEFORE_FIRST_EJECTION_TICKS = 20;
 
     private final String stateName;
     private final LightLevel lightLevel;
@@ -70,95 +83,70 @@ public enum VaultState implements StringRepresentable {
         return this.lightLevel.value;
     }
 
-    public VaultState tickAndGetNext(ServerLevel level,
-                                     BlockPos pos,
-                                     VaultConfig config,
-                                     VaultServerData server,
-                                     VaultSharedData shared) {
-
+    public VaultState tickAndGetNext(ServerLevel level, BlockPos pos, VaultConfig config, VaultServerData serverData, VaultSharedData sharedData) {
         return switch (this) {
 
-            case INACTIVE -> updateStateForConnectedPlayers(
-                    level, pos, config, server, shared, config.activationRange()
-            );
+            case INACTIVE -> updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.activationRange());
 
-            case ACTIVE -> updateStateForConnectedPlayers(
-                    level, pos, config, server, shared, config.deactivationRange()
-            );
+            case ACTIVE -> updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
 
             case UNLOCKING -> {
-                server.pauseStateUpdatingUntil(level.getGameTime() + DELAY_BEFORE_FIRST_EJECTION_TICKS);
+                serverData.pauseStateUpdatingUntil(level.getGameTime() + 20L);
                 yield EJECTING;
             }
 
             case EJECTING -> {
-                if (server.getItemsToEject().isEmpty()) {
-                    server.markEjectionFinished();
-                    yield updateStateForConnectedPlayers(
-                            level, pos, config, server, shared, config.deactivationRange()
-                    );
+                if (serverData.getItemsToEject().isEmpty()) {
+                    serverData.markEjectionFinished();
+                    yield updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
                 } else {
-                    float progress = server.ejectionProgress();
-                    ItemStack next = server.popNextItemToEject();
+                    float progress = serverData.ejectionProgress();
 
-                    this.ejectResultItem(level, pos, next, progress);
+                    ejectResultItem(level, pos, serverData.popNextItemToEject(), progress);
 
-                    shared.setDisplayItem(server.getNextItemToEject());
+                    sharedData.setDisplayItem(serverData.getNextItemToEject());
 
-                    boolean last = server.getItemsToEject().isEmpty();
-                    int delay = last ? DELAY_AFTER_LAST_EJECTION_TICKS : DELAY_BETWEEN_EJECTIONS_TICKS;
+                    boolean last = serverData.getItemsToEject().isEmpty();
+                    int delay = last ? 20 : 20;
 
-                    server.pauseStateUpdatingUntil(level.getGameTime() + delay);
-
+                    serverData.pauseStateUpdatingUntil(level.getGameTime() + delay);
                     yield EJECTING;
                 }
             }
         };
     }
 
-    private static VaultState updateStateForConnectedPlayers(ServerLevel level,
-                                                             BlockPos pos,
-                                                             VaultConfig config,
-                                                             VaultServerData server,
-                                                             VaultSharedData shared,
-                                                             double range) {
-
-        shared.updateConnectedPlayersWithinRange(level, pos, server, config, range);
-        server.pauseStateUpdatingUntil(level.getGameTime() + UPDATE_CONNECTED_PLAYERS_TICK_RATE);
-
-        return shared.hasConnectedPlayers() ? ACTIVE : INACTIVE;
+    private static VaultState updateStateForConnectedPlayers(
+            ServerLevel level, BlockPos pos, VaultConfig config,
+            VaultServerData serverData, VaultSharedData sharedData, double range
+    ) {
+        sharedData.updateConnectedPlayersWithinRange(level, pos, serverData, config, range);
+        serverData.pauseStateUpdatingUntil(level.getGameTime() + 20L);
+        return sharedData.hasConnectedPlayers() ? ACTIVE : INACTIVE;
     }
 
-    public void onTransition(ServerLevel level,
-                             BlockPos pos,
-                             VaultState next,
-                             VaultConfig config,
-                             VaultSharedData shared,
-                             boolean ominous) {
-
-        this.onExit(level, pos, config, shared);
-        next.onEnter(level, pos, config, shared, ominous);
+    public void onTransition(ServerLevel level, BlockPos pos, VaultState next, VaultConfig config, VaultSharedData sharedData, boolean ominous) {
+        this.onExit(level, pos, config, sharedData);
+        next.onEnter(level, pos, config, sharedData, ominous);
     }
 
-    protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared, boolean ominous) {}
-    protected void onExit(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData shared) {}
+    protected void onEnter(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData, boolean ominous) {}
+    protected void onExit(ServerLevel level, BlockPos pos, VaultConfig config, VaultSharedData sharedData) {}
 
-    private void ejectResultItem(ServerLevel level,
-                                 BlockPos pos,
-                                 ItemStack stack,
-                                 float progress) {
+    private void ejectResultItem(ServerLevel level, BlockPos pos, ItemStack stack, float progress) {
+        ItemEntity item = new ItemEntity(level,
+                pos.getX() + 0.5,
+                pos.getY() + 1.2,
+                pos.getZ() + 0.5,
+                stack);
 
-        DefaultDispenseItemBehavior.spawnItem(
-                level,
-                stack,
-                2,
-                Direction.UP,
-                Vec3.atBottomCenterOf(pos).relative(Direction.UP, 1.2)
-        );
+        item.setDeltaMovement(0, 0.3 + progress * 0.1, 0);
+        level.addFreshEntity(item);
 
-        level.levelEvent(3017, pos, 0);
-        level.playSound(null, pos, ModSounds.VAULT_EJECT_ITEM.get(), SoundSource.BLOCKS,
-                1.0F, 0.8F + 0.4F * progress);
+        level.playSound(null, pos, ModSounds.VAULT_EJECT_ITEM.get(), SoundSource.BLOCKS, 1.0F, 0.8F + 0.4F * progress);
+    }
+
+    public void onTick(ServerLevel server, BlockPos pos, VaultConfig config, VaultSharedData sharedData, VaultServerData serverData) {
     }
 
     public enum LightLevel {

@@ -5,7 +5,6 @@ import com.drd.trickytrialsbackport.block.entity.trialspawner.TrialSpawnerState;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
 import com.drd.trickytrialsbackport.util.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;

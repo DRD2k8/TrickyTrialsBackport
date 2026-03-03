@@ -2,12 +2,10 @@ package com.drd.trickytrialsbackport.forge.client;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import com.drd.trickytrialsbackport.client.model.*;
-import com.drd.trickytrialsbackport.client.particle.FlyStraightTowardsParticle;
-import com.drd.trickytrialsbackport.client.particle.GustParticle;
-import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
-import com.drd.trickytrialsbackport.client.particle.TrialSpawnerDetectionParticle;
+import com.drd.trickytrialsbackport.client.particle.*;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
 import com.drd.trickytrialsbackport.client.renderer.blockentity.TrialSpawnerRenderer;
+import com.drd.trickytrialsbackport.client.renderer.blockentity.VaultRenderer;
 import com.drd.trickytrialsbackport.client.renderer.entity.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.entity.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.entity.BreezeWindChargeRenderer;
@@ -49,6 +47,7 @@ public class TrickyTrialsBackportForgeClient {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.VAULT.get(), VaultRenderer::new);
     }
 
     @SubscribeEvent
@@ -72,5 +71,6 @@ public class TrickyTrialsBackportForgeClient {
         event.registerSpriteSet(ModParticles.TRIAL_OMEN.get(), SpellParticle.Provider::new);
         event.registerSpriteSet(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER.get(), TrialSpawnerDetectionParticle.Provider::new);
         event.registerSpriteSet(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS.get(), TrialSpawnerDetectionParticle.Provider::new);
+        event.registerSpriteSet(ModParticles.VAULT_CONNECTION.get(), ModFlyTowardsPositionParticle.VaultConnectionProvider::new);
     }
 }

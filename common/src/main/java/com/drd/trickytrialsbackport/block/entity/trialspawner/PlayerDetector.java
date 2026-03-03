@@ -75,7 +75,6 @@ public interface PlayerDetector {
     }
 
     interface EntitySelector {
-
         PlayerDetector.EntitySelector SELECT_FROM_LEVEL = new PlayerDetector.EntitySelector() {
             @Override
             public List<ServerPlayer> getPlayers(ServerLevel level, Predicate<? super Player> predicate) {
@@ -122,5 +121,34 @@ public interface PlayerDetector {
                 }
             };
         }
+
+        static EntitySelector valueOf(String name) {
+            return switch (name) {
+                case "SELECT_FROM_LEVEL" -> SELECT_FROM_LEVEL;
+
+                default -> SELECT_FROM_LEVEL;
+            };
+        }
+
+        default String name() {
+            if (this == SELECT_FROM_LEVEL) return "SELECT_FROM_LEVEL";
+            return "SELECT_FROM_LEVEL";
+        }
+    }
+
+    static PlayerDetector valueOf(String name) {
+        return switch (name) {
+            case "INCLUDING_CREATIVE_PLAYERS" -> INCLUDING_CREATIVE_PLAYERS;
+            case "NO_CREATIVE_PLAYERS" -> NO_CREATIVE_PLAYERS;
+            case "SHEEP" -> SHEEP;
+            default -> INCLUDING_CREATIVE_PLAYERS;
+        };
+    }
+
+    default String name() {
+        if (this == INCLUDING_CREATIVE_PLAYERS) return "INCLUDING_CREATIVE_PLAYERS";
+        if (this == NO_CREATIVE_PLAYERS) return "NO_CREATIVE_PLAYERS";
+        if (this == SHEEP) return "SHEEP";
+        return "INCLUDING_CREATIVE_PLAYERS";
     }
 }

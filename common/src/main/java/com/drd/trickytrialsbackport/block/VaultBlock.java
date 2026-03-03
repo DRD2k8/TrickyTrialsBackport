@@ -3,9 +3,11 @@ package com.drd.trickytrialsbackport.block;
 import com.drd.trickytrialsbackport.block.entity.vault.VaultBlockEntity;
 import com.drd.trickytrialsbackport.block.entity.vault.VaultState;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
+import com.drd.trickytrialsbackport.registry.ModSounds;
+import com.drd.trickytrialsbackport.util.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -26,51 +28,35 @@ import org.jetbrains.annotations.Nullable;
 
 public class VaultBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final BooleanProperty OMINOUS = ModBlockStateProperties.OMINOUS;
+    public static final EnumProperty<VaultState> STATE = ModBlockStateProperties.VAULT_STATE;
 
-    public static final EnumProperty<VaultState> STATE =
-            EnumProperty.create("vault_state", VaultState.class);
-
-    public static final BooleanProperty OMINOUS =
-            BooleanProperty.create("ominous");
-
-    public VaultBlock(Properties props) {
-        super(props);
+    public VaultBlock(Properties properties) {
+        super(properties);
         this.registerDefaultState(
                 this.stateDefinition.any()
                         .setValue(FACING, Direction.NORTH)
-                        .setValue(STATE, VaultState.INACTIVE)
                         .setValue(OMINOUS, Boolean.FALSE)
+                        .setValue(STATE, VaultState.INACTIVE)
         );
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos,
-                                 Player player, InteractionHand hand, BlockHitResult hit) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING, OMINOUS, STATE);
+    }
 
-        ItemStack stack = player.getItemInHand(hand);
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState()
+                .setValue(FACING, ctx.getHorizontalDirection().getOpposite())
+                .setValue(OMINOUS, Boolean.FALSE)
+                .setValue(STATE, VaultState.INACTIVE);
+    }
 
-        if (stack.isEmpty() || state.getValue(STATE) != VaultState.ACTIVE) {
-            return InteractionResult.PASS;
-        }
-
-        if (!level.isClientSide) {
-            BlockEntity be = level.getBlockEntity(pos);
-            if (be instanceof VaultBlockEntity vault) {
-                VaultBlockEntity.Server.tryInsertKey(
-                        (ServerLevel) level,
-                        pos,
-                        state,
-                        vault.getConfig(),
-                        vault.getServerData(),
-                        vault.getSharedData(),
-                        player,
-                        stack
-                );
-                return InteractionResult.SUCCESS;
-            }
-        }
-
-        return InteractionResult.CONSUME;
+    @Override
+    public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
     }
 
     @Nullable
@@ -79,52 +65,60 @@ public class VaultBlock extends BaseEntityBlock {
         return new VaultBlockEntity(pos, state);
     }
 
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, STATE, OMINOUS);
-    }
-
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
-            Level level, BlockState state, BlockEntityType<T> type) {
+            Level level,
+            BlockState state,
+            BlockEntityType<T> type
+    ) {
+        return level.isClientSide
+                ? null
+                : createTickerHelper(
+                type,
+                ModBlockEntities.VAULT.get(),
+                VaultBlockEntity::serverTick
+        );
+    }
 
-        if (level.isClientSide) {
-            return createTickerHelper(
-                    type,
-                    ModBlockEntities.VAULT.get(),
-                    (lvl, pos, st, be) ->
-                            VaultBlockEntity.Client.tick(lvl, pos, st, be.getClientData(), be.getSharedData())
-            );
-        } else {
-            return createTickerHelper(
-                    type,
-                    ModBlockEntities.VAULT.get(),
-                    (lvl, pos, st, be) ->
-                            VaultBlockEntity.Server.tick((ServerLevel) lvl, pos, st,
-                                    be.getConfig(), be.getServerData(), be.getSharedData())
-            );
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        ItemStack held = player.getItemInHand(hand);
+
+        if (!(level.getBlockEntity(pos) instanceof VaultBlockEntity be)) {
+            return InteractionResult.PASS;
         }
+
+        boolean ominous = state.getValue(OMINOUS);
+
+        boolean isCorrectKey = be.isCorrectKey(held, ominous);
+
+        if (!isCorrectKey) {
+            level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM_FAIL.get(), SoundSource.BLOCKS, 1f, 1f);
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        if (be.tryInsertKey(player, held, ominous)) {
+            level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM.get(), SoundSource.BLOCKS, 1f, 1f);
+
+            if (!player.getAbilities().instabuild) {
+                held.shrink(1);
+            }
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM_FAIL.get(), SoundSource.BLOCKS, 1f, 1f);
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return this.defaultBlockState()
-                .setValue(FACING, ctx.getHorizontalDirection().getOpposite());
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
     public BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
-    }
-
-    @Override
-    public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
     }
 }

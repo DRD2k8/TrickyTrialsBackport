@@ -1,12 +1,10 @@
 package com.drd.trickytrialsbackport.fabric.client;
 
 import com.drd.trickytrialsbackport.client.model.*;
-import com.drd.trickytrialsbackport.client.particle.FlyStraightTowardsParticle;
-import com.drd.trickytrialsbackport.client.particle.GustParticle;
-import com.drd.trickytrialsbackport.client.particle.GustSeedParticle;
-import com.drd.trickytrialsbackport.client.particle.TrialSpawnerDetectionParticle;
+import com.drd.trickytrialsbackport.client.particle.*;
 import com.drd.trickytrialsbackport.client.registry.ModModelLayers;
 import com.drd.trickytrialsbackport.client.renderer.blockentity.TrialSpawnerRenderer;
+import com.drd.trickytrialsbackport.client.renderer.blockentity.VaultRenderer;
 import com.drd.trickytrialsbackport.client.renderer.entity.BoggedRenderer;
 import com.drd.trickytrialsbackport.client.renderer.entity.BreezeRenderer;
 import com.drd.trickytrialsbackport.client.renderer.entity.BreezeWindChargeRenderer;
@@ -29,6 +27,7 @@ public final class TrickyTrialsBackportFabricClient implements ClientModInitiali
     @Override
     public void onInitializeClient() {
         BlockEntityRendererRegistry.register(ModBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.VAULT.get(), VaultRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VAULT.get(), RenderType.cutout());
         EntityRendererRegistry.register(ModEntities.BOGGED.get(), BoggedRenderer::new);
@@ -51,6 +50,7 @@ public final class TrickyTrialsBackportFabricClient implements ClientModInitiali
         ParticleFactoryRegistry.getInstance().register(ModParticles.TRIAL_OMEN.get(), SpellParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER.get(), TrialSpawnerDetectionParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS.get(), TrialSpawnerDetectionParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.VAULT_CONNECTION.get(), ModFlyTowardsPositionParticle.VaultConnectionProvider::new);
 
         if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
             VanillaBackportClientEvents.specialModels();

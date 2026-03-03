@@ -1,163 +1,133 @@
 package com.drd.trickytrialsbackport.block.entity.vault;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
-import net.minecraft.core.UUIDUtil;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.nbt.*;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
 public class VaultServerData {
-    public static final String TAG_NAME = "server_data";
+    public final Set<UUID> rewardedPlayers = new HashSet<>();
+    public long stateUpdatingResumesAt = 0L;
+    public final List<ItemStack> itemsToEject = new ArrayList<>();
+    public int totalEjectionsNeeded = 0;
+    private ItemStack currentEjectingItem = ItemStack.EMPTY;
+    private int ejectionTicks = 0;
+    private static final int EJECTION_DURATION = 20;
 
-    public static final Codec<VaultServerData> CODEC = RecordCodecBuilder.create(instance ->
-            instance.group(
-                    // rewarded_players: Set<UUID> via List<UUID> codec
-                    Codec.list(UUIDUtil.CODEC)
-                            .optionalFieldOf("rewarded_players", List.of())
-                            .xmap(list -> {
-                                Set<UUID> set = new ObjectLinkedOpenHashSet<UUID>();
-                                set.addAll(list);
-                                return set;
-                            }, set -> new ArrayList<>(set))
-                            .forGetter(d -> d.rewardedPlayers),
+    public void load(CompoundTag tag) {
+        rewardedPlayers.clear();
+        itemsToEject.clear();
 
-                    // state_updating_resumes_at: long
-                    Codec.LONG
-                            .optionalFieldOf("state_updating_resumes_at", 0L)
-                            .forGetter(d -> d.stateUpdatingResumesAt),
-
-                    // items_to_eject: List<ItemStack>
-                    ItemStack.CODEC
-                            .listOf()
-                            .optionalFieldOf("items_to_eject", List.of())
-                            .forGetter(d -> d.itemsToEject),
-
-                    // total_ejections_needed: int
-                    Codec.INT
-                            .optionalFieldOf("total_ejections_needed", 0)
-                            .forGetter(d -> d.totalEjectionsNeeded)
-            ).apply(instance, VaultServerData::new)
-    );
-
-    private static final int MAX_REWARD_PLAYERS = 128;
-
-    final Set<UUID> rewardedPlayers = new ObjectLinkedOpenHashSet<>();
-    long stateUpdatingResumesAt;
-    final List<ItemStack> itemsToEject = new ObjectArrayList<>();
-    long lastInsertFailTimestamp;
-    int totalEjectionsNeeded;
-    boolean isDirty;
-
-    VaultServerData(Set<UUID> rewardedPlayers,
-                    long stateUpdatingResumesAt,
-                    List<ItemStack> itemsToEject,
-                    int totalEjectionsNeeded) {
-        this.rewardedPlayers.addAll(rewardedPlayers);
-        this.stateUpdatingResumesAt = stateUpdatingResumesAt;
-        this.itemsToEject.addAll(itemsToEject);
-        this.totalEjectionsNeeded = totalEjectionsNeeded;
-    }
-
-    public VaultServerData() {
-    }
-
-    void setLastInsertFailTimestamp(long time) {
-        this.lastInsertFailTimestamp = time;
-    }
-
-    long getLastInsertFailTimestamp() {
-        return this.lastInsertFailTimestamp;
-    }
-
-    Set<UUID> getRewardedPlayers() {
-        return this.rewardedPlayers;
-    }
-
-    boolean hasRewardedPlayer(Player player) {
-        return this.rewardedPlayers.contains(player.getUUID());
-    }
-
-    @VisibleForTesting
-    public void addToRewardedPlayers(Player player) {
-        this.rewardedPlayers.add(player.getUUID());
-        if (this.rewardedPlayers.size() > MAX_REWARD_PLAYERS) {
-            Iterator<UUID> it = this.rewardedPlayers.iterator();
-            if (it.hasNext()) {
-                it.next();
-                it.remove();
+        if (tag.contains("rewarded_players", Tag.TAG_LIST)) {
+            ListTag list = tag.getList("rewarded_players", Tag.TAG_INT_ARRAY);
+            for (Tag t : list) {
+                if (t instanceof IntArrayTag arr) {
+                    rewardedPlayers.add(NbtUtils.loadUUID(arr));
+                }
             }
         }
-        this.markChanged();
-    }
 
-    long stateUpdatingResumesAt() {
-        return this.stateUpdatingResumesAt;
-    }
-
-    void pauseStateUpdatingUntil(long time) {
-        this.stateUpdatingResumesAt = time;
-        this.markChanged();
-    }
-
-    List<ItemStack> getItemsToEject() {
-        return this.itemsToEject;
-    }
-
-    void markEjectionFinished() {
-        this.totalEjectionsNeeded = 0;
-        this.markChanged();
-    }
-
-    void setItemsToEject(List<ItemStack> items) {
-        this.itemsToEject.clear();
-        this.itemsToEject.addAll(items);
-        this.totalEjectionsNeeded = this.itemsToEject.size();
-        this.markChanged();
-    }
-
-    ItemStack getNextItemToEject() {
-        if (this.itemsToEject.isEmpty()) {
-            return ItemStack.EMPTY;
+        if (tag.contains("state_updating_resumes_at", Tag.TAG_LONG)) {
+            stateUpdatingResumesAt = tag.getLong("state_updating_resumes_at");
         }
-        ItemStack stack = this.itemsToEject.get(this.itemsToEject.size() - 1);
-        return stack == null ? ItemStack.EMPTY : stack;
-    }
 
-    ItemStack popNextItemToEject() {
-        if (this.itemsToEject.isEmpty()) {
-            return ItemStack.EMPTY;
+        if (tag.contains("items_to_eject", Tag.TAG_LIST)) {
+            ListTag list = tag.getList("items_to_eject", Tag.TAG_COMPOUND);
+            for (int i = 0; i < list.size(); i++) {
+                itemsToEject.add(ItemStack.of(list.getCompound(i)));
+            }
         }
-        this.markChanged();
-        ItemStack stack = this.itemsToEject.remove(this.itemsToEject.size() - 1);
-        return stack == null ? ItemStack.EMPTY : stack;
+
+        if (tag.contains("total_ejections_needed", Tag.TAG_INT)) {
+            totalEjectionsNeeded = tag.getInt("total_ejections_needed");
+        }
     }
 
-    void set(VaultServerData other) {
-        this.stateUpdatingResumesAt = other.stateUpdatingResumesAt();
-        this.itemsToEject.clear();
-        this.itemsToEject.addAll(other.itemsToEject);
-        this.rewardedPlayers.clear();
-        this.rewardedPlayers.addAll(other.rewardedPlayers);
+    public CompoundTag save() {
+        CompoundTag tag = new CompoundTag();
+
+        ListTag rewarded = new ListTag();
+        for (UUID id : rewardedPlayers) {
+            rewarded.add(NbtUtils.createUUID(id));
+        }
+        tag.put("rewarded_players", rewarded);
+
+        tag.putLong("state_updating_resumes_at", stateUpdatingResumesAt);
+
+        ListTag ejectList = new ListTag();
+        for (ItemStack stack : itemsToEject) {
+            ejectList.add(stack.save(new CompoundTag()));
+        }
+        tag.put("items_to_eject", ejectList);
+
+        tag.putInt("total_ejections_needed", totalEjectionsNeeded);
+
+        return tag;
     }
 
-    private void markChanged() {
-        this.isDirty = true;
+    public void pauseStateUpdatingUntil(long gameTime) {
+        this.stateUpdatingResumesAt = gameTime;
+    }
+
+    public List<ItemStack> getItemsToEject() {
+        return itemsToEject;
+    }
+
+    @Nullable
+    public ItemStack popNextItemToEject() {
+        if (this.itemsToEject.isEmpty()) {
+            this.currentEjectingItem = ItemStack.EMPTY;
+            return null;
+        }
+
+        this.currentEjectingItem = this.itemsToEject.remove(0);
+        this.ejectionTicks = 0;
+        return this.currentEjectingItem;
+    }
+
+    public ItemStack getNextItemToEject() {
+        return itemsToEject.isEmpty() ? ItemStack.EMPTY : itemsToEject.get(0);
+    }
+
+    public void markEjectionFinished() {
+        itemsToEject.clear();
+        totalEjectionsNeeded = 0;
     }
 
     public float ejectionProgress() {
-        if (this.totalEjectionsNeeded == 1) {
-            return 1.0F;
+        if (totalEjectionsNeeded <= 0) return 0f;
+
+        int done = totalEjectionsNeeded - itemsToEject.size();
+        return (float) done / (float) totalEjectionsNeeded;
+    }
+
+    public void setItemsToEject(List<ItemStack> items) {
+        this.itemsToEject.clear();
+        for (ItemStack stack : items) {
+            this.itemsToEject.add(stack.copy());
         }
-        return 1.0F - Mth.inverseLerp(
-                (float) this.getItemsToEject().size(),
-                1.0F,
-                (float) this.totalEjectionsNeeded
-        );
+        this.totalEjectionsNeeded = this.itemsToEject.size();
+    }
+
+    public ItemStack getCurrentEjectingItem() {
+        return this.currentEjectingItem;
+    }
+
+    public void tickEjection() {
+        if (!this.currentEjectingItem.isEmpty()) {
+            this.ejectionTicks++;
+            if (this.ejectionTicks >= EJECTION_DURATION) {
+                this.currentEjectingItem = ItemStack.EMPTY;
+            }
+        }
+    }
+
+    public float ejectionProgress(float partialTicks) {
+        if (this.currentEjectingItem.isEmpty()) {
+            return 0f;
+        }
+
+        return Math.min(1f, (this.ejectionTicks + partialTicks) / (float) EJECTION_DURATION);
     }
 }
