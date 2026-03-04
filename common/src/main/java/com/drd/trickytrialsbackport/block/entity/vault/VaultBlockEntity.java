@@ -7,6 +7,7 @@ import com.drd.trickytrialsbackport.registry.ModParticles;
 import com.drd.trickytrialsbackport.util.ModBuiltInLootTables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.*;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
@@ -178,6 +179,19 @@ public class VaultBlockEntity extends BlockEntity {
         }
     }
 
+    public void sync() {
+        if (this.level == null) return;
+
+        if (!this.level.isClientSide) {
+            this.setChanged();
+            this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
+        }
+
+        if (this.level instanceof ServerLevel serverLevel) {
+            serverLevel.getChunkSource().blockChanged(this.worldPosition);
+        }
+    }
+
     public VaultConfig getConfig() {
         return config;
     }
@@ -206,11 +220,17 @@ public class VaultBlockEntity extends BlockEntity {
         if (tag.contains("config", Tag.TAG_COMPOUND)) {
             this.config.load(tag.getCompound("config"));
         }
+
         if (tag.contains("server_data", Tag.TAG_COMPOUND)) {
             this.serverData.load(tag.getCompound("server_data"));
         }
+
         if (tag.contains("shared_data", Tag.TAG_COMPOUND)) {
             this.sharedData.load(tag.getCompound("shared_data"));
+        }
+
+        if (sharedData.getDisplayItem() == null) {
+            sharedData.setDisplayItem(ItemStack.EMPTY);
         }
     }
 
@@ -218,8 +238,24 @@ public class VaultBlockEntity extends BlockEntity {
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
 
+        tag.putString("state", this.state.getSerializedName());
         tag.put("config", this.config.save());
         tag.put("server_data", this.serverData.save());
-        tag.put("shared_data", this.sharedData.save());
+
+        CompoundTag sharedTag = new CompoundTag();
+        this.sharedData.save(sharedTag);
+        tag.put("shared_data", sharedTag);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag);
+        return tag;
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 }

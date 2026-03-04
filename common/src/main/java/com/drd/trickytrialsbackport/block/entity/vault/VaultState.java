@@ -4,9 +4,12 @@ import com.drd.trickytrialsbackport.registry.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 public enum VaultState implements StringRepresentable {
     INACTIVE("inactive", LightLevel.HALF_LIT) {
@@ -49,20 +52,7 @@ public enum VaultState implements StringRepresentable {
 
         @Override
         public void onTick(ServerLevel level, BlockPos pos, VaultConfig config,
-                              VaultSharedData sharedData, VaultServerData serverData) {
-            serverData.tickEjection();
-
-            if (serverData.getCurrentEjectingItem().isEmpty()) {
-
-                ItemStack next = serverData.popNextItemToEject();
-
-                if (next == null) {
-                    VaultBlockEntity be = (VaultBlockEntity) level.getBlockEntity(pos);
-                    if (be != null) {
-                        be.setState(VaultState.INACTIVE);
-                    }
-                }
-            }
+                           VaultSharedData sharedData, VaultServerData serverData) {
         }
     };
 
@@ -85,12 +75,45 @@ public enum VaultState implements StringRepresentable {
 
     public VaultState tickAndGetNext(ServerLevel level, BlockPos pos, VaultConfig config, VaultServerData serverData, VaultSharedData sharedData) {
         return switch (this) {
-
             case INACTIVE -> updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.activationRange());
 
-            case ACTIVE -> updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
+            case ACTIVE -> {
+                updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
+
+                if (serverData.getPreviewPool().isEmpty()) {
+                    List<ItemStack> items = serverData.generatePreviewLoot(level, serverData.isOminous());
+                    items.removeIf(stack -> stack == null || stack.isEmpty());
+                    serverData.setPreviewPool(items);
+                }
+
+                serverData.previewTicks++;
+
+                if (serverData.previewTicks >= 1) {
+                    serverData.previewTicks = 0;
+
+                    ItemStack preview = serverData.popNextPreviewItem();
+
+                    if (preview == null || preview.isEmpty()) {
+                        preview = ItemStack.EMPTY;
+                    } else {
+                        preview = preview.copy();
+                    }
+
+                    sharedData.setDisplayItem(preview);
+
+                    VaultBlockEntity be = (VaultBlockEntity) level.getBlockEntity(pos);
+                    if (be != null) {
+                        be.setChanged();
+                        be.sync();
+                    }
+                }
+
+                yield ACTIVE;
+            }
 
             case UNLOCKING -> {
+                serverData.previewTicks = 0;
+                serverData.getPreviewPool().clear();
                 serverData.pauseStateUpdatingUntil(level.getGameTime() + 20L);
                 yield EJECTING;
             }
@@ -102,9 +125,21 @@ public enum VaultState implements StringRepresentable {
                 } else {
                     float progress = serverData.ejectionProgress();
 
-                    ejectResultItem(level, pos, serverData.popNextItemToEject(), progress);
+                    ItemStack popped = serverData.popNextItemToEject();
+                    if (popped == null || popped.isEmpty()) {
+                        serverData.pauseStateUpdatingUntil(level.getGameTime() + 20);
+                        yield EJECTING;
+                    }
 
-                    sharedData.setDisplayItem(serverData.getNextItemToEject());
+                    sharedData.setDisplayItem(popped);
+
+                    ejectResultItem(level, pos, popped, progress);
+
+                    VaultBlockEntity be = (VaultBlockEntity) level.getBlockEntity(pos);
+                    if (be != null) {
+                        be.setChanged();
+                        level.sendBlockUpdated(pos, be.getBlockState(), be.getBlockState(), 3);
+                    }
 
                     boolean last = serverData.getItemsToEject().isEmpty();
                     int delay = last ? 20 : 20;
@@ -114,6 +149,12 @@ public enum VaultState implements StringRepresentable {
                 }
             }
         };
+    }
+
+    public ItemStack getRandomPreviewItem(RandomSource random, VaultServerData serverData) {
+        List<ItemStack> pool = serverData.getPreviewPool();
+        if (pool.isEmpty()) return ItemStack.EMPTY;
+        return pool.get(random.nextInt(pool.size()));
     }
 
     private static VaultState updateStateForConnectedPlayers(

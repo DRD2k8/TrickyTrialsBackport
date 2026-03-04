@@ -40,9 +40,7 @@ public class VaultSharedData {
         }
     }
 
-    public CompoundTag save() {
-        CompoundTag tag = new CompoundTag();
-
+    public CompoundTag save(CompoundTag tag) {
         if (!displayItem.isEmpty()) {
             tag.put("display_item", displayItem.save(new CompoundTag()));
         }
@@ -59,7 +57,11 @@ public class VaultSharedData {
     }
 
     public void setDisplayItem(ItemStack stack) {
-        this.displayItem = stack.copy();
+        if (stack == null) {
+            this.displayItem = ItemStack.EMPTY;
+        } else {
+            this.displayItem = stack.copy();
+        }
     }
 
     public ItemStack getDisplayItem() {

@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class VaultRenderer implements BlockEntityRenderer<VaultBlockEntity> {
     public VaultRenderer(BlockEntityRendererProvider.Context ctx) {
@@ -26,17 +27,21 @@ public class VaultRenderer implements BlockEntityRenderer<VaultBlockEntity> {
 
     private void renderDisplayItem(VaultBlockEntity vault, PoseStack poseStack,
                                    MultiBufferSource buffer, int light, int overlay, float partialTicks) {
+
         ItemStack stack = vault.getSharedData().getDisplayItem();
-        if (stack.isEmpty()) return;
+        if (stack == null || stack.isEmpty()) return;
+
+        Level level = vault.getLevel();
+        if (level == null) return;
 
         poseStack.pushPose();
 
-        poseStack.translate(0.5, 1.0, 0.5);
+        poseStack.translate(0.5, 0.4, 0.5);
 
-        float rotation = (vault.getLevel().getGameTime() + partialTicks) * 4;
+        float rotation = (level.getGameTime() + partialTicks) * 4;
         poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
 
-        poseStack.scale(0.75f, 0.75f, 0.75f);
+        poseStack.scale(1f, 1f, 1f);
 
         Minecraft.getInstance().getItemRenderer().renderStatic(
                 stack,
@@ -45,7 +50,7 @@ public class VaultRenderer implements BlockEntityRenderer<VaultBlockEntity> {
                 overlay,
                 poseStack,
                 buffer,
-                vault.getLevel(),
+                level,
                 0
         );
 

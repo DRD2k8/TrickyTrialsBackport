@@ -1,7 +1,15 @@
 package com.drd.trickytrialsbackport.block.entity.vault;
 
+import com.drd.trickytrialsbackport.util.ModBuiltInLootTables;
 import net.minecraft.nbt.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -14,6 +22,9 @@ public class VaultServerData {
     private ItemStack currentEjectingItem = ItemStack.EMPTY;
     private int ejectionTicks = 0;
     private static final int EJECTION_DURATION = 20;
+    public int previewTicks = 0;
+    private boolean ominous;
+    private List<ItemStack> previewPool = new ArrayList<>();
 
     public void load(CompoundTag tag) {
         rewardedPlayers.clear();
@@ -66,12 +77,60 @@ public class VaultServerData {
         return tag;
     }
 
+    public boolean isOminous() {
+        return ominous;
+    }
+
+    public void setOminous(boolean ominous) {
+        this.ominous = ominous;
+    }
+
+    public List<ItemStack> generatePreviewLoot(ServerLevel level, boolean ominous) {
+        ResourceLocation tableId = ominous
+                ? ModBuiltInLootTables.TRIAL_CHAMBERS_REWARD_OMINOUS
+                : ModBuiltInLootTables.TRIAL_CHAMBERS_REWARD;
+
+        LootTable table = level.getServer().getLootData().getLootTable(tableId);
+
+        LootParams params = new LootParams.Builder(level)
+                .withParameter(LootContextParams.ORIGIN, Vec3.ZERO)
+                .create(LootContextParamSets.CHEST);
+
+        List<ItemStack> preview = new ArrayList<>();
+
+        int rolls = ominous ? 7 : 5;
+
+        for (int i = 0; i < rolls; i++) {
+            preview.addAll(table.getRandomItems(params));
+        }
+
+        preview.removeIf(ItemStack::isEmpty);
+
+        return preview;
+    }
+
+    public List<ItemStack> getPreviewPool() {
+        return previewPool;
+    }
+
+    public void setPreviewPool(List<ItemStack> items) {
+        previewPool = items;
+    }
+
     public void pauseStateUpdatingUntil(long gameTime) {
         this.stateUpdatingResumesAt = gameTime;
     }
 
     public List<ItemStack> getItemsToEject() {
         return itemsToEject;
+    }
+
+    public ItemStack popNextPreviewItem() {
+        if (this.previewPool.isEmpty()) {
+            return ItemStack.EMPTY;
+        }
+
+        return this.previewPool.remove(0);
     }
 
     @Nullable
