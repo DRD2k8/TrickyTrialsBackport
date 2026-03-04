@@ -1,185 +1,41 @@
 {
-  "minecraft:recipes/combat/iron_sword": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/iron_pickaxe": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/combat/iron_leggings": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/combat/shield": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/hopper": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/iron_bars": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
   "minecraft:adventure/minecraft_trials_edition": {
     "criteria": {
-      "minecraft_trials_edition": "2026-03-03 16:33:18 -0800"
+      "minecraft_trials_edition": "2026-03-03 18:42:31 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/combat/iron_boots": {
+  "minecraft:recipes/misc/iron_nugget_from_smelting": {
     "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/combat/iron_chestplate": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/lantern": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/iron_nugget": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/bucket": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/combat/iron_helmet": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/minecart": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/iron_hoe": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/iron_shovel": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:story/smelt_iron": {
-    "criteria": {
-      "iron": "2026-03-03 16:34:24 -0800"
+      "has_iron_axe": "2026-03-03 18:43:26 -0800"
     },
     "done": true
   },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2026-03-03 16:32:21 -0800"
+      "unlock_right_away": "2026-03-03 18:41:41 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/tools/shears": {
+  "minecraft:recipes/redstone/dispenser": {
     "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
+      "has_bow": "2026-03-03 18:43:31 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/iron_trapdoor": {
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
     "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/chain": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/iron_block": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/iron_axe": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/combat/crossbow": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
+      "has_iron_axe": "2026-03-03 18:43:26 -0800"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:cold_ocean": "2026-03-03 16:32:50 -0800",
-      "minecraft:deep_cold_ocean": "2026-03-03 16:34:08 -0800",
-      "minecraft:plains": "2026-03-03 16:32:22 -0800"
+      "minecraft:snowy_taiga": "2026-03-03 18:41:42 -0800",
+      "minecraft:cold_ocean": "2026-03-03 18:42:08 -0800",
+      "minecraft:lush_caves": "2026-03-03 18:42:31 -0800"
     },
     "done": false
-  },
-  "minecraft:recipes/decorations/smithing_table": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "vanillabackport:recipes/decorations/lodestone": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/lodestone": {
-    "criteria": {
-      "has_the_recipe": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/iron_door": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/heavy_weighted_pressure_plate": {
-    "criteria": {
-      "has_iron_ingot": "2026-03-03 16:34:24 -0800"
-    },
-    "done": true
   },
   "DataVersion": 3465
 }

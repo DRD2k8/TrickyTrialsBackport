@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.forge;
 
+import com.drd.trickytrialsbackport.config.CommonConfig;
 import com.drd.trickytrialsbackport.entity.monster.Bogged;
 import com.drd.trickytrialsbackport.entity.monster.breeze.Breeze;
 import com.drd.trickytrialsbackport.forge.registry.ForgeRegistryHelper;
@@ -13,6 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 @Mod(TrickyTrialsBackport.MOD_ID)
 public final class TrickyTrialsBackportForge {
@@ -22,6 +24,8 @@ public final class TrickyTrialsBackportForge {
         TrickyTrialsBackport.init();
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+
+        CommonConfig.init(FMLPaths.CONFIGDIR.get());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

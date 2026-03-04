@@ -1,5 +1,6 @@
 package com.drd.trickytrialsbackport.block.entity.vault;
 
+import com.drd.trickytrialsbackport.config.CommonConfig;
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -78,6 +79,11 @@ public enum VaultState implements StringRepresentable {
             case INACTIVE -> updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.activationRange());
 
             case ACTIVE -> {
+                if (!CommonConfig.isRepeatableVault() && serverData.hasBeenUsed()) {
+                    sharedData.setDisplayItem(ItemStack.EMPTY);
+                    yield INACTIVE;
+                }
+
                 updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
 
                 if (serverData.getPreviewPool().isEmpty()) {
@@ -121,6 +127,7 @@ public enum VaultState implements StringRepresentable {
             case EJECTING -> {
                 if (serverData.getItemsToEject().isEmpty()) {
                     serverData.markEjectionFinished();
+                    serverData.markUsed();
                     yield updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
                 } else {
                     float progress = serverData.ejectionProgress();
@@ -161,6 +168,10 @@ public enum VaultState implements StringRepresentable {
             ServerLevel level, BlockPos pos, VaultConfig config,
             VaultServerData serverData, VaultSharedData sharedData, double range
     ) {
+        if (!CommonConfig.isRepeatableVault() && serverData.hasBeenUsed()) {
+            return INACTIVE;
+        }
+
         sharedData.updateConnectedPlayersWithinRange(level, pos, serverData, config, range);
         serverData.pauseStateUpdatingUntil(level.getGameTime() + 20L);
         return sharedData.hasConnectedPlayers() ? ACTIVE : INACTIVE;

@@ -25,6 +25,7 @@ public class VaultServerData {
     public int previewTicks = 0;
     private boolean ominous;
     private List<ItemStack> previewPool = new ArrayList<>();
+    private boolean usedOnce = false;
 
     public void load(CompoundTag tag) {
         rewardedPlayers.clear();
@@ -188,5 +189,13 @@ public class VaultServerData {
         }
 
         return Math.min(1f, (this.ejectionTicks + partialTicks) / (float) EJECTION_DURATION);
+    }
+
+    public boolean hasBeenUsed() {
+        return usedOnce;
+    }
+
+    public void markUsed() {
+        usedOnce = true;
     }
 }

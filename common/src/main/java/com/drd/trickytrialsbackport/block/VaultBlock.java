@@ -1,8 +1,11 @@
 package com.drd.trickytrialsbackport.block;
 
 import com.drd.trickytrialsbackport.block.entity.vault.VaultBlockEntity;
+import com.drd.trickytrialsbackport.block.entity.vault.VaultServerData;
 import com.drd.trickytrialsbackport.block.entity.vault.VaultState;
+import com.drd.trickytrialsbackport.config.CommonConfig;
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
+import com.drd.trickytrialsbackport.registry.ModItems;
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import com.drd.trickytrialsbackport.util.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
@@ -82,34 +85,46 @@ public class VaultBlock extends BaseEntityBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos,
+                                 Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack held = player.getItemInHand(hand);
+
+        if (level.isClientSide) return InteractionResult.SUCCESS;
 
         if (!(level.getBlockEntity(pos) instanceof VaultBlockEntity be)) {
             return InteractionResult.PASS;
         }
 
-        boolean ominous = state.getValue(OMINOUS);
+        VaultServerData serverData = be.getServerData();
 
-        boolean isCorrectKey = be.isCorrectKey(held, ominous);
+        if (!CommonConfig.isRepeatableVault() && serverData.hasBeenUsed()) {
+            return InteractionResult.FAIL;
+        }
 
-        if (!isCorrectKey) {
+        if (held.is(ModItems.TRIAL_KEY.get()) || held.is(ModItems.OMINOUS_TRIAL_KEY.get())) {
+            boolean ominous = state.getValue(OMINOUS);
+            boolean isCorrectKey = be.isCorrectKey(held, ominous);
+
+            if (!isCorrectKey) {
+                level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM_FAIL.get(), SoundSource.BLOCKS, 1f, 1f);
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+
+            if (be.tryInsertKey(player, held, ominous)) {
+                level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM.get(), SoundSource.BLOCKS, 1f, 1f);
+
+                if (!player.getAbilities().instabuild) {
+                    held.shrink(1);
+                }
+
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+
             level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM_FAIL.get(), SoundSource.BLOCKS, 1f, 1f);
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
-        if (be.tryInsertKey(player, held, ominous)) {
-            level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM.get(), SoundSource.BLOCKS, 1f, 1f);
-
-            if (!player.getAbilities().instabuild) {
-                held.shrink(1);
-            }
-
-            return InteractionResult.sidedSuccess(level.isClientSide);
-        }
-
-        level.playSound(null, pos, ModSounds.VAULT_INSERT_ITEM_FAIL.get(), SoundSource.BLOCKS, 1f, 1f);
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.PASS;
     }
 
     @Override
