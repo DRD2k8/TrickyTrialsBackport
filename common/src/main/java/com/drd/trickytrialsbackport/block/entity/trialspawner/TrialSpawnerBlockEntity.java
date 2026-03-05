@@ -1,10 +1,14 @@
 package com.drd.trickytrialsbackport.block.entity.trialspawner;
 
 import com.drd.trickytrialsbackport.registry.ModBlockEntities;
+import com.drd.trickytrialsbackport.registry.ModParticles;
+import com.drd.trickytrialsbackport.registry.ModSounds;
 import com.drd.trickytrialsbackport.util.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -116,7 +120,60 @@ public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, Tri
         }
     }
 
+    public static void tick(Level level, BlockPos pos, BlockState state, TrialSpawnerBlockEntity be) {
+        if (level.isClientSide) {
+            clientTick(level, pos, state, be);
+        } else {
+            serverTick(level, pos, state, be);
+        }
+    }
+
+    public static void clientTick(Level level, BlockPos pos, BlockState state, TrialSpawnerBlockEntity be) {
+        be.trialSpawner.tick(level, pos, state);
+
+        TrialSpawnerData data = be.trialSpawner.getData();
+
+        if (!data.detectedPlayers.isEmpty()) {
+            RandomSource random = level.getRandom();
+
+            if (!be.trialSpawner.isOminous()) {
+                TrialSpawner.addDetectPlayerParticles(
+                        level,
+                        pos,
+                        random,
+                        data.detectedPlayers.size(),
+                        ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER.get()
+                );
+            } else {
+                TrialSpawner.addDetectPlayerParticles(
+                        level,
+                        pos,
+                        random,
+                        data.detectedPlayers.size(),
+                        ModParticles.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS.get()
+                );
+            }
+        }
+    }
+
     public static void serverTick(Level level, BlockPos pos, BlockState state, TrialSpawnerBlockEntity be) {
         be.trialSpawner.tick(level, pos, state);
+
+        TrialSpawnerData data = be.trialSpawner.getData();
+
+        if (!data.detectedPlayers.isEmpty()) {
+            SoundEvent sound = ModSounds.TRIAL_SPAWNER_DETECT_PLAYER.get();
+
+            if (level.getGameTime() % 20 == 0) {
+                level.playSound(
+                        null,
+                        pos,
+                        sound,
+                        SoundSource.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+            }
+        }
     }
 }

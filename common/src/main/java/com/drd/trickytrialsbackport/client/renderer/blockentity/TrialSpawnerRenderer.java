@@ -5,6 +5,7 @@ import com.drd.trickytrialsbackport.block.entity.trialspawner.TrialSpawnerBlockE
 import com.drd.trickytrialsbackport.block.entity.trialspawner.TrialSpawnerData;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -39,13 +40,12 @@ public class TrialSpawnerRenderer implements BlockEntityRenderer<TrialSpawnerBlo
 
         poseStack.pushPose();
 
-        poseStack.translate(0.5D, 0.0D, 0.5D);
+        poseStack.translate(0.5D, 0.15D, 0.5D);
 
-        float scale = 0.53125F;
-        poseStack.translate(0.0D, 0.4D, 0.0D);
+        float scale = 0.35F;
         poseStack.scale(scale, scale, scale);
 
-        float spin = (float) data.getSpin();
+        float spin = (Minecraft.getInstance().level.getGameTime() * 20) % 360;
         poseStack.mulPose(Axis.YP.rotationDegrees(spin));
 
         this.entityRenderer.render(

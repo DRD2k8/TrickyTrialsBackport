@@ -2,6 +2,7 @@ package com.drd.trickytrialsbackport.block.entity.trialspawner;
 
 import com.drd.trickytrialsbackport.entity.OminousItemSpawner;
 import com.drd.trickytrialsbackport.registry.ModSounds;
+import com.drd.trickytrialsbackport.util.ModBuiltInLootTables;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -11,6 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -73,7 +75,40 @@ public enum TrialSpawnerState implements StringRepresentable {
                     yield INACTIVE;
                 } else {
                     data.tryDetectPlayers(level, pos, spawner);
-                    yield data.detectedPlayers.isEmpty() ? this : ACTIVE;
+                    if (!data.detectedPlayers.isEmpty()) {
+
+                        // Compute waves required if needed
+                        if (data.wavesRequired == 0) {
+                            data.computeWavesRequired(level, spawner);
+                        }
+
+                        // RESET wave counter
+                        data.mobsSpawnedThisWave = 0;
+
+                        // SET TARGET MOBS FOR THIS WAVE (THIS IS THE IMPORTANT PART)
+                        Difficulty diff = level.getDifficulty();
+                        boolean ominous = spawner.isOminous();
+
+                        if (!ominous) {
+                            switch (diff) {
+                                case EASY -> data.targetMobsThisWave = 6;
+                                case NORMAL -> data.targetMobsThisWave = 8;
+                                case HARD -> data.targetMobsThisWave = 10;
+                                default -> data.targetMobsThisWave = 8;
+                            }
+                        } else {
+                            switch (diff) {
+                                case EASY -> data.targetMobsThisWave = 8;
+                                case NORMAL -> data.targetMobsThisWave = 10;
+                                case HARD -> data.targetMobsThisWave = 12;
+                                default -> data.targetMobsThisWave = 10;
+                            }
+                        }
+
+                        yield ACTIVE;
+                    } else {
+                        yield this;
+                    }
                 }
             }
 
@@ -81,6 +116,12 @@ public enum TrialSpawnerState implements StringRepresentable {
                 if (!data.hasMobToSpawn(spawner, level.random)) {
                     yield INACTIVE;
                 } else {
+                    // Clean up dead/gone mobs every tick
+                    data.currentMobs.removeIf(uuid -> {
+                        Entity e = level.getEntity(uuid);
+                        return e == null || !e.isAlive();
+                    });
+
                     int extraPlayers = data.countAdditionalPlayers(pos);
                     data.tryDetectPlayers(level, pos, spawner);
 
@@ -88,17 +129,52 @@ public enum TrialSpawnerState implements StringRepresentable {
                         this.spawnOminousOminousItemSpawner(level, pos, spawner);
                     }
 
-                    if (data.hasFinishedSpawningAllMobs(config, extraPlayers)) {
+                    // Target mobs per wave by difficulty + ominous
+                    int targetMobsThisWave;
+                    Difficulty diff = level.getDifficulty();
+                    boolean ominous = spawner.isOminous();
+                    if (!ominous) {
+                        switch (diff) {
+                            case EASY -> targetMobsThisWave = 6;
+                            case NORMAL -> targetMobsThisWave = 8;
+                            case HARD -> targetMobsThisWave = 10;
+                            default -> targetMobsThisWave = 8;
+                        }
+                    } else {
+                        switch (diff) {
+                            case EASY -> targetMobsThisWave = 8;
+                            case NORMAL -> targetMobsThisWave = 10;
+                            case HARD -> targetMobsThisWave = 12;
+                            default -> targetMobsThisWave = 10;
+                        }
+                    }
+
+                    boolean finishedSpawningThisWave = data.mobsSpawnedThisWave >= targetMobsThisWave;
+
+                    if (finishedSpawningThisWave) {
                         if (data.haveAllCurrentMobsDied()) {
-                            data.cooldownEndsAt = level.getGameTime() + (long) spawner.getTargetCooldownLength();
-                            data.totalMobsSpawned = 0;
-                            data.nextMobSpawnsAt = 0L;
-                            yield WAITING_FOR_REWARD_EJECTION;
+                            data.wavesCompleted++;
+                            if (data.wavesRequired == 0) {
+                                data.computeWavesRequired(level, spawner);
+                            }
+
+                            if (data.wavesCompleted >= data.wavesRequired) {
+                                data.cooldownEndsAt = level.getGameTime() + (long) spawner.getTargetCooldownLength();
+                                data.mobsSpawnedThisWave = 0;
+                                data.nextMobSpawnsAt = 0L;
+                                yield WAITING_FOR_REWARD_EJECTION;
+                            } else {
+                                data.mobsSpawnedThisWave = 0;
+                                data.nextMobSpawnsAt = level.getGameTime() + (long) config.ticksBetweenSpawn();
+                                yield this;
+                            }
+                        } else {
+                            yield this;
                         }
                     } else if (data.isReadyToSpawnNextMob(level, config, extraPlayers)) {
                         spawner.spawnMob(level, pos).ifPresent(uuid -> {
                             data.currentMobs.add(uuid);
-                            data.totalMobsSpawned++;
+                            data.mobsSpawnedThisWave++;
                             data.nextMobSpawnsAt = level.getGameTime() + (long) config.ticksBetweenSpawn();
                             config.spawnPotentialsDefinition()
                                     .getRandom(level.getRandom())
@@ -107,14 +183,16 @@ public enum TrialSpawnerState implements StringRepresentable {
                                         spawner.markUpdated();
                                     });
                         });
+                        yield this;
+                    } else {
+                        yield this;
                     }
-
-                    yield this;
                 }
             }
 
             case WAITING_FOR_REWARD_EJECTION -> {
-                if (data.isReadyToOpenShutter(level, DELAY_BEFORE_EJECT_AFTER_KILLING_LAST_MOB, spawner.getTargetCooldownLength())) {
+                int delay = spawner.getTargetCooldownLength();
+                if (data.isReadyToOpenShutter(level, DELAY_BEFORE_EJECT_AFTER_KILLING_LAST_MOB, delay)) {
                     level.playSound(null, pos, ModSounds.TRIAL_SPAWNER_OPEN_SHUTTER.get(), SoundSource.BLOCKS);
                     yield EJECTING_REWARD;
                 } else {
@@ -123,34 +201,29 @@ public enum TrialSpawnerState implements StringRepresentable {
             }
 
             case EJECTING_REWARD -> {
-                if (!data.isReadyToEjectItems(level, (float) TIME_BETWEEN_EACH_EJECTION, spawner.getTargetCooldownLength())) {
-                    yield this;
-                } else if (data.detectedPlayers.isEmpty()) {
-                    level.playSound(null, pos, ModSounds.TRIAL_SPAWNER_CLOSE_SHUTTER.get(), SoundSource.BLOCKS);
-                    data.ejectingLootTable = Optional.empty();
-                    yield COOLDOWN;
+                boolean ominous = spawner.isOminous();
+                if (!ominous) {
+                    spawner.ejectReward(level, pos, ModBuiltInLootTables.SPAWNER_TRIAL_CHAMBER_KEY);
                 } else {
-                    if (data.ejectingLootTable.isEmpty()) {
-                        data.ejectingLootTable = config.lootTablesToEject().getRandomValue(level.getRandom());
-                    }
-
-                    data.ejectingLootTable.ifPresent(loc ->
-                            spawner.ejectReward(level, pos, loc)
-                    );
-                    data.detectedPlayers.remove(data.detectedPlayers.iterator().next());
-                    yield this;
+                    spawner.ejectReward(level, pos, ModBuiltInLootTables.SPAWNER_OMINOUS_TRIAL_CHAMBER_KEY);
                 }
+
+                level.playSound(null, pos, ModSounds.TRIAL_SPAWNER_CLOSE_SHUTTER.get(), SoundSource.BLOCKS);
+
+                data.ejectingLootTable = Optional.empty();
+                data.wavesCompleted = 0;
+                data.wavesRequired = 0;
+                data.mobsSpawnedThisWave = 0;
+
+                yield COOLDOWN;
             }
 
             case COOLDOWN -> {
-                data.tryDetectPlayers(level, pos, spawner);
-                if (!data.detectedPlayers.isEmpty()) {
-                    data.totalMobsSpawned = 0;
-                    data.nextMobSpawnsAt = 0L;
-                    yield ACTIVE;
-                } else if (data.isCooldownFinished(level)) {
+                if (data.isCooldownFinished(level)) {
                     data.cooldownEndsAt = 0L;
                     spawner.removeOminous(level, pos);
+                    data.detectedPlayers.clear();
+                    data.mobsSpawnedThisWave = 0;
                     yield WAITING_FOR_PLAYERS;
                 } else {
                     yield this;

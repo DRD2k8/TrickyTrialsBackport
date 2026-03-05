@@ -43,7 +43,7 @@ public final class TrialSpawner {
     public static final String NORMAL_CONFIG_TAG_NAME = "normal_config";
     public static final String OMINOUS_CONFIG_TAG_NAME = "ominous_config";
     public static final int DETECT_PLAYER_SPAWN_BUFFER = 40;
-    private static final int DEFAULT_TARGET_COOLDOWN_LENGTH = 36000;
+    private static final int DEFAULT_TARGET_COOLDOWN_LENGTH = 600;
     private static final int DEFAULT_PLAYER_SCAN_RANGE = 14;
     private static final int MAX_MOB_TRACKING_DISTANCE = 47;
     private static final int MAX_MOB_TRACKING_DISTANCE_SQR = Mth.square(47);
@@ -133,6 +133,7 @@ public final class TrialSpawner {
         return this.data;
     }
 
+    // Always 30 seconds (600 ticks)
     public int getTargetCooldownLength() {
         return this.targetCooldownLength;
     }
@@ -307,6 +308,7 @@ public final class TrialSpawner {
                 this.setState(level, TrialSpawnerState.INACTIVE);
             }
         } else {
+            // Clean up tracked mobs (dead / gone / too far)
             if (this.data.currentMobs.removeIf(uuid -> shouldMobBeUntracked(level, pos, uuid))) {
                 this.data.nextMobSpawnsAt = level.getGameTime() + (long) this.getConfig().ticksBetweenSpawn();
             }
@@ -330,10 +332,13 @@ public final class TrialSpawner {
 
     private static boolean shouldMobBeUntracked(ServerLevel level, BlockPos pos, UUID id) {
         Entity entity = level.getEntity(id);
-        return entity == null
-                || !entity.isAlive()
-                || !entity.level().dimension().equals(level.dimension())
-                || entity.blockPosition().distSqr(pos) > (double) MAX_MOB_TRACKING_DISTANCE_SQR;
+        if (entity == null || !entity.isAlive()) {
+            return true;
+        }
+        if (!entity.level().dimension().equals(level.dimension())) {
+            return true;
+        }
+        return entity.blockPosition().distSqr(pos) > (double) MAX_MOB_TRACKING_DISTANCE_SQR;
     }
 
     private static boolean inLineOfSight(Level level, Vec3 targetCenter, Vec3 from) {
@@ -343,7 +348,7 @@ public final class TrialSpawner {
                         targetCenter,
                         ClipContext.Block.VISUAL,
                         ClipContext.Fluid.NONE,
-                        null // 1.20.1: entity parameter, we pass null
+                        null
                 )
         );
         return hit.getBlockPos().equals(BlockPos.containing(targetCenter))
@@ -397,13 +402,11 @@ public final class TrialSpawner {
         }
     }
 
-    @Deprecated(forRemoval = true)
     @VisibleForTesting
     public void setPlayerDetector(PlayerDetector detector) {
         this.playerDetector = detector;
     }
 
-    @Deprecated(forRemoval = true)
     @VisibleForTesting
     public void overridePeacefulAndMobSpawnRule() {
         this.overridePeacefulAndMobSpawnRule = true;

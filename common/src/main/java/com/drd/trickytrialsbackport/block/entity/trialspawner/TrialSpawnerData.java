@@ -12,6 +12,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.random.WeightedEntry;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -41,6 +42,11 @@ public class TrialSpawnerData {
     protected int totalMobsSpawned;
     protected Optional<SpawnData> nextSpawnData;
     protected Optional<ResourceLocation> ejectingLootTable;
+
+    protected int wavesCompleted = 0;
+    protected int wavesRequired = 0;
+    protected int mobsSpawnedThisWave = 0;
+    public int targetMobsThisWave;
 
     @Nullable
     protected Entity displayEntity;
@@ -76,6 +82,9 @@ public class TrialSpawnerData {
         this.totalMobsSpawned = tag.getInt("total_mobs_spawned");
         this.nextMobSpawnsAt = tag.getLong("next_mob_spawns_at");
         this.cooldownEndsAt = tag.getLong("cooldown_ends_at");
+        this.wavesCompleted = tag.getInt("waves_completed");
+        this.wavesRequired = tag.getInt("waves_required");
+        this.mobsSpawnedThisWave = tag.getInt("mobs_spawned_this_wave");
 
         this.detectedPlayers.clear();
         ListTag players = tag.getList("detected_players", Tag.TAG_INT_ARRAY);
@@ -102,6 +111,9 @@ public class TrialSpawnerData {
         tag.putInt("total_mobs_spawned", this.totalMobsSpawned);
         tag.putLong("next_mob_spawns_at", this.nextMobSpawnsAt);
         tag.putLong("cooldown_ends_at", this.cooldownEndsAt);
+        tag.putInt("waves_completed", this.wavesCompleted);
+        tag.putInt("waves_required", this.wavesRequired);
+        tag.putInt("mobs_spawned_this_wave", this.mobsSpawnedThisWave);
 
         ListTag players = new ListTag();
         for (UUID id : this.detectedPlayers) {
@@ -128,15 +140,14 @@ public class TrialSpawnerData {
         this.nextMobSpawnsAt = 0L;
         this.cooldownEndsAt = 0L;
         this.currentMobs.clear();
+        this.wavesCompleted = 0;
+        this.wavesRequired = 0;
+        this.mobsSpawnedThisWave = 0;
     }
 
     public boolean hasMobToSpawn(TrialSpawner spawner, RandomSource random) {
         boolean flag = this.getOrCreateNextSpawnData(spawner, random).getEntityToSpawn().contains("id", 8);
         return flag || !spawner.getConfig().spawnPotentialsDefinition().isEmpty();
-    }
-
-    public boolean hasFinishedSpawningAllMobs(TrialSpawnerConfig config, int additionalPlayers) {
-        return this.totalMobsSpawned >= config.calculateTargetTotalMobs(additionalPlayers);
     }
 
     public boolean haveAllCurrentMobsDied() {
@@ -145,7 +156,7 @@ public class TrialSpawnerData {
 
     public boolean isReadyToSpawnNextMob(ServerLevel level, TrialSpawnerConfig config, int additionalPlayers) {
         return level.getGameTime() >= this.nextMobSpawnsAt
-                && this.currentMobs.size() < config.calculateTargetSimultaneousMobs(additionalPlayers);
+                && this.mobsSpawnedThisWave < this.targetMobsThisWave;
     }
 
     public int countAdditionalPlayers(BlockPos pos) {
@@ -154,6 +165,27 @@ public class TrialSpawnerData {
         }
 
         return Math.max(0, this.detectedPlayers.size() - 1);
+    }
+
+    public void computeWavesRequired(ServerLevel level, TrialSpawner spawner) {
+        Difficulty diff = level.getDifficulty();
+        boolean ominous = spawner.isOminous();
+
+        if (!ominous) {
+            switch (diff) {
+                case EASY -> wavesRequired = 3;
+                case NORMAL -> wavesRequired = 4;
+                case HARD -> wavesRequired = 5;
+                default -> wavesRequired = 4;
+            }
+        } else {
+            switch (diff) {
+                case EASY -> wavesRequired = 4;
+                case NORMAL -> wavesRequired = 5;
+                case HARD -> wavesRequired = 6;
+                default -> wavesRequired = 5;
+            }
+        }
     }
 
     public void tryDetectPlayers(ServerLevel level, BlockPos pos, TrialSpawner spawner) {
@@ -223,6 +255,9 @@ public class TrialSpawnerData {
         this.nextMobSpawnsAt = level.getGameTime() + (long) spawner.getOminousConfig().ticksBetweenSpawn();
         spawner.markUpdated();
         this.cooldownEndsAt = level.getGameTime() + spawner.getOminousConfig().ticksBetweenItemSpawners();
+        this.wavesCompleted = 0;
+        this.wavesRequired = 0;
+        this.mobsSpawnedThisWave = 0;
     }
 
     private void transformBadOmenIntoTrialOmen(Player player, MobEffectInstance effect) {

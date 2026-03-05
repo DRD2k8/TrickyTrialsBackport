@@ -1,41 +1,57 @@
 {
   "minecraft:adventure/minecraft_trials_edition": {
     "criteria": {
-      "minecraft_trials_edition": "2026-03-03 18:42:31 -0800"
+      "minecraft_trials_edition": "2026-03-04 20:34:37 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/misc/iron_nugget_from_smelting": {
+  "minecraft:recipes/misc/wind_charge": {
     "criteria": {
-      "has_iron_axe": "2026-03-03 18:43:26 -0800"
+      "has_breeze_rod": "2026-03-04 20:35:53 -0800"
     },
     "done": true
   },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2026-03-03 18:41:41 -0800"
+      "unlock_right_away": "2026-03-04 20:34:00 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/dispenser": {
+  "minecraft:adventure/root": {
     "criteria": {
-      "has_bow": "2026-03-03 18:43:31 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/iron_nugget_from_blasting": {
-    "criteria": {
-      "has_iron_axe": "2026-03-03 18:43:26 -0800"
+      "killed_something": "2026-03-04 20:35:53 -0800"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:snowy_taiga": "2026-03-03 18:41:42 -0800",
-      "minecraft:cold_ocean": "2026-03-03 18:42:08 -0800",
-      "minecraft:lush_caves": "2026-03-03 18:42:31 -0800"
+      "minecraft:plains": "2026-03-04 20:34:01 -0800"
     },
     "done": false
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "enchanted_golden_apple": "2026-03-04 20:34:18 -0800"
+    },
+    "done": false
+  },
+  "minecraft:recipes/combat/mace": {
+    "criteria": {
+      "has_breeze_rod": "2026-03-04 20:35:53 -0800"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2026-03-04 20:34:18 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2026-03-04 20:34:14 -0800"
+    },
+    "done": true
   },
   "DataVersion": 3465
 }

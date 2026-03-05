@@ -11,43 +11,12 @@ import net.minecraft.world.level.SpawnData;
 
 import java.util.Optional;
 
-public class TrialSpawnerConfig {
-    private final int spawnRange;
-    private final float totalMobs;
-    private final float simultaneousMobs;
-    private final float totalMobsAddedPerPlayer;
-    private final float simultaneousMobsAddedPerPlayer;
-    private final int ticksBetweenSpawn;
-
-    private final SimpleWeightedRandomList<SpawnData> spawnPotentialsDefinition;
-
-    private final SimpleWeightedRandomList<ResourceLocation> lootTablesToEject;
-
-    private final ResourceLocation itemsToDropWhenOminous;
-
+public record TrialSpawnerConfig(int spawnRange, float totalMobs, float simultaneousMobs, float totalMobsAddedPerPlayer,
+                                 float simultaneousMobsAddedPerPlayer, int ticksBetweenSpawn,
+                                 SimpleWeightedRandomList<SpawnData> spawnPotentialsDefinition,
+                                 SimpleWeightedRandomList<ResourceLocation> lootTablesToEject,
+                                 ResourceLocation itemsToDropWhenOminous) {
     public static final TrialSpawnerConfig DEFAULT;
-
-    public TrialSpawnerConfig(
-            int spawnRange,
-            float totalMobs,
-            float simultaneousMobs,
-            float totalMobsAddedPerPlayer,
-            float simultaneousMobsAddedPerPlayer,
-            int ticksBetweenSpawn,
-            SimpleWeightedRandomList<SpawnData> spawnPotentialsDefinition,
-            SimpleWeightedRandomList<ResourceLocation> lootTablesToEject,
-            ResourceLocation itemsToDropWhenOminous
-    ) {
-        this.spawnRange = spawnRange;
-        this.totalMobs = totalMobs;
-        this.simultaneousMobs = simultaneousMobs;
-        this.totalMobsAddedPerPlayer = totalMobsAddedPerPlayer;
-        this.simultaneousMobsAddedPerPlayer = simultaneousMobsAddedPerPlayer;
-        this.ticksBetweenSpawn = ticksBetweenSpawn;
-        this.spawnPotentialsDefinition = spawnPotentialsDefinition;
-        this.lootTablesToEject = lootTablesToEject;
-        this.itemsToDropWhenOminous = itemsToDropWhenOminous;
-    }
 
     public static TrialSpawnerConfig fromTag(CompoundTag tag) {
         ListTag potentialsTag = tag.getList("spawn_potentials", Tag.TAG_COMPOUND);
@@ -115,10 +84,8 @@ public class TrialSpawnerConfig {
         for (WeightedEntry.Wrapper<SpawnData> wrapper : this.spawnPotentialsDefinition().unwrap()) {
             CompoundTag entry = new CompoundTag();
 
-            // weight
             entry.putInt("weight", wrapper.getWeight().asInt());
 
-            // data = the SpawnData's entityToSpawn tag
             entry.put("data", wrapper.getData().entityToSpawn());
 
             potentialsTag.add(entry);
@@ -144,34 +111,15 @@ public class TrialSpawnerConfig {
     }
 
     public int calculateTargetTotalMobs(int players) {
-        return (int)Math.floor(this.totalMobs + this.totalMobsAddedPerPlayer * players);
+        return (int) Math.floor(this.totalMobs + this.totalMobsAddedPerPlayer * players);
     }
 
     public int calculateTargetSimultaneousMobs(int players) {
-        return (int)Math.floor(this.simultaneousMobs + this.simultaneousMobsAddedPerPlayer * players);
+        return (int) Math.floor(this.simultaneousMobs + this.simultaneousMobsAddedPerPlayer * players);
     }
 
     public long ticksBetweenItemSpawners() {
         return 160L;
-    }
-
-    public int spawnRange() { return this.spawnRange; }
-    public float totalMobs() { return this.totalMobs; }
-    public float simultaneousMobs() { return this.simultaneousMobs; }
-    public float totalMobsAddedPerPlayer() { return this.totalMobsAddedPerPlayer; }
-    public float simultaneousMobsAddedPerPlayer() { return this.simultaneousMobsAddedPerPlayer; }
-    public int ticksBetweenSpawn() { return this.ticksBetweenSpawn; }
-
-    public SimpleWeightedRandomList<SpawnData> spawnPotentialsDefinition() {
-        return this.spawnPotentialsDefinition;
-    }
-
-    public SimpleWeightedRandomList<ResourceLocation> lootTablesToEject() {
-        return this.lootTablesToEject;
-    }
-
-    public ResourceLocation itemsToDropWhenOminous() {
-        return this.itemsToDropWhenOminous;
     }
 
     static {

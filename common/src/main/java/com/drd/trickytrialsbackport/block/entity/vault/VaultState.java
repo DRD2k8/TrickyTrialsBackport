@@ -87,7 +87,10 @@ public enum VaultState implements StringRepresentable {
                 updateStateForConnectedPlayers(level, pos, config, serverData, sharedData, config.deactivationRange());
 
                 if (serverData.getPreviewPool().isEmpty()) {
-                    List<ItemStack> items = serverData.generatePreviewLoot(level, serverData.isOminous());
+                    VaultBlockEntity be = (VaultBlockEntity) level.getBlockEntity(pos);
+                    boolean ominous = be != null && be.isOminous();
+
+                    List<ItemStack> items = serverData.generatePreviewLoot(level, ominous);
                     items.removeIf(stack -> stack == null || stack.isEmpty());
                     serverData.setPreviewPool(items);
                 }

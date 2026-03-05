@@ -28,6 +28,7 @@ public class VaultBlockEntity extends BlockEntity {
     private final VaultServerData serverData = new VaultServerData();
     private final VaultSharedData sharedData = new VaultSharedData();
     private VaultState state = VaultState.INACTIVE;
+    private boolean ominous;
 
     public VaultBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.VAULT.get(), pos, state);
@@ -58,9 +59,14 @@ public class VaultBlockEntity extends BlockEntity {
         setChanged();
     }
 
-    private boolean isOminous() {
+    boolean isOminous() {
         BlockState state = getBlockState();
         return state.hasProperty(VaultBlock.OMINOUS) && state.getValue(VaultBlock.OMINOUS);
+    }
+
+    public void setOminous(boolean value) {
+        ominous = value;
+        setChanged();
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, VaultBlockEntity be) {
