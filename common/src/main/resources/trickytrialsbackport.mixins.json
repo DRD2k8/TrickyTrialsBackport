@@ -9,6 +9,7 @@
     "MobEffectInvoker",
     "RecordItemInvoker",
     "SensorTypeInvoker",
+    "ServerPlayerMixin",
     "StairBlockInvoker"
   ],
   "injectors": {
