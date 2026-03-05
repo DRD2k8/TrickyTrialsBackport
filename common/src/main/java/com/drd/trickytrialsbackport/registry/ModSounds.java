@@ -81,6 +81,7 @@ public class ModSounds {
     public static Supplier<SoundEvent> MACE_SMASH_AIR;
     public static Supplier<SoundEvent> MACE_SMASH_GROUND;
     public static Supplier<SoundEvent> MACE_SMASH_GROUND_HEAVY;
+    public static Supplier<SoundEvent> OMINOUS_BOTTLE_DISPOSE;
     public static Supplier<SoundEvent> MUSIC_DISC_CREATOR;
     public static Supplier<SoundEvent> MUSIC_DISC_CREATOR_MUSIC_BOX;
     public static Supplier<SoundEvent> MUSIC_DISC_PRECIPICE;
@@ -161,6 +162,7 @@ public class ModSounds {
         MACE_SMASH_AIR = registerSound(helper, "item.mace.smash_air");
         MACE_SMASH_GROUND = registerSound(helper, "item.mace.smash_ground");
         MACE_SMASH_GROUND_HEAVY = registerSound(helper, "item.mace.smash_ground_heavy");
+        OMINOUS_BOTTLE_DISPOSE = registerSound(helper, "item.ominous_bottle.dispose");
         MUSIC_DISC_CREATOR = registerSound(helper, "music.disc.creator");
         MUSIC_DISC_CREATOR_MUSIC_BOX = registerSound(helper, "music.disc.creator_music_box");
         MUSIC_DISC_PRECIPICE = registerSound(helper, "music.disc.precipice");

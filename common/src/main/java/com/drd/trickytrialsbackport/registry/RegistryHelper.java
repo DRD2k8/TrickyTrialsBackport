@@ -56,6 +56,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("music_disc_creator");
         VANILLA_BACKPORT_IDS.add("music_disc_creator_music_box");
         VANILLA_BACKPORT_IDS.add("music_disc_precipice");
+        VANILLA_BACKPORT_IDS.add("ominous_bottle");
         VANILLA_BACKPORT_IDS.add("ominous_spawning");
         VANILLA_BACKPORT_IDS.add("ominous_trial_key");
         VANILLA_BACKPORT_IDS.add("orb");

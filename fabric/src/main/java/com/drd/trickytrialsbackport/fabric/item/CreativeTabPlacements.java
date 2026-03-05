@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
@@ -65,6 +66,15 @@ public class CreativeTabPlacements {
         entries.addAfter(Items.EGG, ModItems.WIND_CHARGE.get());
     }
 
+    private static void addItemsToFoodTab(FabricItemGroupEntries entries) {
+        for (int amp = 0; amp <= 4; amp++) {
+            ItemStack stack = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+            stack.getOrCreateTag().putInt("OminousAmplifier", amp);
+
+            entries.addAfter(Items.HONEY_BOTTLE, stack);
+        }
+    }
+
     private static void addItemsToIngredientsTab(FabricItemGroupEntries entries) {
         entries.addAfter(Items.BLAZE_ROD, ModItems.BREEZE_ROD.get(), ModBlocks.HEAVY_CORE.get());
         entries.addAfter(Items.PIGLIN_BANNER_PATTERN, ModItems.FLOW_BANNER_PATTERN.get(), ModItems.GUSTER_BANNER_PATTERN.get());
@@ -91,6 +101,7 @@ public class CreativeTabPlacements {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(CreativeTabPlacements::addItemsToRedstoneTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(CreativeTabPlacements::addItemsToToolsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(CreativeTabPlacements::addItemsToCombatTab);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(CreativeTabPlacements::addItemsToFoodTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(CreativeTabPlacements::addItemsToIngredientsTab);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(CreativeTabPlacements::addItemsToSpawnEggsTab);
     }

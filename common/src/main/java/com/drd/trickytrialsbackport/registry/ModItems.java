@@ -2,6 +2,7 @@ package com.drd.trickytrialsbackport.registry;
 
 import com.drd.trickytrialsbackport.item.*;
 import com.drd.trickytrialsbackport.mixin.RecordItemInvoker;
+import com.drd.trickytrialsbackport.util.ModFoods;
 import com.drd.trickytrialsbackport.util.ModTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BannerPatternItem;
@@ -24,6 +25,7 @@ public class ModItems {
     public static Supplier<Item> MUSIC_DISC_CREATOR;
     public static Supplier<Item> MUSIC_DISC_CREATOR_MUSIC_BOX;
     public static Supplier<Item> MUSIC_DISC_PRECIPICE;
+    public static Supplier<Item> OMINOUS_BOTTLE;
     public static Supplier<Item> OMINOUS_TRIAL_KEY;
     public static Supplier<Item> TRIAL_KEY;
     public static Supplier<Item> TRIAL_SPAWNER;
@@ -46,6 +48,7 @@ public class ModItems {
         MUSIC_DISC_CREATOR = helper.registerAuto(Registries.ITEM, "music_disc_creator", () -> RecordItemInvoker.create(12, ModSounds.MUSIC_DISC_CREATOR.get(), new Item.Properties().rarity(Rarity.RARE), 176));
         MUSIC_DISC_CREATOR_MUSIC_BOX = helper.registerAuto(Registries.ITEM, "music_disc_creator_music_box", () -> RecordItemInvoker.create(11, ModSounds.MUSIC_DISC_CREATOR_MUSIC_BOX.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 73));
         MUSIC_DISC_PRECIPICE = helper.registerAuto(Registries.ITEM, "music_disc_precipice", () -> RecordItemInvoker.create(13, ModSounds.MUSIC_DISC_PRECIPICE.get(), new Item.Properties().rarity(Rarity.UNCOMMON), 299));
+        OMINOUS_BOTTLE = helper.registerAuto(Registries.ITEM, "ominous_bottle", () -> new OminousBottleItem(new Item.Properties().food(ModFoods.OMINOUS_BOTTLE)));
         OMINOUS_TRIAL_KEY = helper.registerAuto(Registries.ITEM, "ominous_trial_key", () -> new Item(new Item.Properties()));
         SCRAPE_POTTERY_SHERD = helper.registerAuto(Registries.ITEM, "scrape_pottery_sherd", () -> new Item(new Item.Properties()));
         TRIAL_KEY = helper.registerAuto(Registries.ITEM, "trial_key", () -> new Item(new Item.Properties()));

@@ -19,6 +19,7 @@ public class CreativeTabPlacements {
     interface Entries {
         void addBefore(ItemLike reference, ItemLike... values);
         void addAfter(ItemLike reference, ItemLike... values);
+        void addStackAfter(ItemStack reference, ItemStack value);
     }
 
     /**
@@ -49,6 +50,11 @@ public class CreativeTabPlacements {
                 for (ItemLike value : values) {
                     event.getEntries().putAfter(new ItemStack(reference), new ItemStack(value), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 }
+            }
+
+            @Override
+            public void addStackAfter(ItemStack reference, ItemStack value) {
+                event.getEntries().putAfter(reference, value, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             }
         };
 
@@ -91,6 +97,25 @@ public class CreativeTabPlacements {
             );
             entries.addAfter(blueEgg, ModItems.WIND_CHARGE.get());
             entries.addAfter(Items.EGG, ModItems.WIND_CHARGE.get());
+        }
+
+        if (tab == CreativeModeTabs.FOOD_AND_DRINKS) {
+            ItemStack stack1 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+            ItemStack stack2 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+            ItemStack stack3 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+            ItemStack stack4 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+            ItemStack stack5 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+            stack1.getOrCreateTag().putInt("OminousAmplifier", 0);
+            stack2.getOrCreateTag().putInt("OminousAmplifier", 1);
+            stack3.getOrCreateTag().putInt("OminousAmplifier", 2);
+            stack4.getOrCreateTag().putInt("OminousAmplifier", 3);
+            stack5.getOrCreateTag().putInt("OminousAmplifier", 4);
+
+            entries.addStackAfter(new ItemStack(Items.HONEY_BOTTLE), stack1);
+            entries.addStackAfter(stack1, stack2);
+            entries.addStackAfter(stack2, stack3);
+            entries.addStackAfter(stack3, stack4);
+            entries.addStackAfter(stack4, stack5);
         }
 
         if (tab == CreativeModeTabs.INGREDIENTS) {
