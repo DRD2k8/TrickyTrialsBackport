@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:arrow",
-    "minecraft:trident"
+    "minecraft:trident",
+    "minecraft:fall"
   ]
 }
