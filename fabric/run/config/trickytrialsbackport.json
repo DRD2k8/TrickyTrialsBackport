@@ -1,0 +1,4 @@
+{
+  "_comment": "Keep it as false if you want the vault to be like vanilla. Change it to true if you want the vault to be repeatable.",
+  "repeatableVault": false
+}

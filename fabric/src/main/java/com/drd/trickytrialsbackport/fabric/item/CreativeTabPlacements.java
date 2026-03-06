@@ -67,12 +67,22 @@ public class CreativeTabPlacements {
     }
 
     private static void addItemsToFoodTab(FabricItemGroupEntries entries) {
-        for (int amp = 0; amp <= 4; amp++) {
-            ItemStack stack = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
-            stack.getOrCreateTag().putInt("OminousAmplifier", amp);
+        ItemStack stack1 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+        ItemStack stack2 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+        ItemStack stack3 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+        ItemStack stack4 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+        ItemStack stack5 = new ItemStack(ModItems.OMINOUS_BOTTLE.get());
+        stack1.getOrCreateTag().putInt("OminousAmplifier", 0);
+        stack2.getOrCreateTag().putInt("OminousAmplifier", 1);
+        stack3.getOrCreateTag().putInt("OminousAmplifier", 2);
+        stack4.getOrCreateTag().putInt("OminousAmplifier", 3);
+        stack5.getOrCreateTag().putInt("OminousAmplifier", 4);
 
-            entries.addAfter(Items.HONEY_BOTTLE, stack);
-        }
+        entries.addAfter(Items.HONEY_BOTTLE, stack1);
+        entries.addAfter(stack1, stack2);
+        entries.addAfter(stack2, stack3);
+        entries.addAfter(stack3, stack4);
+        entries.addAfter(stack4, stack5);
     }
 
     private static void addItemsToIngredientsTab(FabricItemGroupEntries entries) {
