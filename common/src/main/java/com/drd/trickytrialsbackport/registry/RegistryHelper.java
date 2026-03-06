@@ -22,6 +22,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("bogged_spawn_egg");
         VANILLA_BACKPORT_IDS.add("bolt_armor_trim_smithing_template");
         VANILLA_BACKPORT_IDS.add("bouquet");
+        VANILLA_BACKPORT_IDS.add("breach");
         VANILLA_BACKPORT_IDS.add("breeze");
         VANILLA_BACKPORT_IDS.add("breeze_rod");
         VANILLA_BACKPORT_IDS.add("breeze_spawn_egg");
@@ -32,6 +33,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("chiseled_tuff_bricks");
         VANILLA_BACKPORT_IDS.add("cotan");
         VANILLA_BACKPORT_IDS.add("crafter");
+        VANILLA_BACKPORT_IDS.add("density");
         VANILLA_BACKPORT_IDS.add("endboss");
         VANILLA_BACKPORT_IDS.add("fern");
         VANILLA_BACKPORT_IDS.add("finding");
@@ -92,6 +94,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("vault");
         VANILLA_BACKPORT_IDS.add("vault_connection");
         VANILLA_BACKPORT_IDS.add("weaving");
+        VANILLA_BACKPORT_IDS.add("wind_burst");
         VANILLA_BACKPORT_IDS.add("wind_charge");
         VANILLA_BACKPORT_IDS.add("wind_charged");
     }

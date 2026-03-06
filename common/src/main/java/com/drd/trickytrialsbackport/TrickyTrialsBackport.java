@@ -13,6 +13,7 @@ public final class TrickyTrialsBackport {
         ModBlocks.register();
         ModBlockEntities.register();
         ModEffects.register();
+        ModEnchantments.register();
         ModEntities.register();
         ModItems.register();
         ModLootFunctionTypes.register();

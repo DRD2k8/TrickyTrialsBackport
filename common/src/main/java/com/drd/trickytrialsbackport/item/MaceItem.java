@@ -1,10 +1,14 @@
 package com.drd.trickytrialsbackport.item;
 
+import com.drd.trickytrialsbackport.enchantment.BreachEnchantment;
+import com.drd.trickytrialsbackport.enchantment.DensityEnchantment;
+import com.drd.trickytrialsbackport.registry.ModEnchantments;
 import com.drd.trickytrialsbackport.registry.ModItems;
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,8 +16,10 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
@@ -73,8 +79,27 @@ public class MaceItem extends Item {
             }
 
             if (attacker instanceof Player player) {
-                float bonus = getSmashDamage(attacker);
-                target.hurt(attacker.damageSources().playerAttack(player), bonus);
+                float base = getSmashDamage(attacker);
+
+                int densityLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.DENSITY.get(), attacker.getMainHandItem());
+                if (densityLevel > 0) {
+                    base += DensityEnchantment.calculateDamageAddition(densityLevel, base);
+                }
+
+                int breachLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BREACH.get(), attacker.getMainHandItem());
+                if (breachLevel > 0) {
+                    float toughness = getTotalArmorToughness(target);
+                    float toughnessEffectiveness = Mth.clamp(toughness / 20.0F, 0.0F, 1.0F);
+
+                    float breachedEffectiveness = BreachEnchantment.calculateArmorBreach(breachLevel, toughnessEffectiveness);
+
+                    float breachedToughness = breachedEffectiveness * 20.0F;
+
+                    float reduction = breachedToughness * 0.1F;
+                    base = Math.max(0, base - reduction);
+                }
+
+                target.hurt(attacker.damageSources().playerAttack(player), base);
             }
 
             knockback(level, attacker, target);
@@ -120,6 +145,18 @@ public class MaceItem extends Item {
 
     public static boolean canSmashAttack(LivingEntity entity) {
         return entity.fallDistance > SMASH_ATTACK_FALL_THRESHOLD && !entity.isFallFlying();
+    }
+
+    public static float getTotalArmorToughness(LivingEntity entity) {
+        float toughness = 0.0F;
+
+        for (ItemStack stack : entity.getArmorSlots()) {
+            if (stack.getItem() instanceof ArmorItem armor) {
+                toughness += armor.getToughness();
+            }
+        }
+
+        return toughness;
     }
 
     @Override
