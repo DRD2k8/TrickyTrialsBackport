@@ -7,6 +7,8 @@
   ],
   "mixins": [
     "MobEffectInvoker",
+    "RaiderMixin",
+    "RaidMixin",
     "RecordItemInvoker",
     "SensorTypeInvoker",
     "ServerPlayerMixin",
