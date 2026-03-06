@@ -60,6 +60,7 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("ominous_bottle");
         VANILLA_BACKPORT_IDS.add("ominous_spawning");
         VANILLA_BACKPORT_IDS.add("ominous_trial_key");
+        VANILLA_BACKPORT_IDS.add("oozing");
         VANILLA_BACKPORT_IDS.add("orb");
         VANILLA_BACKPORT_IDS.add("owlemons");
         VANILLA_BACKPORT_IDS.add("passage");
@@ -90,7 +91,9 @@ public abstract class RegistryHelper {
         VANILLA_BACKPORT_IDS.add("unpacked");
         VANILLA_BACKPORT_IDS.add("vault");
         VANILLA_BACKPORT_IDS.add("vault_connection");
+        VANILLA_BACKPORT_IDS.add("weaving");
         VANILLA_BACKPORT_IDS.add("wind_charge");
+        VANILLA_BACKPORT_IDS.add("wind_charged");
     }
 
     private static RegistryHelper instance;

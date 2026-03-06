@@ -1,124 +1,34 @@
 {
-  "minecraft:recipes/building_blocks/stone_bricks": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_brick_slab_from_stone_stonecutting": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_stonecutting": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/brewing/magma_cream": {
-    "criteria": {
-      "has_blaze_powder": "2026-03-05 20:50:54 -0800"
-    },
-    "done": true
-  },
-  "minecraft:nether/brew_potion": {
-    "criteria": {
-      "potion": "2026-03-05 20:51:17 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_slab_from_stone_stonecutting": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_bricks_from_stone_stonecutting": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_slab": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2026-03-05 20:50:25 -0800"
+      "unlock_right_away": "2026-03-05 21:49:44 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/chiseled_stone_bricks_stone_from_stonecutting": {
+  "minecraft:adventure/root": {
     "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
+      "killed_something": "2026-03-05 21:50:33 -0800"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/stone_stairs_from_stone_stonecutting": {
+  "minecraft:adventure/kill_all_mobs": {
     "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
+      "minecraft:vindicator": "2026-03-05 21:50:33 -0800"
     },
-    "done": true
+    "done": false
   },
-  "minecraft:recipes/misc/ender_eye": {
+  "minecraft:adventure/kill_a_mob": {
     "criteria": {
-      "has_blaze_powder": "2026-03-05 20:50:54 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/stone_button": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/stonecutter": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
+      "minecraft:vindicator": "2026-03-05 21:50:33 -0800"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:stony_peaks": "2026-03-05 20:50:33 -0800",
-      "minecraft:forest": "2026-03-05 20:50:26 -0800"
+      "minecraft:taiga": "2026-03-05 21:49:45 -0800",
+      "minecraft:forest": "2026-03-05 21:50:08 -0800"
     },
     "done": false
-  },
-  "minecraft:recipes/redstone/stone_pressure_plate": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/fire_charge": {
-    "criteria": {
-      "has_blaze_powder": "2026-03-05 20:50:54 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/smooth_stone": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/stone_brick_walls_from_stone_stonecutting": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_stairs": {
-    "criteria": {
-      "has_stone": "2026-03-05 20:50:45 -0800"
-    },
-    "done": true
   },
   "DataVersion": 3465
 }
