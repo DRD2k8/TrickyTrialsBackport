@@ -8,8 +8,8 @@
     "Dandi2k8"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/DRD2k8/TrickyTrialsBackport",
+    "issues": "https://github.com/DRD2k8/TrickyTrialsBackport/issues"
   },
   "license": "MIT",
   "icon": "icon.png",

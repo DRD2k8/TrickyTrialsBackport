@@ -49,16 +49,17 @@ public class TrialSpawnerBlock extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
-                                                                  BlockState state,
-                                                                  BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
+            Level level,
+            BlockState state,
+            BlockEntityType<T> type
+    ) {
         return createTickerHelper(
                 type,
                 ModBlockEntities.TRIAL_SPAWNER.get(),
-                (lvl, pos, st, be) -> {
-                    TrialSpawnerBlockEntity spawnerBe = (TrialSpawnerBlockEntity) be;
-                    spawnerBe.getTrialSpawner().tick(lvl, pos, st);
-                }
+                level.isClientSide
+                        ? TrialSpawnerBlockEntity::clientTick
+                        : TrialSpawnerBlockEntity::serverTick
         );
     }
 }

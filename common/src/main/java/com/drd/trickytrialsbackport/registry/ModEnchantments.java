@@ -18,7 +18,7 @@ public class ModEnchantments {
     public static void register() {
         RegistryHelper helper = RegistryHelper.getInstance();
 
-        BREACH = helper.registerAuto(Registries.ENCHANTMENT, "breach", () -> new BreachEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
+        BREACH = helper.registerAuto(Registries.ENCHANTMENT, "breach", () -> new BreachEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
         DENSITY = helper.registerAuto(Registries.ENCHANTMENT, "density", () -> new DensityEnchantment(Enchantment.Rarity.COMMON, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
         WIND_BURST = helper.registerAuto(Registries.ENCHANTMENT, "wind_burst", () -> new WindBurstEnchantment(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     }

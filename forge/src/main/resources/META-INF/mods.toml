@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/DRD2k8/TrickyTrialsBackport/issues"
 license = "MIT"
 
 [[mods]]

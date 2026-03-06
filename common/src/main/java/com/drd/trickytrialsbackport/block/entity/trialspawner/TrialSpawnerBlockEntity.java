@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, TrialSpawner.StateAccessor {
     private TrialSpawner trialSpawner;
     private TrialSpawnerData data;
+    private boolean wasDetectingPlayers = false;
 
     public TrialSpawnerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.TRIAL_SPAWNER.get(), pos, state);
@@ -132,8 +133,9 @@ public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, Tri
         be.trialSpawner.tick(level, pos, state);
 
         TrialSpawnerData data = be.trialSpawner.getData();
+        boolean detectingNow = !data.detectedPlayers.isEmpty();
 
-        if (!data.detectedPlayers.isEmpty()) {
+        if (detectingNow && !be.wasDetectingPlayers) {
             RandomSource random = level.getRandom();
 
             if (!be.trialSpawner.isOminous()) {
@@ -154,6 +156,8 @@ public class TrialSpawnerBlockEntity extends BlockEntity implements Spawner, Tri
                 );
             }
         }
+
+        be.wasDetectingPlayers = detectingNow;
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, TrialSpawnerBlockEntity be) {

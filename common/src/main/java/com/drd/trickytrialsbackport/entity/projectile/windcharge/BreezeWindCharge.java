@@ -5,6 +5,7 @@ import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModParticles;
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -69,13 +70,32 @@ public class BreezeWindCharge extends ThrowableProjectile {
 
         if (owner != null && hit == owner) return;
 
-        if (!(owner instanceof Breeze)) {
-            discard();
-            return;
-        }
-
         if (hit instanceof LivingEntity living) {
-            living.hurt(damageSources().mobProjectile(this, (LivingEntity) owner), 4.0F);
+            if (noDeflectTicks <= 0 && living.isBlocking()) {
+                if (living.isDamageSourceBlocked(damageSources().mobProjectile(this, (LivingEntity) owner))) {
+                    level().playSound(
+                            null,
+                            living.getX(), living.getY(), living.getZ(),
+                            SoundEvents.SHIELD_BLOCK,
+                            SoundSource.PLAYERS,
+                            1.0F,
+                            1.0F
+                    );
+
+                    Vec3 look = living.getLookAngle();
+                    setDeltaMovement(look.scale(1.2F));
+
+                    setOwner(living);
+
+                    noDeflectTicks = NODEFLECT_TICKS;
+
+                    return;
+                }
+            }
+
+            if (owner instanceof Breeze) {
+                living.hurt(damageSources().mobProjectile(this, (LivingEntity) owner), 4.0F);
+            }
         }
 
         explode();
@@ -126,7 +146,7 @@ public class BreezeWindCharge extends ThrowableProjectile {
         Vec3 look = living.getLookAngle();
 
         double backward = 0.5;
-        double upward = 0.9;
+        double upward = 0.25;
 
         if (this.random.nextFloat() < 0.05F) {
             upward = 1.6;

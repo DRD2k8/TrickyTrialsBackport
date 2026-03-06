@@ -1,8 +1,6 @@
 package com.drd.trickytrialsbackport.entity.monster.breeze;
 
 import com.drd.trickytrialsbackport.entity.projectile.windcharge.BreezeWindCharge;
-import com.drd.trickytrialsbackport.entity.projectile.windcharge.WindCharge;
-import com.drd.trickytrialsbackport.registry.ModEntities;
 import com.drd.trickytrialsbackport.registry.ModMemoryModuleTypes;
 import com.drd.trickytrialsbackport.registry.ModSounds;
 import com.google.common.collect.ImmutableMap;

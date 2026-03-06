@@ -92,11 +92,16 @@ public class MaceItem extends Item {
                     float toughnessEffectiveness = Mth.clamp(toughness / 20.0F, 0.0F, 1.0F);
 
                     float breachedEffectiveness = BreachEnchantment.calculateArmorBreach(breachLevel, toughnessEffectiveness);
-
                     float breachedToughness = breachedEffectiveness * 20.0F;
 
                     float reduction = breachedToughness * 0.1F;
                     base = Math.max(0, base - reduction);
+                }
+
+                int armor = getTotalArmor(target);
+                if (armor > 0) {
+                    float armorBonus = armor * 0.2F;
+                    base += armorBonus;
                 }
 
                 target.hurt(attacker.damageSources().playerAttack(player), base);
@@ -145,6 +150,18 @@ public class MaceItem extends Item {
 
     public static boolean canSmashAttack(LivingEntity entity) {
         return entity.fallDistance > SMASH_ATTACK_FALL_THRESHOLD && !entity.isFallFlying();
+    }
+
+    public static int getTotalArmor(LivingEntity entity) {
+        int armor = 0;
+
+        for (ItemStack stack : entity.getArmorSlots()) {
+            if (stack.getItem() instanceof ArmorItem armorItem) {
+                armor += armorItem.getDefense();
+            }
+        }
+
+        return armor;
     }
 
     public static float getTotalArmorToughness(LivingEntity entity) {
