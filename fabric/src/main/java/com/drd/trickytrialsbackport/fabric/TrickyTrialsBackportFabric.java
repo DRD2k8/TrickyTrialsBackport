@@ -7,15 +7,18 @@ import com.drd.trickytrialsbackport.effect.WeavingEffect;
 import com.drd.trickytrialsbackport.effect.WindChargedEffect;
 import com.drd.trickytrialsbackport.fabric.item.CreativeTabPlacements;
 import com.drd.trickytrialsbackport.fabric.registry.FabricRegistryHelper;
+import com.drd.trickytrialsbackport.fabric.server.WindChargeTracker;
 import com.drd.trickytrialsbackport.fabric.util.ModAttributeBuilders;
 import com.drd.trickytrialsbackport.fabric.util.ModBiomeModifiers;
 import com.drd.trickytrialsbackport.fabric.util.ModBrewingRecipes;
 import com.drd.trickytrialsbackport.registry.ModEffects;
+import com.drd.trickytrialsbackport.registry.ModItems;
 import com.drd.trickytrialsbackport.registry.RegistryHelper;
 import com.drd.trickytrialsbackport.util.ModSoundTypes;
 import net.fabricmc.api.ModInitializer;
 
 import com.drd.trickytrialsbackport.TrickyTrialsBackport;
+import net.fabricmc.fabric.api.entity.event.v1.ServerEntityCombatEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.loader.api.FabricLoader;
@@ -24,10 +27,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -124,5 +129,17 @@ public final class TrickyTrialsBackportFabric implements ModInitializer {
         });
 
         ModBrewingRecipes.register();
+
+        ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register((world, entity, killedEntity) -> {
+            if (killedEntity instanceof Raider raider && raider.isPatrolLeader()) {
+                raider.spawnAtLocation(ModItems.OMINOUS_BOTTLE.get());
+
+                if (entity instanceof Player player) {
+                    player.removeEffect(MobEffects.BAD_OMEN);
+                }
+            }
+        });
+
+        WindChargeTracker.init();
     }
 }

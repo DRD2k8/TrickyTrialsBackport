@@ -15,6 +15,11 @@ loom {
     forge {
         mixinConfig "trickytrialsbackport.mixins.json"
         mixinConfig "trickytrialsbackport.forge.mixins.json"
+        mixin.defaultRefmapName = "trickytrialsbackport-refmap.json"
+    }
+    mixin {
+        useLegacyMixinAp = false
+        defaultRefmapName = "trickytrialsbackport-refmap.json"
     }
     runs {
         data {
@@ -49,6 +54,13 @@ configurations {
     }
 }
 
+repositories {
+    maven {
+        name = "SpongePowered"
+        url = "https://repo.spongepowered.org/maven"
+    }
+}
+
 dependencies {
     forge "net.minecraftforge:forge:$rootProject.forge_version"
 
@@ -61,6 +73,9 @@ dependencies {
     // Optional dependencies
     modRuntimeOnly "maven.modrinth:vanillabackport:${vanillabackport_forge_id}"
     modRuntimeOnly "maven.modrinth:platform:${platform_forge_id}"
+
+    // Always add this for the refmaps to work
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')

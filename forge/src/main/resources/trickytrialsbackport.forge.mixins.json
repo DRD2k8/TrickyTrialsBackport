@@ -3,10 +3,13 @@
   "package": "com.drd.trickytrialsbackport.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
+  "refmap": "trickytrialsbackport-refmap.json",
   "client": [
   ],
   "mixins": [
-    "BoggedMixin"
+    "BoggedMixin",
+    "RaiderMixin",
+    "ServerPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

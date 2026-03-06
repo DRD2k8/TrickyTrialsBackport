@@ -5,13 +5,12 @@
   "minVersion": "0.8",
   "client": [
   ],
+  "refmap": "trickytrialsbackport-refmap.json",
   "mixins": [
     "MobEffectInvoker",
-    "RaiderMixin",
     "RaidMixin",
     "RecordItemInvoker",
     "SensorTypeInvoker",
-    "ServerPlayerMixin",
     "StairBlockInvoker"
   ],
   "injectors": {

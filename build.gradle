@@ -1,5 +1,6 @@
 plugins {
-    id 'dev.architectury.loom' version '1.11-SNAPSHOT' apply false
+    // Do not change it to 1.11-SNAPSHOT, because refmaps will never generate
+    id 'dev.architectury.loom' version '1.10-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.gradleup.shadow' version '8.3.6' apply false
 }
@@ -35,9 +36,13 @@ subprojects {
                 includeGroup "maven.modrinth"
             }
         }
+
         maven { url = "https://jitpack.io/" }
+        maven { url = "https://jm.gserv.me/repository/maven-public/" }
+
         maven {
-            url = "https://jm.gserv.me/repository/maven-public/"
+            name = "SpongePowered"
+            url = "https://repo.spongepowered.org/maven"
         }
     }
 
@@ -48,6 +53,8 @@ subprojects {
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings loom.officialMojangMappings()
+
+        annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
     }
 
     java {
