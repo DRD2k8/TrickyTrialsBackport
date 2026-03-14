@@ -3,13 +3,16 @@ package com.drd.trickytrialsbackport.client.model;
 import com.drd.trickytrialsbackport.entity.monster.Bogged;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.item.Items;
 
-public class BoggedModel<T extends Bogged> extends EntityModel<T> {
+public class BoggedModel<T extends Bogged> extends EntityModel<T> implements ArmedModel {
     private final ModelPart body;
     private final ModelPart waist;
     public final ModelPart head;
@@ -68,6 +71,20 @@ public class BoggedModel<T extends Bogged> extends EntityModel<T> {
         this.rightLeg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.leftLeg.xRot  = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
         this.mushrooms.visible = !entity.isSheared();
+
+        if (entity.isAggressive() && entity.getMainHandItem().is(Items.BOW)) {
+            float headYaw = this.head.yRot;
+            float netHeadPitch = this.head.xRot;
+
+            this.rightArm.yRot = -0.1F + headYaw;
+            this.rightArm.xRot = -((float)Math.PI / 2F) + netHeadPitch;
+
+            this.leftArm.yRot = (float)Math.PI / 6F;
+            this.leftArm.xRot = -((float)Math.PI / 2F) + netHeadPitch;
+
+            this.rightArm.zRot = 0.0F;
+            this.leftArm.zRot = 0.0F;
+        }
     }
 
     @Override
@@ -80,5 +97,10 @@ public class BoggedModel<T extends Bogged> extends EntityModel<T> {
         leftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         rightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         leftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+    }
+
+    @Override
+    public void translateToHand(HumanoidArm arm, PoseStack poseStack) {
+        (arm == HumanoidArm.RIGHT ? rightArm : leftArm).translateAndRotate(poseStack);
     }
 }

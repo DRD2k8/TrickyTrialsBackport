@@ -7,6 +7,7 @@ import com.drd.trickytrialsbackport.client.renderer.entity.layer.BoggedOuterLaye
 import com.drd.trickytrialsbackport.entity.monster.Bogged;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 
 public class BoggedRenderer extends MobRenderer<Bogged, BoggedModel<Bogged>> {
@@ -16,6 +17,7 @@ public class BoggedRenderer extends MobRenderer<Bogged, BoggedModel<Bogged>> {
     public BoggedRenderer(EntityRendererProvider.Context ctx) {
         super(ctx, new BoggedModel<>(ctx.bakeLayer(ModModelLayers.BOGGED)), 0.5F);
 
+        this.addLayer(new ItemInHandLayer<>(this, ctx.getItemInHandRenderer()));
         this.addLayer(new BoggedOuterLayer<>(this, ctx.getModelSet()));
     }
 

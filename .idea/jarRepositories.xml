@@ -76,5 +76,10 @@
       <option name="name" value="GeckoLib" />
       <option name="url" value="https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="SpongePowered" />
+      <option name="name" value="SpongePowered" />
+      <option name="url" value="https://repo.spongepowered.org/maven" />
+    </remote-repository>
   </component>
 </project>
