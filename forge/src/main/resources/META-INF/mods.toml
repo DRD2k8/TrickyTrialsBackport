@@ -12,6 +12,7 @@ description = '''
 Bringing Tricky Trials to modern Minecraft versions.
 '''
 logoFile = "icon.png"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/tricky-trials-backport"
 
 [[dependencies.trickytrialsbackport]]
 modId = "forge"
